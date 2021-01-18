@@ -155,12 +155,25 @@ body {
     align-self: center;
     margin-bottom: 51px;
 }
+.items{
+    display: flex;
+    flex-direction: row;
+
+}
 .item_link{
     font-size: 14px;
     line-height: 30px;
     letter-spacing: 0.05em;
     color: #5A98D0;
     text-decoration: none;
+    margin-top: 30px;
+}
+.item_arrow{
+    align-self: center;
+    background-image: url(img/item-arrow.svg);
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    margin-top: 30px;
 }
 .text {
     text-align: center;
