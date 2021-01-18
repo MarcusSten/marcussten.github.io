@@ -11,19 +11,58 @@ body {
     margin: 0;
     padding: 0;
 }
+.paragrh{
+    width: 425px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
+    text-align: left;
+    letter-spacing: 0.05em;
+    color: #1F3F68;
+    opacity: 0.6;
+
+}
 .ph {
     font-size: 16px;
     line-height: 26px;
-    color: #162e4d;
     text-align: left;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #1F3F68;
+    opacity: 0.6;
+}
+.top_button{
+    background: #5A98D0;
+    box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    padding: 15px 50px;
+    margin-top: 71px;
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 .mine_ph {
     font-size: 16px;
     line-height: 26px;
+    width: 75%;
+    margin: 32px auto 64px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #222222;
+    opacity: 1;
 }
 .title {
     font-size: 64px;
-    color: #162e4d;
+    width: 504px;
+    font-weight: 300;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+    color: #1F3F68;
 }
 .title2 {
     font-weight: 500;
@@ -33,14 +72,20 @@ body {
 .title3 {
     font-size: 36px;
     text-align: center;
+    width: 1137px;
+    font-weight: 300;
+    line-height: 46px;
+    letter-spacing: 0.05em;
+    color: #000000;
 }
 .title4 {
-    font-size: 20px;
     line-height: 30px;
-    color: #162e4d;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #1F3F68;
+    margin-bottom: 14px;
 }
 .form {
-    border: 1px solid #204e83;
     box-sizing: border-box;
     border-radius: 10px;
     opacity: 0.4;
@@ -57,81 +102,187 @@ body {
     text-transform: uppercase;
 }
 .header {
-    border: rgb(209, 49, 49) 1px solid;
+    background: linear-gradient(0deg, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
 }
 .header_content {
-    border: rgb(201, 41, 139) 1px solid;
+
 }
 .header_menu {
-    border: rgb(70, 211, 51) 1px solid;
-    margin-top: 30px;
-    height: 40px;
     line-height: 40px;
     display: flex;
     justify-content: space-between;
+    padding-top: 42px;
 }
 .header_text {
-    border: rgb(81, 184, 202) 1px solid;
-    width: 550px;
-    margin-top: 80px;
-    padding-bottom: 20px;
+    padding-top: 115px;
+    flex-grow: 1;
+    background-image: url(img/background-top-right.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.top_content_box{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.mine_header{
+    padding-top: 64px;
 }
 .mine {
-    border: rgb(201, 41, 139) 1px solid;
+
 }
 .mine_content {
-    border: rgb(70, 211, 51) 1px solid;
     display: flex;
     justify-content: space-between;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 .mine_content div:nth-child(1) {
-    border: rgb(209, 49, 49) 1px solid;
+
 }
 .mine_content_item {
     width: 359px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 44px 32px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    background: #FFFFFF;
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.item_img{
+    align-self: center;
+    margin-bottom: 51px;
+}
+.item_link{
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #5A98D0;
+    text-decoration: none;
 }
 .text {
-    border: rgb(209, 49, 49) 1px solid;
     text-align: center;
     padding-bottom: 10px;
 }
+.text_parrent{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+.text_item{
+    position: relative;
+    flex-grow: 1;
+}
+.text_item_margin{
+    margin-right: 32px;
+}
+.text_text1{
+    font-size: 32px;
+    line-height: 46px;
+    text-align: right;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    position: absolute;
+    top: 64px;
+    right: 64px;
+}
+.text_text2{
+    font-size: 28px;
+    line-height: 46px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    position: absolute;
+    top: 32px;
+    left: 32px;
+}
+.text_text3{
+    font-size: 28px;
+    line-height: 46px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    position: absolute;
+    top: 32px;
+    left: 32px;
+}
+.text_img{
+    width: 100%;
+}
 .footer {
-    border: rgb(235, 50, 50) 1px solid;
+    background: #316099;
+    margin-top: 112px;
 }
 .footer_content {
-    border: rgb(201, 41, 139) 1px solid;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: none;
 }
 .footer_top {
-    border: rgb(26, 36, 11) 1px solid;
 }
 .footer_text {
     width: 495px;
-    border: rgb(158, 87, 199) 1px solid;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 .footer_title3{
     font-size: 36px;
     text-align: left;
-    width: 340px;
-    padding-top: 10px;
+    line-height: 46px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin-top: 91px;
+}
+.ph_footer{
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    opacity: 0.6;
+    margin-top: 32px;
+}
+.footer_button{
+    background: #5A98D0;
+    padding: 15px 80px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    width: 76px;
+    height: 26px;
+    margin-top: 165px;
+    margin-right: 114px;
+}
+hr{
+    opacity: 0.4;
+    border: 1px solid #FFFFFF;
+    margin-top: 96px;
 }
 .footer_bottom {
-    border: rgb(16, 2, 26) 1px solid;
+
 }
 .footer_contact{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
     list-style-type: none;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin-top: 64px;
 }
 .copyright {
-    border: rgb(113, 191, 214) 1px solid;
-    padding: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    opacity: 0.4;
+    margin-top: 64px;
+    padding-bottom: 64px;
 }
 header {
     border: rgb(1113, 191, 214) 1px solid;
