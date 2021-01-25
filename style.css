@@ -150,8 +150,7 @@ body {
   	border: 0;
 }
 .maps{
-	max-width: 1024px;
-	margin: 96px 10% 0 10%;
+	margin: 0 auto; 
 }
 .header {
 	flex-grow: 1;
@@ -182,9 +181,6 @@ body {
 }
 .mine_header{
     padding-top: 64px;
-}
-.mine {
-
 }
 .mine_content {
     display: flex;
@@ -379,6 +375,8 @@ hr{
     padding-bottom: 20px;
 }
 .formblock {
+	margin: 0 auto;
+    width: 100%; 
 	flex-grow: 1;
     background-image: url(img/background-contacts.svg);
     background-repeat: no-repeat;
