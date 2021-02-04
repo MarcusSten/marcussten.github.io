@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Личный сайт Marcus Sten</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+
+        function genPass() {
+            let password = "",
+                n = +document.getElementById("userAnswer").value;
+            charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            for (let i = 0; i < n; i++) {
+                password += charset.charAt(Math.floor(Math.random() * charset.length));
+            }
+            write(password);
+        }
+
+        function write(text) {
+            document.getElementById("info").innerHTML = text;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="header">
+            <a href="index.html">Главная</a>
+            <a href="puzzle.html">Загадки</a>
+            <a href="guess.html">Угадайка</a>
+            <a href="genPass.html">Пароли</a>
+        </div>
+
+        <div class="contentWrap">
+            <div class="content">
+                <div class="center">
+
+                    <h1>Генератор паролей</h1>
+
+                    <div class="box">
+
+                        <p id="info">Укажите длинну желаемого пароля в символах</p>
+                        <input type="text" id="userAnswer">
+                        <br>
+                        <a href="#" onClick="genPass();" id="button">Создать пароль</a>
+
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>Все права защищены &copy; Marcus Sten</p>
+                </div>
+
+</body>
+
+</html>
