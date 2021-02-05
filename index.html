@@ -8,119 +8,141 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <title>Marcus Sten pf</title>
+
+    <style>
+      .en .ru,
+      .ru .en {
+      display: none;
+    }
+
+      /* Переключалки языка */
+    .lang-switcher {
+      border-bottom: 1px dashed;
+      cursor: pointer;
+    }
+    .lang-switcher:hover {
+      color: #b33;
+    }
+      /* Выделяем активную переключалку тоже с помощью классов родителя */
+    .en .lang-switcher--en,
+    .ru .lang-switcher--ru {
+      color: #000;
+      border-bottom: none;
+      font-weight: bold;
+      cursor: default;
+    }
+    </style>
+
   </head>
-	  <body>
+	  <body class="ru">
+
 		  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			  	<div class="container-fluid">
-			    <a class="navbar-brand" href="#">Menu</a>
+			    <a class="navbar-brand ru" lang="ru" href="#">Меню</a>
+          <a class="navbar-brand en" lang="en" href="#">Menu</a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			      <span class="navbar-toggler-icon"></span>
 			    </button>
 				    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				      <div class="navbar-nav">
-				        <a class="nav-link active" aria-current="page" href="#">Home</a>
-				        <a class="nav-link" href="#">About Me</a>
-				        <a class="nav-link" href="#">My Works</a>
-				        <a class="nav-link contact" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+				        <a class="nav-link active ru" lang="ru" aria-current="page" href="#">Главная</a>
+                <a class="nav-link active en" lang="en" aria-current="page" href="#">Home</a>
+				        <a class="nav-link ru" lang="ru" href="#">Обо мне</a>
+                <a class="nav-link en" lang="en" href="#">About me</a>
+				        <a class="nav-link ru" lang="ru" href="#">Мои работы</a>
+                <a class="nav-link en" lang="en" href="#">My Works</a>
+				        <a class="nav-link contact ru" lang="ru" href="#" tabindex="-1" aria-disabled="true">Контакты</a>
+                <a class="nav-link contact en" lang="en" href="#" tabindex="-1" aria-disabled="true">Contacts</a>
 				      </div>
 		    		</div>
-		    		<div class="form-check form-switch">
-					  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-					  <label class="form-check-label" for="flexSwitchCheckDefault">Russian</label>
-					</div>
-		  		</div>
+          <button type="button" class="lang-switcher lang-switcher--ru btn btn-outline-secondary btn-xs" id="switcher-ru">RU</button>
+          <button type="button" class="lang-switcher lang-switcher--en btn btn-outline-secondary btn-xs" id="switcher-en">EN</button>
+  		  		</div>
 			</nav>
-	    <h1>Этот сайт сделан мной для укрепления знаний Java Script, HTML, CSS</h1>
-	    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-	    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-	    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <div class="ru" lang="ru">
+	     <h1>Этот сайт сделан мной для укрепления знаний Java Script, HTML, CSS</h1>
+      </div>
+      <div class="en" lang="en">
+        <h1>This site is made by me to strengthen my knowledge Java Script, HTML, CSS</h1>
+      </div>  
+	    <button type="button ru" lang="ru" class="btn btn-outline-secondary">Кнопка</button>
+      <button type="button en" lang="en" class="btn btn-outline-secondary">Button</button>
 
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-		<div class="row row-cols-1 row-cols-md-3 g-4">
-		  <div class="col">
-		    <div class="card h-100">
-		      <img src="img/site1.JPG" class="card-img-top" alt="site1">
-		      <div class="card-body">
-		        <h5 class="card-title">HTML/CSS</h5>
-		        <p class="card-text">Сайт портфолио по основам HTML/CSS</p>
-		        <a href="https://marcussten.github.io/site1/" class="btn btn-primary" target="_blank">Перейти на сайт</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card h-100">
-		      <img src="img/site2.JPG" class="card-img-top" alt="site2">
-		      <div class="card-body">
-		        <h5 class="card-title">JavaScript</h5>
-		        <p class="card-text">Сайт портфолио по введению в JavaScript</p>
-		        <a href="marcussten.github.io/site2" class="btn btn-primary" target="_blank">Перейти на сайт</a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col">
-		    <div class="card h-100">
-		      <img src="img/site3.JPG" class="card-img-top" alt="site3">
-		      <div class="card-body">
-		        <h5 class="card-title">JavaScript</h5>
-		        <p class="card-text">Сайт портфолио по введению в JavaScript</p>
-		        <a href="marcussten.github.io/site3" class="btn btn-primary" target="_blank">Перейти на сайт</a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+  		<div class="row row-cols-1 row-cols-md-3 g-4">
+  		  <div class="col">
+  		    <div class="card h-100">
+  		      <img src="img/site1.JPG" class="card-img-top" alt="site1">
+  		      <div class="card text-center">
+  		        <h5 class="card-title">HTML/CSS</h5>
+  		        <p class="card-text ru" lang="ru">Сайт компании. Применение основ HTML и CSS, адаптивная верстка</p>
+              <p class="card-text en" lang="en" >The company's website. Applying the basics of HTML and CSS, adaptive layout</p>
+  		        <a href="https://marcussten.github.io/site1/" class="btn btn-primary ru" target="_blank" lang="ru">Перейти на сайт</a>
+              <a href="https://marcussten.github.io/site1/" class="btn btn-primary en" target="_blank" lang="en">Go to the site</a>
+  		      </div>
+  		    </div>
+  		  </div>
+  		  <div class="col">
+  		    <div class="card h-100">
+  		      <img src="img/site2.JPG" class="card-img-top" alt="site2">
+  		      <div class="card text-center">
+  		        <h5 class="card-title">JavaScript</h5>
+  		        <p class="card-text ru" lang="ru">Сайт личной страницы. Основы JavaScript на примере простых игр</p>
+              <p class="card-text en" lang="en">The site of a personal page. JavaScript basics using simple games as an example</p>
+  		        <a href="marcussten.github.io/site2" class="btn btn-primary ru" target="_blank" lang="ru">Перейти на сайт</a>
+              <a href="marcussten.github.io/site2" class="btn btn-primary en" target="_blank" lang="en">Go to the site</a>
+  		      </div>
+  		    </div>
+  		  </div>
+  		  <div class="col">
+  		    <div class="card h-100">
+  		      <img src="img/site3.JPG" class="card-img-top" alt="site3">
+  		      <div class="card text-center">
+  		        <h5 class="card-title">Bootstrap/CSS3</h5>
+  		        <p class="card-text ru" lang="ru">Сайт интернет-магазина. Структура HTML5, применение Bootstrap, препроцессоров, CSS3, Grid layout</p>
+              <p class="card-text en" lang="en">The website of the online store. HTML5 structure, application of Bootstrap, preprocessors, CSS3, Grid layout</p>
+  		        <a href="marcussten.github.io/site3" class="btn btn-primary ru" target="_blank" lang="ru">Перейти на сайт</a>
+              <a href="marcussten.github.io/site3" class="btn btn-primary en" target="_blank" lang="en">Go to the site</a>
+  		      </div>
+  		    </div>
+  		  </div>
+  		</div>
 
-		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-		  <ol class="carousel-indicators">
-		    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-		    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-		    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-		  </ol>
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
-		      <img src="img/site1.JPG" class="card-img-top" alt="site1">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>HTML/CSS</h5>
-		        <p>Сайт портфолио по основам HTML/CSS</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="img/site2.JPG" class="card-img-top" alt="site2">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>JavaScript</h5>
-		        <p>Сайт портфолио по введению в JavaScript</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="img/site3.JPG" class="card-img-top" alt="site3">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>Метка третьего слайда</h5>
-		        <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
-		      </div>
-		    </div>
-		  </div>
-		  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="visually-hidden">Предыдущий</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="visually-hidden">Следующий</span>
-		  </a>
-		</div>
-
-	    
-	    <hr>
         <div class="footer">
             <ul class="footer_contact">
-                <li class="footer_list">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li class="footer_list ru" lang="ru">Связаться со мной:</li>
+                <li class="footer_list en" lang="en">Contact me:</li>
                 <li class="footer_list">8 (999) 999 99-99</li>
-                <li class="footer_list">site@mail.com</li>
+                <li class="footer_list">malmeloon@gmail.com</li>
             </ul>
+        <hr>
         </div>
         <div class="copyright container">
-            <p>Все права защищены &copy; Marcus Sten</p>
+            <p class="ru" lang="ru">Все права защищены &copy; Marcus Sten</p>
+            <p class="en" lang="en">All rights reserved &copy; Marcus Sten</p>
         </div>
 	    
+      <script>
+        (function(){
+          var body = document.getElementsByTagName('body')[0];
+
+          var switcherRU = document.getElementById('switcher-ru');
+          var switcherEN = document.getElementById('switcher-en');
+
+          var switchLang = function() {
+            var lang = this.id
+            lang = lang.replace('switcher-', '');
+
+            // Меняем класс для BODY
+            body.className = lang;
+
+          }
+
+          switcherRU.onclick = switchLang;
+          switcherEN.onclick = switchLang;
+        })();
+      </script>
+
 	</body>
 </html>
