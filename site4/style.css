@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.content{
+    max-width: 1210px;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer{
+    margin: 0 auto;
+    text-align: center;
+}
+.game_mario{
+    border-width: 5px;
+    border-style:solid;
+    border-color: blanchedalmond;
+}

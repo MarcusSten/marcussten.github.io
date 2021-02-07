@@ -1,0 +1,7 @@
+.carousel-inner {
+    height: 500px !important;
+  }
+  .header_text{
+    display: flex;
+    justify-content: center;
+  }
