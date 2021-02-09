@@ -91,80 +91,87 @@
       <div class="container d-flex h-100">
         <div class="row justify-content-center align-self-center">
           <!-- Carousel wrapper -->
-          <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators fixed-bottom">
-              <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
-              <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
-              <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
-            </ol>
 
-            <!-- Inner -->
-            <div id="myCarousel" class="carousel slide row-padded">
-              <div class="carousel-inner">
-                <!-- Single item -->
-                <div class="carousel-item active">
-                  <img src="img/site1.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="img/site2.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="img/site3.png" class="d-block w-100" alt="..." />
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/site1.png" alt="..." class="img-fluid" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript</h5>
+                  <p class="card-text ru" lang="ru">Сайт личной страницы. Основы JavaScript на примере простых игр.
+                  </p>
+                  <p class="card-text en" lang="en">The company's website. Applying the basics of HTML and CSS, adaptive
+                    layout.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- Inner -->
 
-        <!-- Controls -->
-        <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-mdb-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselBasicExample" role="button" data-mdb-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </a>
-      </div>
-      <!-- Carousel wrapper -->
-    </div>
-    <!-- Background image -->
-  </header>
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/site2.png" alt="..." class="img-fluid" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript</h5>
+                  <p class="card-text ru" lang="ru">Сайт личной страницы. Основы JavaScript на примере простых игр.
+                  </p>
+                  <p class="card-text en" lang="en">The company's website. Applying the basics of HTML and CSS, adaptive
+                    layout.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div class="footer">
-    <div class="copyright">
-      <p class="copyright_text ru" lang="ru">Все права защищены &copy; Marcus Sten</p>
-      <p class="copyright_text en" lang="en">All rights reserved &copy; Marcus Sten</p>
-    </div>
-  </div>
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/site3.png" alt="..." class="img-fluid" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript</h5>
+                  <p class="card-text ru" lang="ru">Сайт личной страницы. Основы JavaScript на примере простых игр.
+                  </p>
+                  <p class="card-text en" lang="en">The company's website. Applying the basics of HTML and CSS, adaptive
+                    layout.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-  <script>
-    (function () {
-      var body = document.getElementsByTagName('body')[0];
 
-      var switcherRU = document.getElementById('switcher-ru');
-      var switcherEN = document.getElementById('switcher-en');
+          <script>
+            (function () {
+              var body = document.getElementsByTagName('body')[0];
 
-      var switchLang = function () {
-        var lang = this.id
-        lang = lang.replace('switcher-', '');
+              var switcherRU = document.getElementById('switcher-ru');
+              var switcherEN = document.getElementById('switcher-en');
 
-        // Меняем класс для BODY
-        body.className = lang;
+              var switchLang = function () {
+                var lang = this.id
+                lang = lang.replace('switcher-', '');
 
-      }
+                // Меняем класс для BODY
+                body.className = lang;
 
-      switcherRU.onclick = switchLang;
-      switcherEN.onclick = switchLang;
-    })();
-  </script>
+              }
 
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+              switcherRU.onclick = switchLang;
+              switcherEN.onclick = switchLang;
+            })();
+          </script>
+
+          <script type="text/javascript" src="js/mdb.min.js"></script>
+          <!-- Custom scripts -->
+          <script type="text/javascript"></script>
 </body>
 
 </html>
