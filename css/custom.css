@@ -1,16 +1,3 @@
-body {
-  margin: 0;
-  overflow: hidden;
-}
-
-body > .scroll-box {
-    position: relative;
-    left: 0;
-    right: 0;
-    height: 100%;
-    max-height: 100vh;
-    overflow-y: auto;
-}
 .copyright_text{
 	text-align: center;
 }
@@ -27,4 +14,20 @@ body > .scroll-box {
 .ru_en_button{
   display: flex;
   justify-content: flex-end;
+}
+.card{
+  margin: 0 10px;
+}
+.p-5{
+  overflow: auto;
+}
+.img_card{
+  display: flex;
+  align-content: center;
+  padding: 5px;
+}
+a.my_block:active, 
+a.my_block:hover,  
+a.my_block {
+  color: #000;
 }
