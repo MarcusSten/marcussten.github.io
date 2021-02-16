@@ -17,36 +17,50 @@
 	background: #222222;
 }
 .logo{
-	padding-top: 18px;
-	padding-left: 230px;
 	position: absolute;
+	left: 14.44%;
+	right: 82.81%;
+	top: 0.47%;
+	bottom: 98.54%;
 }
 .search{
-	padding-top: 28px;
-	padding-left: 316px;
 	position: absolute;
+	left: 19.75%;
+	right: 78.63%;
+	top: 0.74%;
+	bottom: 98.56%;
+	background: #E8E8E8;
 }
 .menu{
-	padding-top: 30px;
-	padding-left: 1201px;
 	position: absolute;
+	left: 75.06%;
+	right: 22.94%;
+	top: 0.78%;
+	bottom: 98.62%;
+	background: #E8E8E8;
 }
 .login{
-	padding-top: 26px;
-	padding-left: 1266px;
 	position: absolute;
+	left: 79.12%;
+	right: 19.06%;
+	top: 0.68%;
+	bottom: 98.56%;
+	background: #E8E8E8;
 }
 .cart{
-	padding-top: 26px;
-	padding-left: 1328px;
 	position: absolute;
+	left: 83%;
+	right: 15%;
+	top: 0.68%;
+	bottom: 98.56%;
+	background: #E8E8E8;
 }
 .cart_ellipse{
-	padding-top: 18px;
-	padding-left: 1350px;
+
 	position: relative;
 }
 .header_man{
+	position: absolute;
 	display: flex;
 	flex-direction: row;
 	margin-top: 76px;
