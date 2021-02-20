@@ -4,8 +4,10 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Store</title>
+	<title>Shop</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,10 +21,32 @@
 					<img src="img/search.png" alt="photo">
 				</div>
 				<div class="menu">
-					<img src="img/menu.png" alt="photo">
-					<div class="active_menu">
-					</div>
-				</div>
+					<a class="main_item" href="javascript:void(0);" tabindex="1" ><img src="img/menu.png" alt="photo"></a>
+						<div class="sub_menu">
+							<img class="menu_exit" src="img/exit.png">
+			              <h3 class="sub_menu_title">MENU</h3>
+			              <ul class="sub_menu_class">
+							   		<p class="sub_menu_categories">MAN</p>
+							   		<li class="sub_menu_item"><a href="#1">Accessories</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Bags</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Denim</a></li>
+							   		<li class="sub_menu_item"><a href="#1">T-Shirts</a></li>
+							   		<p class="sub_menu_categories">WOMAN</p>
+							   		<li class="sub_menu_item"><a href="#1">Accessories</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Jackets & Coats</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Polos</a></li>
+							   		<li class="sub_menu_item"><a href="#1">T-Shirts</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Shirts</a></li>
+							   		<p class="sub_menu_categories">KIDS</p>
+							   		<li class="sub_menu_item"><a href="#1">Accessories</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Jackets & Coats</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Polos</a></li>
+							   		<li class="sub_menu_item"><a href="#1">T-Shirts</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Shirts</a></li>
+							   		<li class="sub_menu_item"><a href="#1">Bags</a></li>
+							   	</ul>		
+					</div>     
+	</div>
 				<div class="login">
 					<img src="img/login.png" alt="photo">
 				</div>
@@ -35,34 +59,43 @@
 			</div>
 		</div>
 		<div class="top_content">
-			<div class="header_man">
-				<img src="img/header_man.png" alt="photo">
-				<div class="header_text">
-					<div class="band">
-						<img src="img/band.png" alt="photo">
+				<div class="header_man">
+					<!--<img src="img/header_man.png" alt="photo">-->
+					<div class="header_text">
+						<div class="band">
+							<img src="img/band.png" alt="photo">
+						</div>
+						<div class="band_text">
+							<h1 class="band_text_top">THE BRAND</h1>
+							<h2 class="band_text_bot">OF LUXERIOUS <span class="band_text_color">FASHION</span></h2>
+						</div>
 					</div>
-					<div class="band_text">
-						<h1 class="band_text_top">THE BRAND</h1>
-						<h2 class="band_text_bot">OF LUXERIOUS <span class="band_text_color">FASHION</span></h2>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="nav_card">
-				<div class="card_image">
-					<img src="img/nav_card_1.png" alt="photo">
+				<div class="nav_card_image">
+					<div class="card_image_woman">
+					</div>
+					<h2 class="nav_card_title"><span class="nav_card_text">30% OFF</span><br>FOR <span class="band_text_color">WOMEN</span></h2>
 				</div>
-				<div class="card_image">
-					<img src="img/nav_card_2.png" alt="photo">
+				<div class="nav_card_image">
+					<div class="card_image_man">
+					</div>
+					<h2 class="nav_card_title"><span class="nav_card_text">HOT DEAL</span><br>FOR <span class="band_text_color">MEN</span></h2>
 				</div>
-				<div class="card_image">
-					<img src="img/nav_card_3.png" alt="photo">
+				<div class="nav_card_image">
+					<div class="card_image_kids">
+					</div>
+					<h2 class="nav_card_title"><span class="nav_card_text">NEW ARRIVALS</span><br>FOR <span class="band_text_color">KIDS</span></h2>
 				</div>
 			</div>
 			<div class="nav_card_bot">
-				<img src="img/nav_card_bot.png" alt="photo">
+				<div class="card_image_accesories">
+				</div>
+				<h2 class="nav_card_title_bot"><span class="nav_card_text_bot">LUXIROUS & TRENDY</span><br><span class="band_text_color">ACCESORIES</span></h2>
 			</div>
+
 			<div>
 				<p class="main_text">Fetured Items</p>
 				<p class="main_text_bot">Shop for items based on what we featured in this week</p>
@@ -70,65 +103,94 @@
 
 			<div class="card_block">
 				<div class="card_item">
-					<img src="img/card_1.png" alt="photo">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_1.png" alt="photo">
+						</div>
 					<p class="card_title">ELLERY X M'O CAPSULE</p>
 					<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian arbiter
 						of
 						cool Kym Ellery teams up with Moda Operandi.</p>
 					<p class="card_price">$52.00</p>
 				</div>
-				<div>
+				
 					<div class="card_item">
-						<img src="img/card_2.png" alt="photo">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_2.png" alt="photo">
+						</div>
 						<p class="card_title">ELLERY X M'O CAPSULE</p>
 						<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian
 							arbiter
 							of cool Kym Ellery teams up with Moda Operandi.</p>
 						<p class="card_price">$52.00</p>
 					</div>
-				</div>
-				<div>
+				
+			
 					<div class="card_item">
-						<img src="img/card_3.png" alt="photo">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_3.png" alt="photo">
+						</div>
 						<p class="card_title">ELLERY X M'O CAPSULE</p>
 						<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian
 							arbiter
 							of cool Kym Ellery teams up with Moda Operandi.</p>
 						<p class="card_price">$52.00</p>
 					</div>
-				</div>
+				
 			</div>
 			<div class="card_block">
-				<div>
-					<div class="card_item">
-						<img src="img/card_4.png" alt="photo">
+				<div class="card_item">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_4.png" alt="photo">
+						</div>
 						<p class="card_title">ELLERY X M'O CAPSULE</p>
 						<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian
 							arbiter
 							of cool Kym Ellery teams up with Moda Operandi.</p>
 						<p class="card_price">$52.00</p>
 					</div>
-				</div>
-				<div>
+				
+	
 					<div class="card_item">
-						<img src="img/card_5.png" alt="photo">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_5.png" alt="photo">
+						</div>
 						<p class="card_title">ELLERY X M'O CAPSULE</p>
 						<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian
 							arbiter
 							of cool Kym Ellery teams up with Moda Operandi.</p>
 						<p class="card_price">$52.00</p>
 					</div>
-				</div>
-				<div>
+				
+				
 					<div class="card_item">
-						<img src="img/card_6.png" alt="photo">
+						<div class="card_image1">
+							<img src="img/opacity_card.png" alt="opacity_card">
+						</div>
+						<div class="card_image2">
+							<img src="img/card_6.png" alt="photo">
+						</div>
 						<p class="card_title">ELLERY X M'O CAPSULE</p>
 						<p class="card_text">Known for her sculptural takes on traditional tailoring, Australian
 							arbiter
 							of cool Kym Ellery teams up with Moda Operandi.</p>
 						<p class="card_price">$52.00</p>
 					</div>
-				</div>
+				
 			</div>
 		</div>
 		<button class="button_all">Browse All Product</button>
