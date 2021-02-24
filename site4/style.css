@@ -32,7 +32,7 @@
 }
 .sub_menu{
 	position: absolute;
-	/*display: none;*/
+	display: none;
 	width: 232px;
 	height: 764px;
 	background-color: white;
@@ -281,12 +281,14 @@ a{
 	opacity: 1;
 }
 .card_title{
+	font-family: Lato;
 	font-size: 13px;
 	line-height: 16px;
 	color: #000000;
 	margin-top: 25px;
 }
 .card_text{
+	font-family: Lato;
 	font-weight: 300;
 	font-size: 14px;
 	line-height: 17px;
@@ -294,6 +296,7 @@ a{
 	margin-top: 12px;
 }
 .card_price{
+	font-family: Lato;
 	font-size: 16px;
 	line-height: 19px;
 	color: #F16D7F;
@@ -325,12 +328,14 @@ a{
 	width: 360px;
 }
 .bottom_title{
+	font-family: Lato;
 	font-size: 19.96px;
 	line-height: 24px;
 	color: #FBFBFB;
 	margin-top: 28px;
 }
 .bottom_text{
+	font-family: Lato;
 	font-weight: 300;
 	font-size: 13.972px;
 	line-height: 17px;
@@ -339,33 +344,21 @@ a{
 	margin-top: 16px;
 }
 .footer_top{
-	position: relative;
 	display: flex;
 	justify-content: space-around;
 	height: 448px;
-	background-image: url(img/background_footer.png);
 	background-size: 100% 448px;
-	background-size: cover;
-    background-repeat: no-repeat;
-}
-.footer_top::before {
-	content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(244, 244, 244, 0.7);
-    transition: all .3s ease;
+	background-image: url(img/background_footer.png);
 }
 .review{
 	margin-top: 86px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	
 }
 .review_text{
+	text-align: center;
+	font-family: Lato;
 	width: 360px;
 	margin-top: 20px;
 	font-size: 20px;
@@ -374,24 +367,28 @@ a{
 	color: #222224;
 }
 .subscribe{
-	margin-top: 150px;
+	margin-top: 110px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
 .subscribe_title{
+	text-align: center;
+	font-family: Lato;
 	font-size: 24px;
 	line-height: 167.2%;
 	text-align: center;
 	color: #222224;
 }
 .subscribe_text{
+	font-family: Lato;
 	font-size: 18px;
 	line-height: 167.2%;
 	text-align: center;
 	color: #222224;
 }
 .subscribe__form {
+	font-family: Lato;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -432,7 +429,6 @@ a{
     cursor: pointer;
 }
 .footer_bottom{
-	
 	height: 79px;
 	background: #222224;
 }
@@ -446,6 +442,7 @@ a{
 	margin-top: 30px;
 }
 .copyright_text{
+	font-family: Lato;
 	font-size: 16px;
 	line-height: 19px;
 	color: #FBFBFB;
@@ -453,4 +450,32 @@ a{
 }
 .social_network{
 	margin-top: 24px;
+}
+@media (min-width: 768px) and (max-width: 1140px){
+	.nav_bar{
+		height: 74px;
+	}
+	.nav{
+		height: 74px;
+		margin: 0 auto;
+	}
+	.logo{
+		padding-top: 18px;
+		padding-left: 32px;
+	}
+	.search{
+		padding-left: 41px;
+	}
+	.menu{
+		padding-top: 31px;
+		padding-left: 567px;
+		position: relative;
+	}
+	.sub_menu{
+		margin-top: 18px;
+		margin-left: 10px;
+	}
+}
+@media (max-width: 768px){
+
 }
