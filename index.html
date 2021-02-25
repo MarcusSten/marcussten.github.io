@@ -1,139 +1,760 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html class="no-js" lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Marcus Sten</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Marcus Sten</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <style>
-    .en .ru,
-    .ru .en {
-      display: none;
-    }
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Переключалки языка */
-    .lang-switcher {
-      cursor: pointer;
-    }
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
 
-    .lang-switcher:hover {
-      color: #b33;
-    }
+    <!-- script
+    ================================================== -->
+    <script defer src="js/vendor/fontawesome/all.min.js"></script>
 
-    /* Выделяем активную переключалку тоже с помощью классов родителя */
-    .en .lang-switcher--en,
-    .ru .lang-switcher--ru {
-      color: #000;
-      border-bottom: none;
-      font-weight: bold;
-      cursor: default;
-    }
-  </style>
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        .en .ru,
+        .ru .en {
+          display: none;
+        }
+
+        /* Переключалки языка */
+        .lang-switcher {
+          cursor: pointer;
+        }
+
+        .lang-switcher:hover {
+          color: #b33;
+        }
+
+        /* Выделяем активную переключалку тоже с помощью классов родителя */
+        .en .lang-switcher--en,
+        .ru .lang-switcher--ru {
+          color: #b33;
+          font-weight: bold;
+          cursor: default;
+        }
+    </style>
 
 </head>
 
-<body class="ru">
+<body id="top" class="ss-preload ru">
 
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link ru" lang="ru" aria-current="page" href="main.html">Главная</a>
-              <a class="nav-link en" lang="en" aria-current="page" href="main.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ru" lang="ru" href="About.html">Обо мне</a>
-              <a class="nav-link en" lang="en" href="About.html">About me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ru" lang="ru" href="works.html">Мои работы</a>
-              <a class="nav-link en" lang="en" href="works.html">My Works</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link contact ru" lang="ru" href="contacts.html" tabindex="-1"
-                aria-disabled="true">Контакты</a>
-              <a class="nav-link contact en" lang="en" href="contacts.html" tabindex="-1"
-                aria-disabled="true">Contacts</a>
-            </li>
-          </ul>
-        </div>
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
         <div class="ru_en_button">
-          <button type="button" class="lang-switcher lang-switcher--ru btn btn-light" id="switcher-ru">RU</button>
-          <button type="button" class="lang-switcher lang-switcher--en btn btn-light" id="switcher-en">EN</button>
+                  <button type="button" class="ru_en_switch lang-switcher lang-switcher--ru" id="switcher-ru">RU</button>
+                  <button type="button" class="ru_en_switch lang-switcher lang-switcher--en" id="switcher-en">EN</button>
+                </div>
+        <div class="row s-header__nav-wrap">
+            <nav class="s-header__nav">
+                <ul>
+                    <li class="current ru" lang="ru"><a class="smoothscroll" href="#hero">Главная</a></li>
+                    <li class="current en" lang="en"><a class="smoothscroll" href="#hero">Home</a></li>
+                    <li><a class="smoothscroll ru" lang="ru" href="#about">Обо мне</a></li>
+                    <li><a class="smoothscroll en" lang="en" href="#about">About me</a></li>
+                    <li><a class="smoothscroll ru" lang="ru" href="#resume">Резюме</a></li>
+                    <li><a class="smoothscroll en" lang="en" href="#resume">Resume</a></li>
+                    <li><a class="smoothscroll ru" lang="ru" href="#portfolio">Работы</a></li>
+                    <li><a class="smoothscroll en" lang="en" href="#portfolio">Works</a></li>
+                    <!--<li><a class="smoothscroll ru" lang="ru" href="#testimonials">Отзывы</a></li>
+                    <li><a class="smoothscroll en" lang="en" href="#testimonials">Reviews</a></li>-->
+                    <li><a class="smoothscroll ru" lang="ru" href="#contact">Контакты</a></li>
+                    <li><a class="smoothscroll en" lang="en" href="#contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </div> <!-- end row -->
+        
+        <a class="s-header__menu-toggle" href="#0" title="Menu">
+            <span class="s-header__menu-icon"></span>
+        </a>
+    </header> <!-- end s-header -->
+
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <div class="s-hero__content-about">
+
+                    <h1 class="ru" lang="ru">Я Маркус Стен</h1>
+                    <h1 class="en" lang="en">I'm Marcus Sten.</h1>
+
+                    <h3 class="ru" lang="ru">
+                    Я из России и являюсь <span>Frontend разработчиком</span>, занимаюсь созданием сайтов и приложений для компаний по всему миру.<a class="smoothscroll" href="#about">Крути колесо мыши вниз</a>, что бы лучше узнать <a class="smoothscroll" href="#about">меня</a>.
+                    </h3>
+                    <h3 class="en" lang="en">
+                    I'm a Russia based <span>frontend developer</span>, creating awesome and
+                    effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
+                    and learn more <a class="smoothscroll" href="#about">about me</a>.
+                    </h3>
+
+                    <div class="s-hero__content-social">
+                        <a href="#0"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-behance" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+
+                </div> <!-- end s-hero__content-about -->
+
+            </div>
+        </div> <!-- s-hero__content -->
+
+        <div class="s-hero__scroll">
+            <a href="#about" class="s-hero__scroll-link smoothscroll">
+                <span class="scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z"></path></svg>
+                </span>
+                <span class="scroll-text ru" lang="ru">Вниз</span>
+                <span class="scroll-text en" lang="en">Scroll Down</span>
+
+            </a>
+        </div> <!-- s-hero__scroll -->
+
+    </section> <!-- end s-hero -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+
+        <div class="row">
+            <div class="column large-3 tab-12">
+                <img class="s-about__pic" src="img/avatars/user-06.png" alt="">
+            </div>
+            <div class="column large-9 tab-12 s-about__content">
+                <h3 class="ru" lang="ru">Обо мне</h3>
+                <h3 class="en" lang="en">About Me</h3>
+                <p class="ru" lang="ru">
+                Проснувшись рано утром и взгянув в зеркало я увидел не бритого мужчину 35 лет. Умываясь взгляд упал на кольцо. Да он женат и является отцом замечательного мальчугана. С первого взгляда в его жизни всё свершилось и остается плыть по течению по направлению к старости. Постой. Но одна мысль не давала покоя с утра: "Время пробовать новое еще не ушло".
+                Всё это я к чему... да мне 35 лет, да я состоявшийся мужчина по большинству параметров принятых в обществе. Но мне этого мало. Мой путь по новой тропинке только начинается, но он уже удивляет и завораживает.
+                </p>
+                <p class="en" lang="en">
+                Waking up early in the morning and looking in the mirror, I saw an unshaven man of 35 years. While washing his face, his eyes fell on the ring. Yes, he is married and is the father of a wonderful little boy. At first glance, everything in his life has happened and remains to go with the flow in the direction of old age. Wait a minute. But one thought haunted me in the morning: "The time to try new things is not yet gone."
+Yes, I am 35 years old, and I am an accomplished man according to most of the parameters accepted in society. But that's not enough for me. My journey along the new path is just beginning, but it is already surprising and fascinating.
+                </p>
+
+                <hr>
+
+                <div class="row s-about__content-bottom">
+                    <div class="column w-1000-stack">
+                        <h3 class="ru" lang="ru">Контактные данные</h3>
+                        <h3 class="en" lang="en">Contact Details</h3>
+    
+                        <p>
+                        Marcus Sten <br>
+                        <span class="ru" lang="ru">Москва</span>
+                        <span class="en" lang="en">Moscow</span> <br>
+                        <span class="ru" lang="ru">Россия</span>
+                        <span class="en" lang="en">Russia</span> <br>
+                        <a href="tel:+79099344647">+7 909 934 4647</a> <br>
+                        <a href="mailto:malmeloon@gmail.com">malmeloon@gmail.com</a>
+                        </p>
+                        
+                    </div>
+                    <div class="column w-1000-stack">
+                        <a href="#0" class="btn btn--download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
+                            <span class="ru" lang="ru">Скачать резюме</span>
+                        <span class="en" lang="en">Download CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end row -->
+
+    </section> <!-- end s-about -->
+
+
+    <!-- resume
+    ================================================== -->
+    <section id="resume" class="s-resume target-section">
+        
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps ru" lang="ru">Опыт обучения</h3>
+                <h3 class="section-header-allcaps en" lang="en">Learning experience</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">GeekBrains</h4>
+                        <p class="resume-block__header-meta">
+                            <span class="ru" lang="ru">Факультет Frontend разработчик</span> 
+                            <span class="en" lang="en">Frontend training at GeekBrains school</span>
+                            <span class="resume-block__header-date ru" lang="en">
+                                Декабрь 2020 - Декабрь  2021
+                            </span>
+                            <span class="resume-block__header-date en" lang="en">
+                                December 2020 - December  2021
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    HTML, CSS, JavaScript, Git, NodeJS, TypeScript...
+                    </p>
+
+                </div> <!-- end resume-block -->
+
+                <!--<div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">Facebook</h4>
+                        <p class="resume-block__header-meta">
+                            <span>UI/UX Designer</span> 
+                            <span class="resume-block__header-date">
+                                August 2016 - July 2019
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore 
+                    vero quidem nobis maxime dolorem aliquam quisquam eum ipsum amet. Vitae 
+                    aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam 
+                    nesciunt facilis! Porro architecto dicta inventore tempora ratione quia odio.
+                    </p>-->
+
+                </div> <!-- end resume-block -->
+            </div>
+        <!-- s-resume__section -->
+
+        <!--
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Education</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">University of Life</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Master in Graphic Design</span> 
+                            <span class="resume-block__header-date">
+                                April 2015
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore 
+                    vero quidem nobis maxime dolorem aliquam quisquam eum ipsum amet. Vitae 
+                    aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam 
+                    nesciunt facilis! Porro architecto dicta inventore tempora ratione quia odio.
+                    </p>
+
+                </div>
+
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">School of Cool Designers</h4>
+                        <p class="resume-block__header-meta">
+                            <span>B.A. Degree in Graphic Design</span> 
+                            <span class="resume-block__header-date">
+                                August 2012
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore 
+                    vero quidem nobis maxime dolorem aliquam quisquam eum ipsum amet. Vitae 
+                    aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam 
+                    nesciunt facilis! Porro architecto dicta inventore tempora ratione quia odio.
+                    </p>
+
+                </div>
+            </div>
         </div>
-      </div>
+        -->
 
-    </nav>
-    <!-- Navbar -->
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps ru" lang="ru">Скилы</h3>
+                <h3 class="section-header-allcaps en" lang="en">Skills</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
 
-    <!-- Background image -->
-    <div class="p-5 text-center bg-image" style="
-      background-image: url('https://source.unsplash.com/twukN12EN7c/1920x1080');
-      height: 90vh;
-    ">
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <h1 class="mb-3 ru" lang="ru">Давай</h1>
-            <h1 class="mb-3 en" lang="en">Let's</h1>
-            <a class="btn btn-outline-light btn-lg ru" lang="ru" href="main.html" role="button">Дружить!</a>
-            <a class="btn btn-outline-light btn-lg en" lang="en" href="main.html" role="button">Be friends!</a>
-          </div>
+                    <p class="ru" lang="ru">
+                    Прочие скилы приобритенные за всю жизнь  
+                    </p>
+                    <p class="en" lang="en">
+                    Other skills acquired over a lifetime
+                    </p>
+                    <ul class="skill-bars-fat">
+                        <li>
+                        <div class="progress percent70"></div>
+                        <strong>Javascript</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent80"></div>
+                        <strong>HTML</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent80"></div>
+                        <strong>CSS</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent60"></div>
+                        <strong>Figma</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent40"></div>
+                        <strong>Photoshop</strong>
+                        </li>
+                    </ul>
+
+                </div> <!-- end resume-block -->
+
+            </div>
+        </div> <!-- s-resume__section -->
+
+    </section> <!-- end s-resume -->
+
+
+    <!-- portfolio
+    ================================================== -->
+    <section id="portfolio" class="s-portfolio target-section">
+
+        <div class="row s-portfolio__header">
+            <div class="column large-12">
+                <h3 class="ru" lang="ru">Мои проекты</h3>
+                <h3 class="en" lang="en">My projects</h3>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Background image -->
-  </header>
 
-  <div class="footer">
-    <div class="copyright">
-      <p class="copyright_text ru" lang="ru">Все права защищены &copy; Marcus Sten</p>
-      <p class="copyright_text en" lang="en">All rights reserved &copy; Marcus Sten</p>
-    </div>
-  </div>
+        <div class="row collapse block-large-1-4 block-medium-1-3 block-tab-1-2 block-500-stack folio-list">
+
+            <div class="column folio-item">
+                <a href="#modal-01" class="folio-item__thumb">
+                    <img src="img/portfolio/droplet.jpg" 
+                         srcset="img/portfolio/droplet.jpg 1x, 
+                                 img/portfolio/droplet@2x.jpg 2x" alt="">
+                </a>
+                <div>
+                <p>HTML/CSS</p>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item">
+                <a href="#modal-02" class="folio-item__thumb">
+                    <img src="img/portfolio/lamp.jpg" 
+                         srcset="img/portfolio/lamp.jpg 1x, 
+                                 img/portfolio/lamp@2x.jpg 2x" alt="">
+                </a>
+                <div>
+                <p>Simple games</p>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item">
+                <a href="#modal-03" class="folio-item__thumb">
+                    <img src="img/portfolio/minimalismo.jpg" 
+                         srcset="img/portfolio/minimalismo.jpg 1x, 
+                                 img/portfolio/minimalismo@2x.jpg 2x" alt="">
+                </a>
+                <div>
+                <p>Mario game</p>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item">
+                <a href="#modal-04" class="folio-item__thumb">
+                    <img src="img/portfolio/shutterbug.jpg" 
+                         srcset="img/portfolio/shutterbug.jpg 1x, 
+                                 img/portfolio/shutterbug@2x.jpg 2x" alt="">
+                </a>
+                <div>
+                <p>Shop</p>
+                </div>
+            </div> <!-- end folio-item -->
+
+            <div class="column folio-item">
+                <a href="#modal-05" class="folio-item__thumb">
+                    <img src="img/portfolio/fuji.jpg" 
+                         srcset="img/portfolio/fuji.jpg 1x, 
+                                 img/portfolio/fuji@2x.jpg 2x" alt="">
+                </a>
+                <div>
+                <p>Notes</p>
+                </div>
+            </div> <!-- end folio-item -->
+
+        </div> <!-- end folio-list -->
 
 
-  <script>
-    (function () {
-      var body = document.getElementsByTagName('body')[0];
+        <!-- Modal Templates Popup
+        =========================================================== -->
+        <div id="modal-01" hidden>
+            <div class="modal-popup">
+                <img src="img/portfolio/gallery/g-droplet.jpg" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>HTML/CSS</h5>
+                    <p class="ru" lang="ru">Сайт компании создан используя знания HTML, CSS, адаптивной верстки.</p>
+                    <p class="en" lang="en">The company's website was created using knowledge of HTML, CSS, and adaptive layout.</p>
+                    <ul class="modal-popup__cat">
+                        <li>HTML, CSS, Adaptive</li>
+                    </ul>
+                </div>
+    
+                <a href="site1/index.html" class="modal-popup__details ru" lang="ru">Открыть проект</a>
+                <a href="site1/index.html" class="modal-popup__details en" lang="en">Project link</a>
+            </div>
+        </div> <!-- end modal -->
 
-      var switcherRU = document.getElementById('switcher-ru');
-      var switcherEN = document.getElementById('switcher-en');
+        <div id="modal-02" hidden>
+            <div class="modal-popup">
+                <img src="img/portfolio/gallery/g-lamp.jpg" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>JavaScript games</h5>
+                    <p class="ru" lang="ru">Сайт с простыми играми построенными на языке JavaScript.</p>
+                    <p class="en" lang="en">A website with simple games built in JavaScript.</p>
+                    <ul class="modal-popup__cat">
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+    
+                <a href="site2/index.html" class="modal-popup__details ru" lang="ru">Открыть проект</a>
+                <a href="site2/index.html" class="modal-popup__details en" lang="en">Project link</a>
+            </div>
+        </div> <!-- end modal -->
 
-      var switchLang = function () {
-        var lang = this.id
-        lang = lang.replace('switcher-', '');
+        <div id="modal-03" hidden>
+            <div class="modal-popup">
+                <img src="img/portfolio/gallery/g-minimalismo.jpg" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>JavaScript Game</h5>
+                    <p class="ru" lang="ru">Мини игра на JavaScript про водопроводчика с применением гравитации и теоремы пифагора.</p>
+                    <p class="en" lang="en">A JavaScript mini-game about a plumber using gravity and the Pythagorean theorem.</p>
+                    <ul class="modal-popup__cat">
+                        <li>JavaScript, Math</li>
+                    </ul>
+                </div>
+    
+                <a href="site3/index.html" class="modal-popup__details ru" lang="ru">Открыть проект</a>
+                <a href="site3/index.html" class="modal-popup__details en" lang="en">Project link</a>
+            </div>
+        </div> <!-- end modal -->
 
-        // Меняем класс для BODY
-        body.className = lang;
+        <div id="modal-04" hidden>
+            <div class="modal-popup">
+                <img src="img/portfolio/gallery/g-shutterbug.jpg" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>HTML/CSS shop</h5>
+                    <p class="ru" lang="ru">Сайт интернет-магазина одежды. Применены HTML5, Bootstrap, Препроцессоры, CSS3, Grid layout.</p>
+                    <p class="en" lang="en">Website of an online clothing store. HTML5, Bootstrap, Preprocessors, CSS3, Grid layout are used.</p>
+                    <ul class="modal-popup__cat">
+                        <li>HTML5, Bootstrap, Preprocessors, CSS3, Grid layout</li>
+                    </ul>
+                </div>
+    
+                <a href="site4/index.html" class="modal-popup__details ru" lang="ru">Открыть проект</a>
+                <a href="site4/index.html" class="modal-popup__details en" lang="en">Project link</a>
+            </div>
+        </div> <!-- end modal -->
 
-      }
+        <div id="modal-05" hidden>
+            <div class="modal-popup">
 
-      switcherRU.onclick = switchLang;
-      switcherEN.onclick = switchLang;
-    })();
+                <img src="img/portfolio/gallery/g-fuji.jpg" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>JavaScript Notes</h5>
+                    <p class="ru" lang="ru">Приложение заметок. Применены JavaScript, NodeJS, Twig.</p>
+                    <p class="en" lang="en">The notes app. JavaScript, NodeJS, and Twig are used.</p>
+                    <ul class="modal-popup__cat">
+                        <li>JavaScript, NodeJS, Twig</li>
+                    </ul>
+                </div>
+    
+                <a href="site5/index.html" class="modal-popup__details ru" lang="ru">Открыть проект</a>
+                <a href="site5/index.html" class="modal-popup__details en" lang="en">Project link</a>
+            </div>
+        </div> <!-- end modal -->
+
+    </section> <!-- end s-portfolio -->
+
+
+    <!-- CTA
+    ================================================== 
+    <section class="s-cta">
+
+        <div class="row">
+            <div class="column">
+                <h3 class="h2 section-desc">
+                    Need a great reliable web hosting?
+                </h3>
+            </div>
+        </div> 
+
+        <div class="row cta-content">
+            <div class="column">
+                <p>
+                We highly recommend <a href="https://www.dreamhost.com/r.cgi?287326">DreamHost</a>.
+                Powerful web and Wordpress hosting. Guaranteed.
+                Starting at $2.95 per month.
+                </p>
+
+                <a href="https://www.dreamhost.com/r.cgi?287326" class="btn btn--primary h-full-width">Get Started</a>
+            </div>
+        </div> 
+
+    </section>  end s-cta -->
+
+
+    <!-- testimonials
+    ================================================== 
+    <section id="testimonials" class="s-testimonials target-section">
+
+        <div class="s-testimonials__bg"></div>
+
+        <div class="row s-testimonials__header">
+            <div class="column large-12">
+                <h3>Hear What My Clients Says</h3>
+            </div>
+        </div>
+
+        <div class="row s-testimonials__content">
+
+            <div class="column">
+
+                <div class="swiper-container testimonial-slider">
+
+                    <div class="swiper-wrapper">
+
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Tim Cook</strong>
+                                    <span>CEO, Apple</span>
+                                </cite>
+                            </div>
+                            <p>
+                            Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                            Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
+                            Laudantium quia consequatur molestias delectus culpa.
+                            </p>
+                        </div> 
+        
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Sundar Pichai</strong>
+                                    <span>CEO, Google</span>
+                                </cite>
+                            </div>
+                            <p>
+                            Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+                            Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
+                            Quasi voluptas eius distinctio. Atque eos maxime.
+                            </p>
+                        </div> 
+        
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Satya Nadella</strong>
+                                    <span>CEO, Microsoft</span>
+                                </cite>
+                            </div>
+                            <p>
+                            Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
+                            Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
+                            Voluptatem dignissimos ut.
+                            </p>
+                        </div> 
+
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Jeff Bezos</strong>
+                                    <span>CEO, Amazon</span>
+                                </cite>
+                            </div>
+                            <p>
+                            Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
+                            quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
+                            Nihil ea quia nesciunt. Ducimus aut sed ipsam.
+                            </p>
+                        </div> 
+    
+                    </div> 
+
+                    <div class="swiper-pagination"></div>
+
+                </div> 
+            </div> 
+
+        </div> 
+
+    </section> -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+        <div class="row s-contact__header">
+            <div class="column large-12">
+                <h3 class="section-header-allcaps ru" lang="ru">Скажи, привет!</h3>
+                <h3 class="section-header-allcaps en" lang="en">Say Hello</h3>
+            </div>
+        </div>
+
+        <div class="row s-contact__content">
+
+            <div class="column large-7 medium-12">
+
+                <h4 class="huge-text ru" lang="ru">
+                У вас на уме новый проект? Давайте сотрудничать и создавать что-то потрясающее.
+Давайте превратим эту идею в еще больший продукт :)
+                </h4>
+                <h4 class="huge-text en" lang="en">
+                Have a new project in mind? Let's collaborate and build something awesome. 
+                Let's turn that idea to an even greater product :)
+                </h4>
+
+            </div>
+
+            <div class="column large-4 medium-12">
+
+                <div class="row contact-infos">
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header">
+                                Email
+                            </h5>
+                            <p class="contact-block__content">
+                                <a class="mailtoui" href="mailto:sayhello@ceevee.com">malmeloon@gmail.com</a>
+                            </p>
+                        </div> <!-- end contact-block -->
+                    </div>
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header ru" lang="ru">
+                                Телефон
+                            </h5>
+                            <h5 class="contact-block__header en" lang="en">
+                                Phone
+                            </h5>
+                            <p class="contact-block__content">
+                                <a href="tel:+1975432345">+7 909 934 4647</a>
+                            </p>
+                        </div> <!-- end contact-block -->
+                    </div>
+
+                    <div class="column large-12">
+                        <a href="mailto:malmeloon@gmail.com" class="mailtoui btn btn--primary h-full-width ru" lang="ru">Давай поговорим</a>
+                        <a href="mailto:malmeloon@gmail.com" class="mailtoui btn btn--primary h-full-width en" lang="en">Let's Talk</a>
+                    </div>
+                </div> <!-- end contact-infos -->
+
+            </div>
+        </div> <!-- s-contact__content -->
+
+    </section> <!-- end s-contact -->
+    
+
+    <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+        <div class="row">
+            <div class="column large-4 medium-6 w-1000-stack s-footer__social-block">
+                <ul class="s-footer__social">
+                    <li><a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a></li>
+                    <li><a href="#0"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="column large-7 medium-6 w-1000-stack ss-copyright">
+                <span>© Copyright Marcus Sten 2021</span> 
+            </div>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"/></svg>
+             </a>
+        </div> <!-- end ss-go-top -->
+    </footer>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        (function () {
+          var body = document.getElementsByTagName('body')[0];
+
+          var switcherRU = document.getElementById('switcher-ru');
+          var switcherEN = document.getElementById('switcher-en');
+
+          var switchLang = function () {
+            var lang = this.id
+            lang = lang.replace('switcher-', '');
+
+            // Меняем класс для BODY
+            body.className = lang;
+
+          }
+
+          switcherRU.onclick = switchLang;
+          switcherEN.onclick = switchLang;
+        })();
   </script>
 
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
 </body>
 
 </html>

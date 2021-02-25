@@ -451,7 +451,7 @@ a{
 .social_network{
 	margin-top: 24px;
 }
-@media (min-width: 768px) and (max-width: 1140px){
+@media (min-width: 768px) and (max-width: 1150px){
 	.nav_bar{
 		height: 74px;
 	}
