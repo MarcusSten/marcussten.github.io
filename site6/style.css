@@ -39,11 +39,54 @@ body {
 	border-radius: 5px;
 	border: 2px solid;
 }
+.block_note{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+	padding: 15px 10px;
+	background-color: #fff6;
+	border-radius: 5px;
+	border: 2px solid;
+}
 .paragr{
 	font-family: 'Poppins', sans-serif;
 	font-size: 22px;
 	color: white;
 	padding-left: 20px;
+}
+.text_note{
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	color: white;
+	padding: 15px;
+}
+.form{
+	display: flex;
+	flex-direction: column;
+
+}
+.form_title{
+	margin: 10px;
+	padding: 15px 10px;
+	background-color: #fff6;
+	border-radius: 5px;
+	border: 2px solid;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	color: white;
+}
+.form_text{
+	display: block;
+	height: 200px;
+	margin: 10px;
+	padding: 15px 10px;
+	background-color: #fff6;
+	border-radius: 5px;
+	border: 2px solid;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	color: white;
 }
 .open, 
 .delete{
@@ -58,7 +101,10 @@ body {
 	font-size: 16px;
 	margin-left: 5px;
 }
-.create {
+.create,
+.save,
+.return,
+.edit {
 	font-family: 'Poppins', sans-serif;
 	border: 2px solid;
 	border-radius: 5px;
