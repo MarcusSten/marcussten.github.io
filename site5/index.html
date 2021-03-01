@@ -5,29 +5,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>Shop</title>
 </head>
 <body>
     <header>
-        <div class="header_container">
-            <div class="header_flex">
-                <div class="header_left">
-                    <img src="img/logo.png" alt="logo">
-                    <p class="logo_text">BRAN<span class="logo_d">D</span></p>
-                    <a class="header_link"  href="#">browse</a>
-                    <input type="text">
-                    <button type="submit">Q</button>
-                </div>
+    	<div class="header_container">
+	        <div class="header_nav">
+	            <div class="header_flex">
+	                <div class="header_left">
+	                    <img src="img/logo.png" alt="logo">
+	                    <p class="logo_text">BRAN<span class="logo_d">D</span></p>
+	                    <a class="header_link"  href="#">browse<img class="fa_caret_down" src="img/fa_caret_down.png"></a>
+	                    <input type="text" class="header_input" placeholder="Search for Item...">
+	                    <button class="search_button" type="submit"><i class="fa fa-search search"></i></button>
+	                </div>
 
-                <div class="header_right">
-                    <img src="img/cart.png" alt="cart">
-                    <a href="#" class="account">My account</a>
-                </div>
+	                <div class="header_right">
+	                    <img src="img/cart.png" alt="cart">
+	                    <a href="#" class="account">My account<i class="fa fa-caret-down caret_down"></i></a>
+	                </div>
 
-            </div>
+	            </div>
+
+	        </div>
         </div>
 
+		<div class="header_nav_bottom">
+            <div class="bottom_menu">
+            	<div class="name_menu">HOME</div>
+            	<div class="name_menu">MAN</div>
+            	<div class="name_menu">WOMAN</div>
+            	<div class="name_menu">KIDS</div>
+            	<div class="name_menu">ACCOSERIESE</div>
+            	<div class="name_menu">FEATURED</div>
+            	<div class="name_menu">HOT DEALS</div>
+            </div>
+        </div>
     </header>
+
+    <main>
+    	<div class="top_content">
+    		<div class="top_content_box">
+	    		<div class="carousel">
+	    			<div class="photo_man">
+	    			</div>
+
+	    			
+	    		</div>
+    		</div>
+    	</div>
+
+
+
+    	<a href="#" class="button_all">Browse All Product</a>
+    	
+    	<div class="bottom_conent">
+	    	<div class="bottom_left">
+	    		
+	    	</div>
+	    	
+	    	<div class="bottom_right">
+	    		<div class="bottom_right_top">
+		    		<img class="bottom_image" src="img/bottom_1.png" alt="">
+		    		<div class="text_block">
+		    			<p class="bottom_title">Free Delivery</p>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+						</p>
+					</div>
+	    		</div>
+	    		<div class="bottom_right_center">
+	    			<img class="bottom_image" src="img/bottom_2.png" alt="">
+		    		<div class="text_block">
+		    			<p class="bottom_title">Sales & discounts</p>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+						</p>
+		    		</div>
+	    		</div>
+	    		<div class="bottom_right_bot">
+	    			<img class="bottom_image" src="img/bottom_3.png" alt="">
+		    		<div class="text_block">
+		    			<p class="bottom_title">Quality assurance</p>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+						</p>
+		    		</div>
+	    		</div>
+	    		
+	    	</div>		
+    	</div>
+    </main>
+
+    <footer>
+		<div class="footer_top">
+			<div class="footer_line"></div>
+			<div class="footer_block">
+				<div class="review">
+					<img src="img/review_img.png" alt="review_img">
+					<p class="review_text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus
+						condimentum“</p>
+				</div>
+				<div class="subscribe">
+					<p class="subscribe_title">SUBSCRIBE</p>
+					<p class="subscribe_text">FOR OUR NEWLETTER AND PROMOTION</p>
+					<form action="#" class="subscribe__form">
+
+						<input class="subscribe__field" type="email" placeholder="Enter Your Email" required=""><button
+							class="subscribe__button" type="submit">Subscribe</button>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer_bottom">
+			<div class="footer_bottom_block">
+				<div class="copyright">
+					<p class="copyright_text">© 2021 Brand All Rights Reserved.</p>
+				</div>
+				<div class="social_network">
+					<img src="img/facebook.png" alt="facebook">
+					<img src="img/instagram.png" alt="instagram">
+					<img src="img/pinterest.png" alt="pinterest">
+					<img src="img/twitter.png" alt="twitter">
+				</div>
+			</div>
+		</div>
+
+	</footer>
 
 
 </body>

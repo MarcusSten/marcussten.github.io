@@ -10,6 +10,14 @@ let saveData = function(){
 	fs.writeFileSync("notes.json", text);
 };
 
+//let delData = function(){
+	//let text = fs.readFileSync("notes.json");
+	//fs.unlinkSync(NOTES);  удаление файла?
+//};
+//или NOTES.pop();  удаление с индексацией
+//или перезапись файла fs.writeFile() и индексация с удалением .filter(element => element !== null)
+
+
 
 let loadData = function(){
 	let text = fs.readFileSync("notes.json");
