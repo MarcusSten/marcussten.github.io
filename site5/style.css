@@ -3,6 +3,16 @@
 	padding: 0;
 }
 
+.fab {
+	font-family: 'Font Awesome 5 Brands' !important;
+}
+
+.fas,
+.far,
+.fa {
+	font-family: 'Font Awesome 5 Free' !important;
+}
+
 .header_container {
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17);
 	border: 1px solid #ececec;
@@ -31,10 +41,12 @@
 	align-items: center;
 	margin-top: 25px;
 }
-.logo{
+
+.logo {
 	display: flex;
 	text-decoration: none;
 }
+
 .logo_text {
 	font-family: Lato;
 	font-size: 27px;
@@ -217,50 +229,60 @@
 	height: 613px;
 	background-image: url(img/header_photo.jpg);
 }
-.center_content_box{
+
+.center_content_box {
 	margin: 0 auto;
 	width: 1140px;
 	display: flex;
 	margin-top: 98px;
 	margin-bottom: 100px;
 }
-.center_box_right{
+
+.center_box_right {
 	display: flex;
 	flex-direction: column;
 	margin-right: 10px;
 }
-.center_box_left{
+
+.center_box_left {
 	display: flex;
 	flex-direction: column;
 	margin-left: 10px;
 }
-.card_image_man{
+
+.card_image_man {
 	width: 560px;
 	height: 542px;
 	background-image: url(img/nav_card1.jpg);
 	position: relative;
+}
+
+.card_image_link {
 	margin-bottom: 20px;
 }
-.card_image_accesories{
+
+.card_image_accesories {
 	width: 560px;
 	height: 261px;
 	background-image: url(img/nav_card3.jpg);
 	position: relative;
 }
-.card_image_woman{
+
+.card_image_woman {
 	width: 560px;
 	height: 261px;
 	background-image: url(img/nav_card2.jpg);
 	position: relative;
-	margin-bottom: 20px;
 }
-.card_image_kids{
+
+.card_image_kids {
 	width: 560px;
 	height: 542px;
 	background-image: url(img/nav_card4.jpg);
 	position: relative;
 }
-.nav_card_title{
+
+.nav_card_title {
 	position: absolute;
 	font-family: Lato;
 	font-size: 30px;
@@ -273,10 +295,12 @@
 	background-color: #ffffff;
 	margin-top: 26px;
 }
-.nav_card_text{
+
+.nav_card_text {
 	font-size: 18px;
 }
-.main_text{
+
+.main_text {
 	text-align: center;
 	font-family: Lato;
 	font-size: 30px;
@@ -285,7 +309,8 @@
 	color: #222222;
 	margin-bottom: 16px;
 }
-.main_text_bot{
+
+.main_text_bot {
 	text-align: center;
 	font-family: Lato;
 	font-size: 14px;
@@ -294,7 +319,8 @@
 	color: #9f9f9f;
 	margin-bottom: 60px;
 }
-.card_block{
+
+.card_block {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -303,23 +329,50 @@
 	width: 1140px;
 	margin-bottom: 67px;
 }
-.card_item{
+
+.card_item {
 	display: flex;
 	flex-direction: column;
 	margin-top: 48px;
 }
-.card_image2{
+
+.card_image2 {
 	position: relative;
 }
+
 .card_image1 {
 	opacity: 0;
 	position: absolute;
 	z-index: 1;
 }
+
 .card_image1:hover {
 	opacity: 1;
 }
-.card_title{
+
+.opacity_cart {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	top: 98px;
+	left: 70px;
+	opacity: 2;
+	padding: 10px 13px 9px 12px;
+	text-decoration: none;
+	border: 1px solid #ffffff;
+}
+
+.opacity_cart_text {
+	font-family: Lato;
+	font-size: 13px;
+	line-height: 1.2;
+	font-weight: 700;
+	color: #ffffff;
+	padding-top: 5px;
+	padding-left: 8px;
+}
+
+.card_title {
 	font-family: Lato;
 	font-size: 13px;
 	line-height: 1.2;
@@ -329,7 +382,8 @@
 	margin-left: 14px;
 	margin-top: 19px;
 }
-.card_price{
+
+.card_price {
 	font-family: Lato;
 	font-size: 16px;
 	line-height: 1.2;
@@ -340,6 +394,7 @@
 	margin-top: 17px;
 	margin-bottom: 12px;
 }
+
 .button_all {
 	margin: 0 auto;
 	display: flex;
@@ -403,16 +458,19 @@
 	height: 32px;
 	padding-right: 33px;
 }
+
 .bottom_image2 {
 	width: 40px;
 	height: 40px;
 	padding-right: 33px;
 }
+
 .bottom_image3 {
 	width: 47px;
 	height: 35px;
 	padding-right: 33px;
 }
+
 .bottom_title {
 	display: flex;
 	font-family: Lato;
@@ -457,22 +515,26 @@
 	display: flex;
 	justify-content: space-around;
 }
-.carousel_reviews{
+
+.carousel_reviews {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
+
 .review {
 	margin-top: 111px;
 	display: flex;
 }
-.review_text_block{
+
+.review_text_block {
 	display: flex;
 	flex-direction: column;
 	width: 390px;
 	margin-left: 28px;
 	margin-top: 12px;
 }
+
 .review_text {
 	font-family: Lato;
 	font-size: 16px;
@@ -483,7 +545,8 @@
 	color: #222224;
 	margin-top: 19px;
 }
-.review_name{
+
+.review_name {
 	font-family: Lato;
 	font-size: 16px;
 	line-height: 26px;
@@ -491,7 +554,8 @@
 	letter-spacing: 0.025em;
 	color: #f16d7f;
 }
-.review_adr{
+
+.review_adr {
 	font-size: 12px;
 	line-height: 14px;
 	font-weight: 300;
@@ -499,22 +563,26 @@
 	font-family: Lato;
 	letter-spacing: 0.025em;
 }
-.review_post{
+
+.review_post {
 	display: flex;
 	justify-content: space-around;
 	margin-top: 41px;
 	width: 140px;
 }
-.post1{
+
+.post1 {
 	width: 38px;
 	height: 4px;
 	background-color: #d6d6d6;
 }
-.post2{
+
+.post2 {
 	width: 38px;
 	height: 4px;
 	background-color: #f16d7f;
 }
+
 .subscribe {
 	margin-top: 110px;
 	display: flex;
@@ -586,20 +654,24 @@
 	border: none;
 	cursor: pointer;
 }
-.footer_center{
+
+.footer_center {
 	width: 1140px;
 	margin: 0 auto;
 	margin-top: 109px;
 	margin-bottom: 89px;
 	display: flex;
 }
-.footer_center_right{
+
+.footer_center_right {
 	width: 427px;
 }
-.footer_logo{
+
+.footer_logo {
 	display: flex;
 }
-.footer_center_text{
+
+.footer_center_text {
 	font-family: Lato;
 	font-size: 14px;
 	line-height: 24px;
@@ -608,19 +680,22 @@
 	color: #898989;
 	margin-top: 27px;
 }
-.footer_center_left{
+
+.footer_center_left {
 	width: 713px;
 	display: flex;
 	justify-content: center;
 }
-.navigation{
+
+.navigation {
 	display: flex;
 	justify-content: space-between;
 
 }
+
 .navigation_title1,
 .navigation_title2,
-.navigation_title3{
+.navigation_title3 {
 	font-family: Lato;
 	font-size: 18px;
 	line-height: 26px;
@@ -629,13 +704,16 @@
 	color: #f16d7f;
 	list-style-type: none;
 }
-.navigation_title1{
+
+.navigation_title1 {
 	margin-right: 129px;
 }
-.navigation_title2{
+
+.navigation_title2 {
 	margin-right: 80px;
 }
-.navigation_text{
+
+.navigation_text {
 	font-family: Lato;
 	font-size: 16px;
 	line-height: 59px;
@@ -643,6 +721,7 @@
 	letter-spacing: 0.025em;
 	color: #898989;
 }
+
 .footer_bottom {
 	height: 79px;
 	background-color: #e6e6e6;
@@ -672,13 +751,11 @@
 .social_network {
 	margin-top: 24px;
 }
-.fa_social{
+
+.fa_social {
 	width: 32px;
 	height: 32px;
 	background-color: #ffffff;
 	font-size: 16px;
 	color: #b2b2b2;
-}
-i {
-font-family: fontawesome !important;
 }
