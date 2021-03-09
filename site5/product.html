@@ -5,11 +5,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
 	<link href="css/all.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-	<title>Product</title>
+	<title>Shop</title>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
 							<summary class="header_link">browse<i class="fas fa-caret-down browse_caret_down"></i>
 							</summary>
 							<div class="browse_block down_flex">
-								<div class="menu_browse_block"><a class="menu_title">Women</a>
+								<div class="menu_browse_block"><a class="menu_title" href="product.html">Women</a>
 									<div class="menu_shape"></div>
 									<ul class="browse_link">
 										<li><a class="browse_link_text" href="product.html">Dresses</a></li>
@@ -39,7 +41,7 @@
 										<li><a class="browse_link_text" href="product.html">Accessories</a></li>
 									</ul>
 								</div>
-								<div class="menu_browse_block"><a class="menu_title">Men</a>
+								<div class="menu_browse_block"><a class="menu_title" href="product.html">Men</a>
 									<div class="menu_shape"></div>
 									<ul class="browse_link">
 										<li><a class="browse_link_text" href="product.html">Tees/Tank tops</a></li>
@@ -64,7 +66,7 @@
 							<div class="card_menu">
 								<ul class="card_menu_list">
 									<li>
-										<a class="card_nomber" href="#">
+										<a class="card_nomber" href="single_page.html">
 											<div class="cart_card">
 												<img src="img/cart_1.jpg" alt="">
 												<div class="cart_card_info">
@@ -99,7 +101,7 @@
 									</li>
 
 									<li>
-										<a class="card_nomber" href="#">
+										<a class="card_nomber" href="single_page.html">
 											<div class="cart_card">
 												<img src="img/cart_2.jpg" alt="">
 												<div class="cart_card_info">
@@ -138,8 +140,8 @@
 									<p class="summa">$500.00</p>
 								</div>
 								<div class="checkout_btn">
-									<button class="checkout">Checkout</button>
-									<button class="go_to_card">Go to cart</button>
+									<a class="checkout" href="checkout.html">Checkout</a>
+									<a class="go_to_card" href="shoppingcart.html">Go to cart</a>
 								</div>
 							</div>
 						</div>
@@ -155,8 +157,34 @@
 		<nav>
 			<div class="header_nav_bottom">
 				<ul class="bottom_menu">
-					<li class="name_menu"><a href="#" class="menu_link">HOME</a></li>
-					<li class="name_menu"><a href="#" class="menu_link">MAN</a>
+					<li class="name_menu"><a href="index.html" class="menu_link">HOME</a></li>
+					<li class="name_menu"><a href="product.html" class="menu_link">MAN</a>
+						<div class="mega_menu">
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">Men</a>
+									<div class="menu_shape"></div>
+									<ul class="menu_list">
+										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
+										<li><a class="menu_list_text" href="product.html">Bags</a></li>
+										<li><a class="menu_list_text" href="product.html">Denim</a></li>
+										<li><a class="menu_list_text" href="product.html">Hoodies & Sweatshirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Jackets & Coats</a></li>
+										<li><a class="menu_list_text" href="product.html">Pants</a></li>
+										<li><a class="menu_list_text" href="product.html">Polos</a></li>
+										<li><a class="menu_list_text" href="product.html">Shirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Shoes</a></li>
+										<li><a class="menu_list_text" href="product.html">Shorts</a></li>
+										<li><a class="menu_list_text" href="product.html">Sweaters & Knits</a></li>
+										<li><a class="menu_list_text" href="product.html">T-Shirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Tanks</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">WOMAN</a>
 						<div class="mega_menu">
 							<div class="mega_menu_block">
 								<div class="mega_box">
@@ -175,8 +203,15 @@
 										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
 									</ul>
 								</div>
-
-								<div class="menu_block"><a class="menu_title" href="product.html">Women</a>
+							</div>
+						</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">KIDS</a>
+						<div class="mega_menu">
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">KIDS</a>
 									<div class="menu_shape"></div>
 									<ul class="menu_list">
 										<li><a class="menu_list_text" href="product.html">Dresses</a></li>
@@ -190,23 +225,29 @@
 										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
 									</ul>
 								</div>
-
-								<div class="menu_block"><a class="menu_title" href="product.html">Women</a>
+							</div>
+						</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">ACCOSERIESE</a>
+						<div class="mega_menu">
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">ACCOSERIESE</a>
 									<div class="menu_shape"></div>
 									<ul class="menu_list">
-										<li><a class="menu_list_text" href="product.html">Dresses</a></li>
-										<li><a class="menu_list_text" href="product.html">Tops</a></li>
-										<li><a class="menu_list_text" href="product.html">Sweaters/Knits</a></li>
-										<li><a class="menu_list_text" href="product.html">Jackets/Coats</a></li>
+										<li><a class="menu_list_text" href="product.html">Gloves</a></li>
+										<li><a class="menu_list_text" href="product.html">Glasses</a></li>
+										<li><a class="menu_list_text" href="product.html">Wallets</a></li>
+										<li><a class="menu_list_text" href="product.html">Cufflinks</a></li>
+										<li><a class="menu_list_text" href="product.html">Security Features</a></li>
+										<li><a class="menu_list_text" href="product.html">Headwear</a></li>
 									</ul>
 								</div>
 								<img src="img/mega_menu.jpg" alt="menu_image" class="mega_menu_image">
 							</div>
 						</div>
 					</li>
-					<li class="name_menu"><a href="product.html" class="menu_link">WOMAN</a></li>
-					<li class="name_menu"><a href="product.html" class="menu_link">KIDS</a></li>
-					<li class="name_menu"><a href="product.html" class="menu_link">ACCOSERIESE</a></li>
 					<li class="name_menu"><a href="product.html" class="menu_link">FEATURED</a></li>
 					<li class="name_menu"><a href="product.html" class="menu_link">HOT DEALS</a></li>
 				</ul>
@@ -290,13 +331,63 @@
         	</nav>
 
         	<div class="product_block">
-        		<nav class="product_filter"></nav>
+        		<nav class="product_filter d-flex justify-content-between">
+        			<div class="trending">
+        				<h3 class="filter_title">Trending now</h3>	
+        				<span class="filter_text">Bohemian    |    Floral    |    Lace</span>
+        				<span class="filter_text">Floral    |    Lace    |    Bohemian</span>
+					</div>
+
+					<div class="filter_size">
+						<h3 class="filter_title">Size</h3>
+				        <div class="form-check form-check-inline">
+							<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+							<label class="form-check-label filter_text" for="inlineCheckbox1">XS</label>
+						</div>
+						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+							  <label class="form-check-label filter_text" for="inlineCheckbox2">S</label>
+						</div>
+						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2" disabled="disabled">
+							  <label class="form-check-label filter_text" for="inlineCheckbox3">M</label>
+						</div>
+						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+							  <label class="form-check-label filter_text" for="inlineCheckbox4">L</label>
+						</div>
+						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option5">
+							  <label class="form-check-label filter_text" for="inlineCheckbox5">XL</label>
+						</div>
+						<div class="form-check form-check-inline">
+							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option6">
+							  <label class="form-check-label filter_text" for="inlineCheckbox6">XXL</label>
+						</div>
+					</div>
+
+        			<div class="price">
+        				<label for="customRange2" class="form-label filter_title">PRICE</label>
+						<input type="range" class="form-range" min="0" max="100000" id="customRange2">
+        			</div>
+        		</nav>
+
+        		<div class="sort_block">
+        			<h3 class="sort_title">Sort By</h3>
+        			<details>
+					<summary class="sort_product">Name
+					</summary>
+					<ul class="sort_by">
+						<li class="sort_link">Name</li>
+						<li class="sort_link">Price Up</li>
+						<li class="sort_link">Price Down</li>
+						<li class="sort_link">Discount Up</li>
+						<li class="sort_link">Discount Down</li>
+        		</div>
         		<div class="card_product"></div>
         		<nav class="aria-label"></nav>
         	</div>
         </div>
-
-
 
     <main>
 
