@@ -13,6 +13,14 @@
 	font-family: 'Font Awesome 5 Free' !important;
 }
 
+a{
+	text-decoration: none;
+}
+
+:focus {
+  outline: 0;
+}
+
 /* ---------------- HEADER ---------------- */
 
 .header_container {
@@ -51,7 +59,7 @@
 }
 
 .logo_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 27px;
 	line-height: 32px;
 	font-weight: 300;
@@ -79,7 +87,7 @@
 	background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
 	border: 1px solid #e6e6e6;
 	border-radius: 3px 0px 0px 3px;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 32px;
 	font-weight: 300;
@@ -121,13 +129,14 @@
 
 .browse_link_text {
 	color: #4f4f4f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	font-style: normal;
 	letter-spacing: normal;
 	line-height: 28px;
 	text-decoration: none;
+	display: block;
 }
 
 .browse_link_text:hover {
@@ -160,7 +169,7 @@ details>summary {
 	border: 1px solid #e6e6e6;
 	margin-top: 7px;
 	border-left: none;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 32px;
 	font-weight: 300;
@@ -193,7 +202,7 @@ details>summary {
 	text-decoration: none;
 	padding: 6px 19px 5px 19px;
 	background-color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 15px;
 	line-height: 32px;
 	font-weight: 400;
@@ -233,7 +242,7 @@ details>summary {
 }
 
 .menu_link {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: 700;
@@ -283,7 +292,7 @@ details>summary {
 
 .menu_title {
 	color: #232323;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	font-style: normal;
@@ -313,7 +322,7 @@ details>summary {
 
 .menu_list_text {
 	color: #646464;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	font-style: normal;
@@ -387,7 +396,7 @@ details>summary {
 
 .cart_card_title {
 	color: #222222;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 12px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -426,7 +435,7 @@ details>summary {
 .card_summa {
 	display: flex;
 	color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 12px;
 	font-weight: 400;
 	margin-top: 12px;
@@ -443,7 +452,7 @@ details>summary {
 	display: flex;
 	justify-content: space-between;
 	color: #222222;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -456,7 +465,7 @@ details>summary {
 
 .checkout {
 	color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -466,7 +475,7 @@ details>summary {
 
 .go_to_card {
 	color: #4a4a4a;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -477,7 +486,7 @@ details>summary {
 }
 
 /* ---------------- MAIN for index.html page ---------------- */
-.carousel {
+.content_box {
 	position: relative;
 	background-color: #e8e8e8;
 }
@@ -501,7 +510,7 @@ details>summary {
 }
 
 .band_text_top {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 60px;
 	line-height: 1.2;
 	font-weight: 900;
@@ -510,7 +519,7 @@ details>summary {
 }
 
 .band_text_bot {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 40px;
 	line-height: 1.2;
 	font-weight: 900;
@@ -584,7 +593,7 @@ details>summary {
 
 .nav_card_title {
 	position: absolute;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 30px;
 	line-height: 1.2;
 	font-weight: 900;
@@ -602,7 +611,7 @@ details>summary {
 
 .main_text {
 	text-align: center;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 30px;
 	font-weight: 700;
 	letter-spacing: 0.025em;
@@ -612,7 +621,7 @@ details>summary {
 
 .main_text_bot {
 	text-align: center;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 0.025em;
@@ -684,7 +693,7 @@ details>summary {
 }
 
 .opacity_cart_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 13px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -694,7 +703,7 @@ details>summary {
 }
 
 .card_title {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 13px;
 	line-height: 1.2;
 	font-weight: 400;
@@ -705,7 +714,7 @@ details>summary {
 }
 
 .card_price {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -724,7 +733,7 @@ details>summary {
 	width: 212px;
 	height: 48px;
 	background-color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 54px;
 	font-weight: 700;
@@ -734,7 +743,7 @@ details>summary {
 	margin-bottom: 113px;
 }
 
-.bottom_conent {
+.bottom_content {
 	display: flex;
 	justify-content: center;
 }
@@ -759,7 +768,7 @@ details>summary {
 }
 
 .Bottom_left_text_top {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 53.7px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -768,7 +777,7 @@ details>summary {
 }
 
 .Bottom_left_text_bot {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 32.2px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -817,7 +826,7 @@ details>summary {
 
 .bottom_title {
 	display: flex;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 20px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -827,7 +836,7 @@ details>summary {
 
 .bottom_text {
 	display: flex;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 24px;
 	font-weight: 300;
@@ -857,7 +866,7 @@ details>summary {
 
 .new_right {
 	color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato - Black", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 20px;
@@ -866,7 +875,7 @@ details>summary {
 
 .nav_path {
 	color: #636363;
-	font-family: Lato;
+	font-family: "Lato Light", sans-serif;
 	font-weight: 300;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -874,7 +883,7 @@ details>summary {
 
 .new_text_path {
 	color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato - Bold", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 20px;
@@ -914,7 +923,7 @@ details>summary {
 .collection {
 	display: flex;
 	color: #f16d7f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 24px;
@@ -942,7 +951,7 @@ details>summary {
 
 .card_naming {
 	color: #4d4d4d;
-	font-family: Lato;
+	font-family: "Lato - Black", sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 24px;
@@ -953,7 +962,7 @@ details>summary {
 
 .card_text {
 	color: #5e5e5e;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 300;
 	font-style: normal;
@@ -974,7 +983,7 @@ details>summary {
 .card_material {
 	margin-right: 44px;
 	color: #b9b9b9;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 24px;
@@ -983,7 +992,7 @@ details>summary {
 
 .card_designer {
 	color: #b9b9b9;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 24px;
@@ -996,7 +1005,7 @@ details>summary {
 
 .price_card {
 	color: #ef5b70;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 24px;
@@ -1031,7 +1040,7 @@ details>summary {
 
 .parameters_title {
 	color: #2f2f2f;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 24px;
@@ -1050,7 +1059,7 @@ details>summary {
 
 .add_to_cart_text {
 	color: #ef5b70;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	margin-left: 15px;
@@ -1063,7 +1072,7 @@ details>summary {
 
 .rec_title {
 	color: #4d4d4d;
-	font-family: Lato;
+	font-family: "Lato - Black", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 20px;
@@ -1090,7 +1099,7 @@ details>summary {
 
 .rec_card_title {
 	color: #6f6e6e;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -1105,6 +1114,82 @@ details>summary {
 	margin-bottom: 21px;
 	padding-right: 13px;
 }
+
+/* ---------------- MAIN for product.html    ---------------- */
+
+.main_container{
+	width: 1140px;
+	margin: 0 auto;
+	margin-top: 59px;
+}
+
+.left_menu{
+	width: 243px;
+	margin-right: 49px;
+}
+
+.name_category{
+	display: flex;
+	color: #ef5b70;
+	font-family: Lato;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+	align-items: center;
+	position: relative;
+	margin-bottom: 18px;
+	cursor: pointer
+}
+
+.band_category{
+	width: 5px;
+	height: 37px;
+	background-color: #ef5b70;
+	margin-right: 11px;
+}
+
+.name_category_title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 227px;
+}
+
+.category_caret_up{
+	color: #ef5b70;
+}
+
+.category_line{
+	width: 243px;
+	height: 1px;
+	background-color: #ebebeb;
+	position: absolute;
+	bottom: 0px;
+	margin-left: 5px;
+}
+
+.category_link{
+	margin-left: 17px;
+	list-style-type: none;
+	margin-bottom: 23px;
+}
+
+.category_link_text{
+	text-decoration: none;
+	color: #6f6e6e;
+	font-family: Lato;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 33px;
+	display: block;
+}
+
+.category_link_text:hover {
+	color: #f16d7f;
+}
+
+
 
 /* ---------------- FOOTER ---------------- */
 
@@ -1151,7 +1236,7 @@ details>summary {
 }
 
 .review_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 26px;
 	font-weight: 400;
@@ -1162,7 +1247,7 @@ details>summary {
 }
 
 .review_name {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 26px;
 	font-weight: 700;
@@ -1175,7 +1260,7 @@ details>summary {
 	line-height: 14px;
 	font-weight: 300;
 	color: #222224;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	letter-spacing: 0.025em;
 }
 
@@ -1206,7 +1291,7 @@ details>summary {
 }
 
 .subscribe_title {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 24px;
 	line-height: 54px;
 	font-weight: 400;
@@ -1216,7 +1301,7 @@ details>summary {
 }
 
 .subscribe_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.025em;
 	color: #222224;
@@ -1226,7 +1311,7 @@ details>summary {
 }
 
 .subscribe__form {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1242,7 +1327,7 @@ details>summary {
 	border-radius: 24px 0 0 24px;
 	height: 49px;
 	outline: none;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 54px;
 	color: #222222;
@@ -1259,7 +1344,7 @@ details>summary {
 	height: 49px;
 	border-radius: 0 24px 24px 0;
 	outline: none;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -1287,7 +1372,7 @@ details>summary {
 }
 
 .footer_center_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 14px;
 	line-height: 24px;
 	font-weight: 300;
@@ -1315,7 +1400,7 @@ details>summary {
 }
 
 .navigation_title {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 18px;
 	line-height: 26px;
 	font-weight: 700;
@@ -1337,7 +1422,7 @@ ul {
 
 .link_navigation_text {
 	text-decoration: none;
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 59px;
 	font-weight: 400;
@@ -1364,7 +1449,7 @@ ul {
 }
 
 .copyright_text {
-	font-family: Lato;
+	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.025em;
