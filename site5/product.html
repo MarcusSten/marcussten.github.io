@@ -5,13 +5,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
 	<link href="css/all.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-	<title>Shop</title>
+	<title>Best Shop</title>
 </head>
 
 <body>
@@ -331,7 +329,7 @@
         	</nav>
 
         	<div class="product_block">
-        		<nav class="product_filter d-flex justify-content-between">
+        		<nav class="product_filter">
         			<div class="trending">
         				<h3 class="filter_title">Trending now</h3>	
         				<span class="filter_text">Bohemian    |    Floral    |    Lace</span>
@@ -340,56 +338,509 @@
 
 					<div class="filter_size">
 						<h3 class="filter_title">Size</h3>
-				        <div class="form-check form-check-inline">
-							<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-							<label class="form-check-label filter_text" for="inlineCheckbox1">XS</label>
-						</div>
-						<div class="form-check form-check-inline">
-							  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-							  <label class="form-check-label filter_text" for="inlineCheckbox2">S</label>
-						</div>
-						<div class="form-check form-check-inline">
-							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2" disabled="disabled">
-							  <label class="form-check-label filter_text" for="inlineCheckbox3">M</label>
-						</div>
-						<div class="form-check form-check-inline">
-							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
-							  <label class="form-check-label filter_text" for="inlineCheckbox4">L</label>
-						</div>
-						<div class="form-check form-check-inline">
-							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option5">
-							  <label class="form-check-label filter_text" for="inlineCheckbox5">XL</label>
-						</div>
-						<div class="form-check form-check-inline">
-							  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option6">
-							  <label class="form-check-label filter_text" for="inlineCheckbox6">XXL</label>
+						<div class="filter_size_check">
+					        <div class="size_check">
+								<input class="check_input" type="checkbox" id="inlineCheckbox1" value="option1">
+								<label class="filter_text" for="inlineCheckbox1">XS</label>
+							</div>
+							<div class="size_check">
+								  <input class="check_input" type="checkbox" id="inlineCheckbox2" value="option2">
+								  <label class="filter_text" for="inlineCheckbox2">S</label>
+							</div>
+							<div class="size_check">
+								  <input class="check_input" type="checkbox" id="inlineCheckbox3" value="option3" disabled="disabled">
+								  <label class="filter_text" for="inlineCheckbox3">M</label>
+							</div>
+							<div class="size_check">
+								  <input class="check_input" type="checkbox" id="inlineCheckbox4" value="option4">
+								  <label class="filter_text" for="inlineCheckbox4">L</label>
+							</div>
+							<div class="size_check">
+								  <input class="check_input" type="checkbox" id="inlineCheckbox5" value="option5">
+								  <label class="filter_text" for="inlineCheckbox5">XL</label>
+							</div>
+							<div class="size_check">
+								  <input class="check_input" type="checkbox" id="inlineCheckbox6" value="option6">
+								  <label class="filter_text" for="inlineCheckbox6">XXL</label>
+							</div>
 						</div>
 					</div>
 
         			<div class="price">
-        				<label for="customRange2" class="form-label filter_title">PRICE</label>
-						<input type="range" class="form-range" min="0" max="100000" id="customRange2">
+        				<label for="customRange" class="filter_title">PRICE</label>
+						<input type="range" class="form_range_price" min="0" max="100000" id="customRange2">
         			</div>
         		</nav>
 
         		<div class="sort_block">
         			<h3 class="sort_title">Sort By</h3>
-        			<details>
-					<summary class="sort_product">Name
-					</summary>
-					<ul class="sort_by">
-						<li class="sort_link">Name</li>
-						<li class="sort_link">Price Up</li>
-						<li class="sort_link">Price Down</li>
-						<li class="sort_link">Discount Up</li>
-						<li class="sort_link">Discount Down</li>
+									<select name="sort_by" class="sort_by">
+										<option selected>Name</option>
+										<option>Price Up</option>
+										<option>Price Down</option> 
+										<option>Discount Up</option> 
+										<option>Discount Down</option> 
+									</select>
+					<h3 class="show_title">Show</h3>
+									<select name="show_by" class="show_by">
+										<option selected>9</option>
+										<option>27</option>
+										<option>81</option> 
+										<option>All</option> 
+									</select>				
         		</div>
-        		<div class="card_product"></div>
-        		<nav class="aria-label"></nav>
+
+        		<div class="card_product">
+        			<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card1.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card2.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card3.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card4.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card5.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card6.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card7.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card8.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card9.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card10.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card11.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="card_item">
+					<a href="single_page.html" class="card_item_link">
+						<div class="card_image1">
+							<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span
+									class="opacity_cart_text">Add to Cart</span></a>
+						</div>
+						<div class="card_image2">
+							<img class="card_image_w" src="img/card12.jpg" alt="photo">
+						</div>
+						<p class="card_title">Mango People T-shirt</p>
+						<div class="price_score">
+							<p class="card_price">$52.00</p>
+							<div class="score disp_none">
+								<div class="score-wrap">
+									<span class="stars-active" style="width:100%">
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+										<i class="fas fa-star" aria-hidden="true"></i>
+									</span>
+									<span class="stars-inactive">
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+										<i class="far fa-star" aria-hidden="true"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+        		</div>
+        		
+        		<nav class="pagination">
+						<ul class="pagination">
+						  <li><a class="active" href="#"><</a></li>
+						  <li><a href="#">1</a></li>
+						  <li><a href="#">2</a></li>
+						  <li><a href="#">3</a></li>
+						  <li><a href="#">4</a></li>
+						  <li><a href="#">5</a></li>
+						  <li><a href="#">6</a></li>
+						  <li><a href="#">7</a></li>
+						  <li><a href="#">></a></li>
+						</ul>
+        		</nav>
         	</div>
         </div>
 
-    <main>
+        <section>
+				<div class="bottom_block">
+					<div class="container">
+						<div class="bottom_block_loot">
+							<img class="block_loot_image1" src="img/bottom_1.png" alt="">
+							<div class="text_block_loot">
+								<p class="block_loot_title">Free Delivery</p>
+								<p class="block_loot_text">Worldwide delivery on all. Authorit tively morph next-generation
+									innov tion with extensive models.
+								</p>
+							</div>
+						</div>
+						<div class="bottom_block_loot">
+							<img class="block_loot_image2" src="img/bottom_2.png" alt="">
+							<div class="text_block_loot">
+								<p class="block_loot_title">Sales & discounts</p>
+								<p class="block_loot_text">Worldwide delivery on all. Authorit tively morph next-generation
+									innov tion with extensive models.
+								</p>
+							</div>
+						</div>
+						<div class="bottom_block_loot">
+							<img class="block_loot_image3" src="img/bottom_3.png" alt="">
+							<div class="text_block_loot">
+								<p class="block_loot_title">Quality assurance</p>
+								<p class="block_loot_text">Worldwide delivery on all. Authorit tively morph next-generation
+									innov tion with extensive models.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </main>
 
     <footer>
 		<div class="footer_top">
