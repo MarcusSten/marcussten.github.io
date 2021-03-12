@@ -1882,6 +1882,127 @@ input::-webkit-input-placeholder {
 	cursor: pointer;
 }
 
+/* ---------------- MAIN for checkout.html    ---------------- */
+
+.main_container{
+	width: 1140px;
+	margin: 0 auto;
+	margin-top: 89px;
+	display: flex;
+	flex-direction: column;
+}
+
+.check_block_title:hover{
+	cursor: pointer;
+	border-color: #ebebeb;
+}
+
+.check_block{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 33px;
+}
+
+.check_block_title{
+	color: #222222;
+	font-family: Lato;
+	font-size: 16px;
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.left_bold_text{
+	color: #222222;
+	font-family: Lato;
+	font-size: 13px;
+	text-transform: uppercase;
+	margin-top: 35px;
+}
+
+.left_small_text{
+	color: #b3b2b2;
+	font-family: Lato;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-top: 15px;
+}
+
+.check_radio_text{
+	color: #222222;
+	font-family: Lato;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+
+.color_red{
+	color: red;
+}
+
+.right_bold_text{
+	color: #222222;
+	font-family: Lato;
+	margin-top: 16px;
+	width: 390px;
+	height: 45px;
+	border: 1px solid #eaeaea;
+	background-color: #ffffff;
+	padding-left: 10px;
+}
+
+.right_small_text{
+	color: red;
+	font-family: Lato;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-top: 22px;
+	margin-bottom: 32px;
+}
+
+.left_small_text_bold{
+	font-size: 17px;
+}
+
+.right_text_link{
+	text-decoration: none;
+	margin-left: 32px;
+	color: #222222;
+	font-family: Lato;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+	border-color: #ebebeb;
+}
+
+.check_line{
+	width: 1140px;
+	height: 1px;
+	background-color: #e8e8e8;
+	margin: 33px 0 33px 0;
+}
+
+.ship_block{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.btn_ship_cart{
+	width: 180px;
+	height: 50px;
+	border: 1px solid #eaeaea;
+	background-color: #ffffff;
+	margin: 33px 0;
+}
+
+.btn_ship_cart:hover{
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
 /* ---------------- FOOTER ---------------- */
 
 .footer_top {
