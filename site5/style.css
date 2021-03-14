@@ -1175,7 +1175,7 @@ details>summary {
 
 /* ---------------- MAIN for product.html    ---------------- */
 
-.main_container {
+.main_container__product {
 	width: 1140px;
 	margin: 0 auto;
 	margin-top: 59px;
