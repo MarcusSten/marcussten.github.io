@@ -258,10 +258,10 @@
 										<h3 class="left_bold_text">Check as a guest or register</h3>
 										<p class="left_small_text">Register with us for future convenience</p>
 									
-										<input class="check_radio_text" type="radio" name="contactChoice">
+										<input class="check_radio_text" type="radio" name="contactChoice" id="contactChoice">
 										<label class="check_radio_text" for="contactChoice">checkout as guest</label>
 										<br>
-										<input class="check_radio_text" type="radio" name="contactChoice" checked>
+										<input class="check_radio_text" type="radio" name="contactChoice" id="contactChoice1" checked>
 										<label class="check_radio_text" for="contactChoice">register</label>
 										<h3 class="left_bold_text">register and save time!</h3>
 										<p class="left_small_text">Register with us for future convenience</p>
@@ -277,21 +277,22 @@
 								</div>
 
 								<div class="check_block_right">
-									<form class="" action="#">
-									<h3 class="left_bold_text">Already registed?</h3>
-									<p class="left_small_text">Please log in below</p>
+									<form class="registered" action="#">
+										<h3 class="left_bold_text">Already registed?</h3>
+										<p class="left_small_text">Please log in below</p>
 
-									<h3 class="left_bold_text">EMAIL ADDRESS<span class="color_red"> *</span></h3>
-									<input class="right_bold_text" type="text" name="" placeholder="">
+										<h3 class="left_bold_text">EMAIL ADDRESS<span class="color_red"> *</span></h3>
+										<input class="right_bold_text" type="text" name="EMAIL" placeholder="">
 
-									<h3 class="left_bold_text">PASSWORD<span class="color_red"> *</span></h3>
-									<input class="right_bold_text" type="text" name="" placeholder="">
+										<h3 class="left_bold_text">PASSWORD<span class="color_red"> *</span></h3>
+										<input class="right_bold_text" type="text" name="PASSWORD" placeholder="">
 
-									<p class="right_small_text">* Required Fileds</p>
-									<div class="check_block_right_btn">
-										<button class="btn_cart" type="button" onclick="window.location.href = 'product.html';">Log in</button>
-										<a class="right_text_link" href="#">Forgot Password ?</a>
-									</div>
+										<p class="right_small_text">* Required Fileds</p>
+										<div class="check_block_right_btn">
+											<button class="btn_cart" type="button" onclick="window.location.href = 'product.html';">Log in</button>
+											<a class="right_text_link" href="#">Forgot Password ?</a>
+										</div>
+									</form>
 								</div>
 							</div>
 
@@ -303,13 +304,14 @@
 							<h2 class="check_block_title">02.&nbsp;&nbsp;&nbsp;BILLING INFORMATION</h2>
 						</summary>
 						<div class="ship_block">
-							<label class="left_bold_text">First name:&nbsp;<input class="right_bold_text" type="text" id="firstname1"></label>
-							<label class="left_bold_text">Last name:&nbsp;<input class="right_bold_text" type="text" id="lastname1"></label>
-							<label class="left_bold_text">Address:&nbsp;<input class="right_bold_text" type="text" id="address1"></label>
-							<label class="left_bold_text">City:&nbsp;<input class="right_bold_text" type="text" id="city1"></label>
-							<label class="left_bold_text">Country:&nbsp;<input class="right_bold_text" type="text" id="country1"></label>
-							</fieldset>
-							<button class="btn_ship_cart" type="button" onclick="window.location.href = '#';">CONTINUE</button>
+							<form action="BILLING">
+								<label class="left_bold_text">First name:&nbsp;<input class="right_bold_text" type="text" id="firstname1"></label>
+								<label class="left_bold_text">Last name:&nbsp;<input class="right_bold_text" type="text" id="lastname1"></label>
+								<label class="left_bold_text">Address:&nbsp;<input class="right_bold_text" type="text" id="address1"></label>
+								<label class="left_bold_text">City:&nbsp;<input class="right_bold_text" type="text" id="city1"></label>
+								<label class="left_bold_text">Country:&nbsp;<input class="right_bold_text" type="text" id="country1"></label>
+								<button class="btn_ship_cart" type="button" onclick="window.location.href = '#';">CONTINUE</button>
+							</form>
 						</div>
 					</details>
 					<div class="check_line"></div>
@@ -319,13 +321,14 @@
 							<h2 class="check_block_title">03.&nbsp;&nbsp;&nbsp;SHIPPING INFORMATION</h2>
 						</summary>
 						<div class="ship_block">
-							<label class="left_bold_text">First name:&nbsp;<input class="right_bold_text" type="text" id="firstname1"></label>
-							<label class="left_bold_text">Last name:&nbsp;<input class="right_bold_text" type="text" id="lastname1"></label>
-							<label class="left_bold_text">Address:&nbsp;<input class="right_bold_text" type="text" id="address1"></label>
-							<label class="left_bold_text">City:&nbsp;<input class="right_bold_text" type="text" id="city1"></label>
-							<label class="left_bold_text">Country:&nbsp;<input class="right_bold_text" type="text" id="country1"></label>
-							</fieldset>
-							<button class="btn_ship_cart" type="button" onclick="window.location.href = '#';">CONTINUE</button>
+							<form action="SHIPPING">
+								<label class="left_bold_text">First name:&nbsp;<input class="right_bold_text" type="text" id="firstname11"></label>
+								<label class="left_bold_text">Last name:&nbsp;<input class="right_bold_text" type="text" id="lastname11"></label>
+								<label class="left_bold_text">Address:&nbsp;<input class="right_bold_text" type="text" id="address11"></label>
+								<label class="left_bold_text">City:&nbsp;<input class="right_bold_text" type="text" id="city11"></label>
+								<label class="left_bold_text">Country:&nbsp;<input class="right_bold_text" type="text" id="country11"></label>
+								<button class="btn_ship_cart" type="button" onclick="window.location.href = '#';">CONTINUE</button>
+							</form>
 						</div>
 
 					</details>
