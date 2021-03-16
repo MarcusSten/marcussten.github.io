@@ -1192,34 +1192,39 @@ details>summary {
 
 .name_category {
 	display: flex;
-	color: #ef5b70;
+	color: #6f6e6e;
 	font-family: Lato;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 20px;
 	text-transform: uppercase;
 	align-items: center;
-	position: relative;
 	margin-bottom: 18px;
-	cursor: pointer
-}
-
-.band_category {
-	width: 5px;
+	cursor: pointer;
+	width: 228px;
 	height: 37px;
-	background-color: #ef5b70;
-	margin-right: 11px;
+	background-image: url(img/band_category.png);
+	background-repeat: no-repeat;
 }
 
 .name_category_title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 227px;
+	padding-left: 15px; 
+}
+
+details[open] .name_category_title {
+  	color: #ef5b70;
+}
+
+details[open] .category_caret_up {
+  	color: #ef5b70;
+  	transform: rotate(180deg);
 }
 
 .category_caret_up {
-	color: #ef5b70;
+	color: #6f6e6e;
 }
 
 .category_line {
