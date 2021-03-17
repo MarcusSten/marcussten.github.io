@@ -28,3 +28,12 @@
 .link:hover {
 	box-shadow: 0 3 8 #fff;
 }
+
+.card-img-top img {
+    height: 300px;
+    width: 200px;
+}
+
+.nav-bottom{
+    margin-top: 50px;
+}
