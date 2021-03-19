@@ -936,7 +936,8 @@ details>summary {
 .carousel_btn {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	width: 1140px;
+	margin: 0 auto;
 }
 
 .carousel_btn_right,
@@ -1098,6 +1099,18 @@ details>summary {
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 24px;
+}
+
+.param_block_select{
+	width: 144px;
+	height: 35px;
+	background-color: #ffffff;
+	border: 1px solid #eaeaea;
+	font-family: Lato;
+	font-size: 13px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #bcbcbc;
 }
 
 .btn_add {
@@ -1696,6 +1709,18 @@ ul.pagination li a {
 	line-height: 20px;
 }
 
+.quantity_block_shopping{
+	appearance: none;
+	padding: 10px 24px;
+	background-color: #ffffff;
+	border: 1px solid #eaeaea;
+	font-family: Lato;
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #656565;
+}
+
 .shipping_block {
 	text-align: center;
 	color: #656565;
@@ -1790,10 +1815,16 @@ ul.pagination li a {
 	font-size: 13px;
 	font-weight: 300;
 	padding-left: 16px;
+	padding-right: 16px;
 }
 
 .form_control {
 	cursor: pointer;
+	appearance: none;
+}
+
+.text_form_control{
+	content: "\f0d7";
 }
 
 .adress_block {
