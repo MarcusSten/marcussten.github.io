@@ -43,7 +43,7 @@ ul
 .top-content
     background-color: $grey
     height: 650px
-    .title-h2
+    .text-top
         opacity: 0.21
         font-family: $basefont
         font-size: 33px
@@ -65,13 +65,15 @@ ul
         display: flex
         flex-direction: row-reverse
 
-.title__top
-    margin-top: 33px
-    font-family: $optfont
+.title-h2
     font-size: 36px
-    line-height: 1.2
     font-weight: 400
-    color: $white
+    &__top
+        margin-top: 33px
+        &_white
+            color: $white
+            line-height: 1.2
+            font-family: $optfont
 
 .line
     width: 74px
@@ -260,14 +262,11 @@ ul
     background-color: $white
 
 .block__right-main
-    display: flex
-    align-items: center
-    justify-content: center
     width: 50%
 
 .image-block
-    width: 453px;
-    height: 303px;
+    width: 453px
+    height: 303px
     background-color: $grey
 
 .text__image
@@ -313,3 +312,182 @@ ul
         line-height: 20px
         font-weight: 400
         color: $grey
+
+.container__main-center_lgrey
+    background-color: $lgrey
+
+.title-h2__main
+    margin-top: 90px
+    text-align: center
+    &_black
+        font-family: $optfont
+        line-height: 43px
+
+.container__main
+    height: 580px
+    display: flex
+    flex-direction: column
+
+.line__main-center
+    margin: 0 auto
+    margin-top: 30px
+    &_orange
+        background-color: $orange
+
+.text__main-center
+    margin: 0 auto
+    margin-top: 30px
+    margin-bottom: 50px
+    &_grey
+        font-family: $basefont
+        font-size: 14px
+        line-height: 20px
+        font-weight: 400
+        color: $grey
+
+.box-block
+    display: flex
+    justify-content: space-between
+
+.box-reason
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    width: 30%
+
+
+.img-icon_bold
+    width: 70px
+    height: 70px
+    margin-bottom: 29px
+
+.center-price-block
+    height: 880px
+    background-color: $lgrey
+    
+.box-price
+    text-align: center
+    width: 30%
+    cursor: pointer
+    transition: 0.5s
+    &:hover
+        transform: translateY(-20px)
+
+.title-h3_price
+    font-family: $basefont
+    line-height: 24px
+    color: $white
+    padding: 21px 0
+    background-color: $dgrey
+    text-align: center
+
+.text-price
+    font-family: $optfont
+    font-size: 35px
+    line-height: 24px
+    font-weight: 700
+    color: $white
+    padding: 40px 0
+    background-color: $dgrey
+    text-align: center
+    margin-top: 1px
+
+.price
+    font-size: 94px
+
+.text-price_montly
+    font-family: $basefont
+    font-size: 14px
+    line-height: 24px
+    font-weight: 600
+    font-style: italic
+    color: $grey
+    background-color: $dgrey
+    padding-bottom: 20px
+
+.text__price
+    text-transform: uppercase
+    padding: 10px
+    margin-bottom: 1px
+    &_grey
+        font-family: $basefont
+        font-size: 14px
+        line-height: 24px
+        font-weight: 400
+        color: $grey
+        background-color: $white
+
+.line-price
+    height: 5px
+    background-color: $orange
+
+.block__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.form__bottom
+    display: flex
+    flex-direction: column
+    margin-bottom: 30px
+
+.input-contact    
+    margin-top: 40px
+    width: 400px
+    height: 31px
+    box-shadow: 0px 1px 0px 0px $black
+    font-family: $basefont
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    border: none
+    outline: none
+
+.textarea-message
+    box-shadow: 0px 1px 0px 0px $black
+    font-family: $basefont
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    border: none
+    outline: none
+
+textarea
+    resize: none
+
+.btn__message
+    margin: 0 auto
+    display: block
+    &_orange
+        font-family: $basefont
+        font-size: 15px
+        line-height: 1.2
+        font-weight: 600
+        color: $white
+        background-color: $orange
+        border: none
+        cursor: pointer
+
+.footer
+    height: 100px
+    background-color: $black
+
+.social-link-block__footer
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    .link-social
+        font-size: 24px
+        line-height: 1.2
+        font-weight: 400 
+
+.copyright
+    opacity: 0.5
+    font-family: $basefont
+    color: $white
+    font-size: 12px
+    line-height: 1.2
+    font-weight: 400
+    text-align: center
+    margin-top: 5px
