@@ -3,4 +3,149 @@
     padding: 0
 
 @import  vars
-    $basefont: 'Lato', sans-serif
+
+$basefont: 'Lato', sans-serif
+
+.header_black
+    height: 85px
+    background-color: $black
+    display: flex
+    align-items: center
+
+.container
+    width: $container
+    margin: 0 auto
+
+.container__head
+    display: flex
+    justify-content: space-between
+
+.header_pink
+    background-color: $lrose
+    height: 764px
+
+.container__banner
+    display: flex
+
+.block-main__top
+    display: flex
+    justify-content: space-between
+    margin-top: 65px
+
+.image-woman,
+.image-man,
+.image-kids
+    height: 260px
+    width: 360px
+
+.image-woman
+    background-image: url(../img/main-woman.jpg)
+
+.image-man
+    background-image: url(../img/main-man.jpg)
+
+.image-kids
+    background-image: url(../img/main-kids.png)
+
+.image-accesories
+    height: 180px
+    width: 1140px
+    background-image: url(../img/main-accesories.jpg)
+    margin-top: 30px
+
+.container__main-card
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.main_text
+    text-align: center
+    font-family: "Lato", sans-serif
+    font-size: 30px
+    font-weight: 700
+    letter-spacing: 0.025em
+    color: #222222
+    margin-top: 95px
+    margin-bottom: 16px
+
+.main_text_bot
+    text-align: center
+    font-family: "Lato", sans-serif
+    font-size: 14px
+    font-weight: 400
+    letter-spacing: 0.025em
+    color: #9f9f9f
+    margin-bottom: 48px
+
+.card_item
+    display: flex
+    flex-direction: column
+    margin-top: 48px
+    width: 360px
+    height: 581px
+
+.card_item:hover .card_image_w
+    filter: brightness(30%)
+
+.card_image
+    opacity: 0
+    position: absolute
+    z-index: 2
+    width: 360px
+    height: 581px
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16)
+
+.card_item:hover .card_image
+    opacity: 1
+
+.card_item:hover .opacity_cart
+    opacity: 1
+
+.card_image_w
+    position: relative
+    width: 360px
+
+.opacity_cart
+    display: flex
+    justify-content: center
+    margin-left: 70px
+    margin-top: 98px
+    position: absolute
+    opacity: 0
+    padding: 10px 13px 9px 12px
+    text-decoration: none
+    border: 1px solid #ffffff
+    box-shadow: #cdcdcc
+    z-index: 100
+
+.opacity_cart_text
+    font-family: "Lato", sans-serif
+    font-size: 13px
+    line-height: 1.2
+    font-weight: 700
+    color: #ffffff
+    padding-top: 5px
+    padding-left: 8px
+
+.card_title
+    font-family: "Lato", sans-serif
+    font-size: 13px
+    line-height: 1.2
+    font-weight: 400
+    text-transform: uppercase
+    color: #222222
+    margin-left: 14px
+    margin-top: 19px
+    text-decoration: none
+
+.card_price
+    font-family: "Lato", sans-serif
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 700
+    text-transform: uppercase
+    color: #f16d7f
+    margin-left: 14px
+    margin-top: 17px
+    margin-bottom: 12px
+    text-decoration: none
