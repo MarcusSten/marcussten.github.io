@@ -380,6 +380,22 @@
 .review {
   margin-top: 111px;
   width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.review img {
+  width: 83px;
+  height: 83px;
 }
 
 .review_text_block {
