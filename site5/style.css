@@ -98,6 +98,16 @@ a {
 	cursor: pointer;
 }
 
+details[open] .header_link {
+	color: #ef5b70;
+}
+
+details[open] .browse_caret_down {
+	color: #ef5b70;
+	transform: rotate(180deg);
+	margin-left: 8px;
+}
+
 .browse_block {
 	position: absolute;
 	z-index: 100;
@@ -178,6 +188,7 @@ details>summary {
 	letter-spacing: 0.025em;
 	color: #a4a4a4;
 	padding-left: 16px;
+	border-right: none;
 }
 
 .search {
@@ -190,7 +201,13 @@ details>summary {
 	background-color: #ffffff;
 	border: 1px solid #e6e6e6;
 	border-radius: 0px 3px 3px 0px;
-	border-left: none;
+	transition: 0.5s;
+}
+
+.search:hover {
+	border: 1px solid #f16d7f;
+	color: #f16d7f;
+	cursor: pointer;
 }
 
 .search_button {
@@ -215,6 +232,18 @@ details>summary {
 	letter-spacing: 0.025em;
 	color: #ffffff;
 	margin-left: 26px;
+	transition: 0.5s;
+	border: 1px solid #f16d7f;
+}
+
+.account:hover {
+	background-color: #ffffff;
+	border: 1px solid #f16d7f;
+	color: #f16d7f;
+}
+
+.account:hover .caret_down {
+	color: #f16d7f;
 }
 
 .caret_down {
@@ -359,6 +388,10 @@ details>summary {
 	position: relative;
 }
 
+.cart-hover:hover {
+	filter: invert(1);
+}
+
 .cart_block {
 	position: absolute;
 	width: 262px;
@@ -492,6 +525,7 @@ details>summary {
 	text-transform: uppercase;
 	padding: 19px 74px;
 	border: 1px solid #f16d7f;
+	transition: 0.5s;
 }
 
 .go_to_card {
@@ -507,7 +541,10 @@ details>summary {
 }
 
 .checkout:hover {
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+	border: 1px solid #f16d7f;
+	color: #ffffff;
+	background-color: #f16d7f;
+	cursor: pointer;
 }
 
 .go_to_card:hover {
@@ -572,6 +609,7 @@ details>summary {
 	margin: 0 auto;
 	width: 1140px;
 	display: flex;
+	justify-content: space-between;
 	margin-top: 98px;
 	margin-bottom: 100px;
 }
@@ -579,13 +617,11 @@ details>summary {
 .center_box_right {
 	display: flex;
 	flex-direction: column;
-	margin-right: 10px;
 }
 
 .center_box_left {
 	display: flex;
 	flex-direction: column;
-	margin-left: 10px;
 }
 
 .card_image_man {
@@ -772,6 +808,14 @@ details>summary {
 	color: #ffffff;
 	text-decoration: none;
 	margin-bottom: 113px;
+	border: 1px solid #f16d7f;
+	transition: 0.5s;
+}
+
+.button_all:hover {
+	background-color: #ffffff;
+	color: #f16d7f;
+	border: 1px solid #f16d7f;
 }
 
 .bottom_content {
@@ -1776,10 +1820,13 @@ ul.pagination li a {
 	border: 1px solid #eaeaea;
 	background-color: #ffffff;
 	background-color: inherit;
+	transition: 0.5s;
 }
 
 .btn_cart:hover {
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+	border: 1px solid #f16d7f;
+	background-color: #f16d7f;
+	color: #ffffff;
 	cursor: pointer;
 }
 
@@ -1861,10 +1908,13 @@ input::-webkit-input-placeholder {
 	border: 1px solid #eaeaea;
 	background-color: #ffffff;
 	margin-top: 23px;
+	transition: 0.5s;
 }
 
 .btn_adress:hover {
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+	border: 1px solid #f16d7f;
+	background-color: #f16d7f;
+	color: #ffffff;
 	cursor: pointer;
 }
 
@@ -1934,12 +1984,14 @@ input::-webkit-input-placeholder {
 	background-color: #f16d7f;
 	border: none;
 	margin-left: 45px;
-
-
+	border: 1px solid #f16d7f;
+	transition: 0.5s;
 }
 
 .btn_checkout:hover {
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.30);
+	border: 1px solid #f16d7f;
+	background-color: #ffffff;
+	color: #f16d7f;
 	cursor: pointer;
 }
 
@@ -1951,6 +2003,9 @@ input::-webkit-input-placeholder {
 	margin-top: 89px;
 	display: flex;
 	flex-direction: column;
+}
+.check_block_title {
+	padding: 30px 0;
 }
 
 .check_block_title:hover {
@@ -2042,7 +2097,7 @@ input::-webkit-input-placeholder {
 	width: 1140px;
 	height: 1px;
 	background-color: #e8e8e8;
-	margin: 33px 0 33px 0;
+	margin: 10px 0 10px 0;
 }
 
 .ship_block {
@@ -2057,11 +2112,13 @@ input::-webkit-input-placeholder {
 	border: 1px solid #eaeaea;
 	background-color: #ffffff;
 	margin: 33px 0;
+	transition: 0.5s;
 }
 
 .btn_ship_cart:hover {
 	cursor: pointer;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+	border: 1px solid #f16d7f;
+	color: #f16d7f;
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -2223,8 +2280,15 @@ input::-webkit-input-placeholder {
 	line-height: 17px;
 	text-align: center;
 	color: #FFFFFF;
-	border: none;
+	border: 1px solid #F16D7F;
 	cursor: pointer;
+	transition: 0.5s;
+}
+
+.subscribe__button:hover {
+	background-color: #FFFFFF;
+	color: #F16D7F;
+	border: 1px solid #F16D7F;
 }
 
 .footer_center {
@@ -2293,6 +2357,7 @@ ul {
 }
 
 .link_navigation_text {
+	display: flex;
 	text-decoration: none;
 	font-family: "Lato", sans-serif;
 	font-size: 16px;

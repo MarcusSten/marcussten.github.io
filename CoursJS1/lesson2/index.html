@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>lesson2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Практическое задание к уроку 2. Основы языка JavaScript</h1>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>1. Почему код дает именно такие результаты?</h2>
+                    <pre>
+                        <br>
+var a = 1, b = 1, c, d;
+c = ++a; alert(c);           // 2
+d = b++; alert(d);           // 1
+c = (2+ ++a); alert(c);      // 5
+d = (2+ b++); alert(d);      // 4
+alert(a);                    // 3
+alert(b);                    // 3
+                    </pre>
+                    
+                </div>
+                
+                <div class="box2">
+                    <p>
+<br>
+<br>
+// 2   префиксная форма. Сначала идет инкрементирование a + 1<br>
+// 1   постфиксная формa. Сначала идет присвоение d = b, потом инкрементирование b + 1<br>
+// 5   c = 2 из второй строки. Благодаря скобкам выполняются все операторы. После идет присвоение<br>
+// 4   b = 2 из третий строки. Дальше аналогия с предыдущим<br>
+// 3   a = 2 из второй строки. Далее инкрементирование в 4 строке<br>
+// 3   b = 2 третий строки. Далее инкрементирование в 5 строке<br>
+</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>2. Чему будет равен x?</h2>
+                    <pre>
+                        <br>
+var a = 2;
+var x = 1 + (a *= 2);
+                    </pre>
+                    <button onClick="myScript1()">Запустить</button>
+                </div>
+                <div class="box2">
+                    
+                    <h3>
+                        <br>
+                        <br>
+                        x = 5 <br>
+                            1 + (2 * 2);  *= оператор присваивания с умножением.</h3>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>3. Объявить две целочисленные переменные — a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+                        <br>
+                        <br>если a и b положительные, вывести их разность;
+                        <br>если а и b отрицательные, вывести их произведение;
+                        <br>если а и b разных знаков, вывести их сумму;
+                        <br><br>
+                        Ноль можно считать положительным числом.
+                        </h2>
+                    <button onClick="myScript2()">Запустить</button>
+                </div>
+                <div class="box2">
+                    <pre>                     
+var a = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+var b = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+
+if(a >= 0 & b >= 0){
+        alert(a - b);
+    } else if(a < 0 & b < 0) {
+        alert(a * b); 
+    } else if((a <= 0 & b >= 0) || (a >= 0 & b <= 0)){
+        alert(a + b);
+    } else{
+        alert("a и b равны 0. Вот это удача");
+    }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.</h2>
+                    <button onClick="myScript3()">Запустить</button>
+                </div>
+                <div class="box2">
+                    <pre>
+var a = (Math.floor(Math.random() * 15));
+
+switch(a){
+    case 0:
+        alert("0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 1:
+        alert("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 2:
+        alert("2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 3:
+        alert("3 4 5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 4:
+        alert("4 5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 5:
+        alert("5 6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 6:
+        alert("6 7 8 9 10 11 12 13 14 15");
+        break;
+    case 7:
+        alert("7 8 9 10 11 12 13 14 15");
+        break;
+    case 8:
+        alert("8 9 10 11 12 13 14 15");
+        break;
+    case 9:
+        alert("9 10 11 12 13 14 15");
+        break;
+    case 10:
+        alert("10 11 12 13 14 15");
+        break;
+    case 11:
+        alert("11 12 13 14 15");
+        break;
+    case 12:
+        alert("12 13 14 15");
+        break;
+    case 13:
+        alert("13 14 15");
+        break;
+    case 14:
+        alert("14 15");
+        break;
+    case 15:
+        alert("15");
+        break;
+}
+                    </pre>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>5. Реализовать четыре основные арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+                    </h2>
+                </div>
+                <div class="box2">
+                    
+                </div>
+            </div> 
+
+            <div class="block">
+                <div class="box1">
+                    <h2>6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 — значения аргументов, operation — строка с названием операции. В зависимости от переданного значения выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (применить switch).
+
+                    </h2>
+                </div>
+                <div class="box2">
+                    
+                </div>
+            </div> 
+
+            <div class="block">
+                <div class="box1">
+                    <h2>7. * Сравнить null и 0. Объяснить результат.</h2>
+                </div>
+                <div class="box2">
+                    
+                </div>
+            </div> 
+
+            <div class="block">
+                <div class="box1">
+                    <h2>8. * С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val — заданное число, pow –— степень.</h2>
+                </div>
+                <div class="box2">
+                    
+                </div>
+            </div> 
+        </div>
+        <footer>
+            <p class="copyright">© 2021 Marcus Sten</p>
+        </footer>
+    </div>
+
+    <script>
+        function myScript1(){
+            var a = 2;
+            var x = 1 + (a *= 2);
+            alert("x будет равен: " + x);
+        }
+    </script>
+
+    <script>
+        function myScript2(){
+
+            var a = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+            var b = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+           
+            if(a >= 0 & b >= 0){
+                    alert(a - b);
+                } else if(a < 0 & b < 0) {
+                    alert(a * b); 
+                } else if((a <= 0 & b >= 0) || (a >= 0 & b <= 0)){
+                    alert(a + b);
+                } else{
+                    alert("a и b равны 0. Вот это удача");
+                }
+        }
+    </script>
+
+    <script>
+        function myScript3(){
+            var a = (Math.floor(Math.random() * 15));
+            
+            switch(a){
+                case 0:
+                    alert("0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 1:
+                    alert("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 2:
+                    alert("2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 3:
+                    alert("3 4 5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 4:
+                    alert("4 5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 5:
+                    alert("5 6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 6:
+                    alert("6 7 8 9 10 11 12 13 14 15");
+                    break;
+                case 7:
+                    alert("7 8 9 10 11 12 13 14 15");
+                    break;
+                case 8:
+                    alert("8 9 10 11 12 13 14 15");
+                    break;
+                case 9:
+                    alert("9 10 11 12 13 14 15");
+                    break;
+                case 10:
+                    alert("10 11 12 13 14 15");
+                    break;
+                case 11:
+                    alert("11 12 13 14 15");
+                    break;
+                case 12:
+                    alert("12 13 14 15");
+                    break;
+                case 13:
+                    alert("13 14 15");
+                    break;
+                case 14:
+                    alert("14 15");
+                    break;
+                case 15:
+                    alert("15");
+                    break;
+            }
+
+        }
+    </script>
+    
+    
+</body>
+</html>
