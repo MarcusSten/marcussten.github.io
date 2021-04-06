@@ -76,8 +76,8 @@ var x = 1 + (a *= 2);
                 </div>
                 <div class="box2">
                     <pre>                     
-var a = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
-var b = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+var a = parseInt(Math.random() * 100)*((Math.random() < 0.5) ? -1 : 1);
+var b = parseInt(Math.random() * 100)*((Math.random() < 0.5) ? -1 : 1);
 
 if(a >= 0 & b >= 0){
         alert(a - b);
@@ -99,7 +99,7 @@ if(a >= 0 & b >= 0){
                 </div>
                 <div class="box2">
                     <pre>
-var a = (Math.floor(Math.random() * 15));
+var a = parseInt(Math.random() * 15));
 
 switch(a){
     case 0:
@@ -163,7 +163,30 @@ switch(a){
                 </div>
                 <div class="box2">
                     <pre>
+var x = parseInt(Math.random() * 10);
+var y = parseInt(Math.random() * 10);
 
+alert("Даны числа x = " + x + " и y = " + y);
+
+function addition(x,y){
+    return x + y;
+}
+alert("сложение чисел: " + addition(x,y));
+
+function subtraction(x,y){
+    return x - y;
+}
+alert("вычитание чисел: " + subtraction(x,y));
+
+function multiplication(x,y){
+    return x * y;
+}
+alert("умножение чисел: " + multiplication(x,y));
+
+function division(x,y){
+    return x / y;
+}
+alert("деление чисел: " + division(x,y));
                     </pre>
                     
                 </div>
@@ -214,8 +237,8 @@ switch(a){
     <script>
         function myScript2(){
 
-            var a = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
-            var b = (Math.floor(Math.random() * 100))*((Math.random() < 0.5) ? -1 : 1);
+            var a = parseInt(Math.random() * 100)*((Math.random() < 0.5) ? -1 : 1);
+            var b = parseInt(Math.random() * 100)*((Math.random() < 0.5) ? -1 : 1);
            
             if(a >= 0 & b >= 0){
                     alert(a - b);
@@ -231,7 +254,7 @@ switch(a){
 
     <script>
         function myScript3(){
-            var a = (Math.floor(Math.random() * 15));
+            var a = parseInt(Math.random() * 15);
             
             switch(a){
                 case 0:
@@ -289,30 +312,30 @@ switch(a){
 
     <script>
         function myScript4(){
-            var x = 1;
-            var y = 2;
-            var z;
-            function addition(){
-                var x = 1;
-                var y = 2;
-                var z;
-                (z = x + y);
-                return(z);
-            }
-            alert("сложение: " + z);
+            var x = parseInt(Math.random() * 10);
+            var y = parseInt(Math.random() * 10);
 
-            function subtraction(x, y){
-                return (x - y);
-            }
-            function multiplication(x, y){
-                return (x * y);
-            }
-            function division(x, y){
-                return (x / y);
-            }
+            alert("Даны числа x = " + x + " и y = " + y);
 
+            function addition(x,y){
+                return x + y;
+            }
+            alert("сложение чисел: " + addition(x,y));
 
+            function subtraction(x,y){
+                return x - y;
+            }
+            alert("вычитание чисел: " + subtraction(x,y));
 
+            function multiplication(x,y){
+                return x * y;
+            }
+            alert("умножение чисел: " + multiplication(x,y));
+
+            function division(x,y){
+                return x / y;
+            }
+            alert("деление чисел: " + division(x,y));
         }
     </script>
     
