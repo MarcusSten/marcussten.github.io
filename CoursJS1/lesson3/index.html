@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet">
+    <title>lesson3</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="text-smile"><span class="txt-rotate" data-period="2000" data-rotate='[ "Hello im Marcus Sten", "and this is a JavaScript course", "Smile, peanut!" ]'></span></h1>
+            <h1>Практическое задание к уроку 3. Основы языка JavaScript</h1>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.</h2>  
+                    <button onClick="myScript1()">Запустить</button>  
+                </div> 
+                <div class="box2">
+                   
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.</h2>
+                    
+                </div>
+                <div class="box2">
+                
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>3. Товары в корзине хранятся в массиве. Задачи: <br>
+                            а. Организовать такой массив для хранения товаров в корзине; <br>
+                            б. Организовать функцию countBasketPrice, которая будет считать стоимость корзины.</h2>
+                    <button onClick="myScript2()">Запустить</button>
+                </div>
+                <div class="box2">
+                  
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>4.* Нарисовать пирамиду с 20 рядами с помощью console.log, как показано на рисунке:</h2>
+                    <pre>
+x
+xx
+xxx
+xxxx
+xxxxx
+                    </pre>
+                    <button onClick="myScript3()">Запустить</button>
+                </div>
+                <div class="box2">
+                    
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <p class="copyright">© 2021 Marcus Sten</p>       
+        </footer>
+    </div>
+
+    <script>
+        function myScript1(){
+
+            let n = 10;
+
+            nextPrime:
+            for (let i = 2; i <= n; i++) { // Для всех i...
+
+            for (let j = 2; j < i; j++) { // проверить, делится ли число..
+                if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+            }
+
+            alert( i ); // простое число
+            }
+        }
+    </script>
+
+    <script>
+        var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+    </script>
+
+    
+    
+    
+</body>
+</html>
