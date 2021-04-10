@@ -3,6 +3,6 @@ function myScript5(){
     var x;
     console.log(egypt);
     for(x = 0; x < 20; x++){
-        console.log(egypt += "xx");
+        console.log(egypt += "x");
     }
 }
