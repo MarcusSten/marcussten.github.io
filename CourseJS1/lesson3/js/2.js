@@ -12,7 +12,7 @@ function priceSumm(){
         console.log("Товар " + (i + 1) + " " + "стоит: " + arr[i] + "$");
         sum = sum + parseInt(arr[i]);
       }
-      console.log("сумма товаров корзины: " + sum + "$");
+      console.log("Cумма товаров корзины: " + sum + "$");
 
 }
 
