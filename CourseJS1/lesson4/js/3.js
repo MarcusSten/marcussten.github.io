@@ -1,7 +1,6 @@
 function myScript3(){
 
-    
-    var goods = [
+    var product = [
         {
             id: 0001,
             title: "Jacket",
@@ -12,6 +11,7 @@ function myScript3(){
             size: "S",
             brend: "Laconte",
             designer: "Johnny Cash",
+            category: "Jackets",
             season: "Summer",
             pic: "jacket.jpg"
         },
@@ -25,6 +25,7 @@ function myScript3(){
             size: "M",
             brend: "Gusi",
             designer: "Bob Dylan",
+            category: "Polos",
             season: "Autumn",
             pic: "polo.jpg"
         },
@@ -37,6 +38,7 @@ function myScript3(){
             color: "Black",
             size: "S",
             brend: "Dolche & Gavvana",
+            category: "Shorts",
             designer: "James Brown",
             season: "Summer",
             pic: "Short.jpg"
@@ -51,10 +53,12 @@ function myScript3(){
             size: "XL",
             brend: "Diar",
             designer: "Elton John",
+            category: "Sweaters",
             season: "Autumn",
             pic: "Sweater.jpg"
         }
     ]; 
-    
-    
-    }
+
+    console.table(product, ["color", "title", "price"]);
+
+}

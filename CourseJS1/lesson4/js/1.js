@@ -1,12 +1,14 @@
 function myScript1(){
 
     var num = prompt("Введите число от 0 до 999");
-
     var numbers = {};
+    var numLength = 3;
+
+    num.toString();
+    num = num.padStart(numLength, '0');
 
     function score() {
         if(num < 1000){
-            num.toString();
             numbers.hundred = num.charAt(0);
             numbers.tens = num.charAt(1);
             numbers.figure = num.charAt(2);
