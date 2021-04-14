@@ -1,64 +1,57 @@
 function myScript3(){
 
-    var product = [
-        {
-            id: 0001,
-            title: "Jacket",
-            description: "Amazing red jacket",
-            price: 250,
-            count: 1,
-            color: "Red",
-            size: "S",
-            brend: "Laconte",
-            designer: "Johnny Cash",
-            category: "Jackets",
-            season: "Summer",
-            pic: "jacket.jpg"
-        },
-            {
-            id: 0002,
-            title: "Polo",
-            description: "Excellent green polo",
-            price: 50,
-            count: 1,
-            color: "Green",
-            size: "M",
-            brend: "Gusi",
-            designer: "Bob Dylan",
-            category: "Polos",
-            season: "Autumn",
-            pic: "polo.jpg"
-        },
-        {
-            id: 0003,
-            title: "Short",
-            description: "Luxurious black short",
-            price: 100,
-            count: 1,
-            color: "Black",
-            size: "S",
-            brend: "Dolche & Gavvana",
-            category: "Shorts",
-            designer: "James Brown",
-            season: "Summer",
-            pic: "Short.jpg"
-        },
-        {
-            id: 0004,
-            title: "Sweater",
-            description: "Bright white sweater",
-            price: 400,
-            count: 1,
-            color: "White",
-            size: "XL",
-            brend: "Diar",
-            designer: "Elton John",
-            category: "Sweaters",
-            season: "Autumn",
-            pic: "Sweater.jpg"
+    var answer;
+    var answers = [];
+    var i = 0;
+    var n = 1;
+    var score = 0;
+    var many = [0, 1000, 5000, 50000, 200000, 500000, 1000000];
+    
+    alert("Начинаем игру - Кто хочет стать миллионером?");
+
+    function questions(){
+        answer = prompt(question[i].a00 + "Варианты ответа: \n" + question[i].a1 + question[i].a2 + question[i].a3 + question[i].a4 + "Ваш ответ: \n Если хотите закончить, нажмите q");
+        if (answer > 0 && answer < 5 || answer == "q") {
+            if (answer == "q"){
+                alert('Спасибо за игру');
+            } else {
+                gameContinue();
+            }
+        } else {
+            alert("Вы ввели неверное значение. Введите ответ от 1 до 4 или покиньте игру нажав q");
+            return questions();
         }
-    ]; 
+    }
 
-    console.table(product, ["color", "title", "price"]);
+    questions();
 
+    function gameContinue(){
+        if(answer == question[i].aa){
+            score++;
+            alert("Вы угадали. Вы выиграли " + many[n]);
+            many[++n];
+            questions = questions(++i);
+        } else {
+            alert("Вы проиграли.");
+        }
+    }
+
+    // isAnswers();
+    // alert('Спасибо за игру');
+
+    // function isAnswers(){
+    //     var step = prompt("Хотите посмотреть ваши ответы? Введите интересующий вас шаг. \n -1 - Выход"); 
+    //     switch(step) {
+    //         case "1":
+    //             alert("Текст на шаге 1 был: \n"  +  answers[1].join('\n Ваш ответ: '));
+    //             break;
+    //         case "2":
+    //             alert("Текст на шаге 2 был: \n" +  answers[1].join('\n Ваш ответ: '));
+    //             break;
+    //         case "-1":
+    //             break;
+    //         default:
+    //             alert("Вы ввели не верное значение. Укажите номер шага");
+    //     }
+    // }
 }

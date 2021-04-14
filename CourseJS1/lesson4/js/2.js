@@ -1,41 +1,153 @@
 function myScript2(){
+    var event, ok;
 
+    var answers = [];
+
+    do {//Выводим первый вопрос
+        ok = false;
+        event = +prompt(works.a00 + works.a1 + works.a2 + '-1 - Выход из игры');
     
-    var goods = [
-        {
-            title: "Jacket",
-            price: 250,
-            count: 2
-        },
-            {
-            title: "Polo",
-            price: 50,
-            count: 3
-        },
-        {
-            title: "Short",
-            price: 100,
-            count: 4
-        },
-        {
-            title: "Sweater",
-            price: 400,
-            count: 1
+        if (event == -1) {
+            break;
         }
-    ]; 
-    
-    var goods_price = 0;
-    
-    function countBasketPrice() {
-        for (i = 0; i < goods.length; i++) { 
-            goods_price = goods_price + (goods[i].price * goods[i].count);
+        else {
+            ok = isAnswer(works.a0, event);
         }
-        return goods_price;
+    } while (!ok);
+    switch (event) {
+        case 1: // Первое действие  - если в первом окне ввели 1 то открываем серию окон - окно 2
+            answers[1] = [works.a00, works.a1];
+            do {
+                ok = false;
+                event = +prompt(works.b00 + works.b1 + works.b2 + '-1 - Выход из игры');
+                if (event == -1) {
+                    break;
+                }
+                else {
+                    ok = isAnswer(works.b0, event);
+                }
+            } while (!ok);
+            switch (event) {
+                case 1: // Второе действие, если во 2 окне ввели 1 то переходим на 4 окно
+                    answers[2] = [works.b00, works.b1];
+                    do {
+                        ok = false;
+                        event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                        if (event == -1) {
+                            break;
+                        }
+                        else {
+                            ok = isAnswer(works.d0, event);
+                        }
+                    } while (!ok);
+
+                    break;
+                case 2: // Второе действие   Если ввели 2 то также переходим на 4 окно
+                    answers[2] = [works.b00, works.b2];
+                    do {
+                        ok = false;
+                        event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                        if (event == -1) {
+                            break;
+                        }
+                        else {
+                            ok = isAnswer(works.d0, event);
+                        }
+                    } while (!ok);
+
+                    break;
+                case -1: // Второе действие
+                    answers[2] = [works.b00, '-1 - Выход из игры'];
+                    break;
+                default:
+                    alert('Ошибка');
+            }
+            break;
+        case 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
+        answers[1] = [works.a00, works.a2];
+            do {
+                ok = false;
+                event = +prompt(works.c00 + works.c1 + works.c2 + '-1 - Выход из игры');
+                if (event == -1) {
+                    break;
+                }
+                else {
+                    ok = isAnswer(works.c0, event);
+                }
+            } while (!ok);
+            switch (event) {
+                case 1: // Второе действие
+                    do {
+                        ok = false;
+                        event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                        if (event == -1) {
+                            break;
+                        }
+                        else {
+                            ok = isAnswer(works.d0, event);
+                        }
+                    } while (!ok);
+
+                    break;
+                case 2: // Второе действие
+                    do {
+                        ok = false;
+                        event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
+                        if (event == -1) {
+                            break;
+                        }
+                        else {
+                            ok = isAnswer(works.d0, event);
+                        }
+                    } while (!ok);
+
+                    break;
+                case -1: // Второе действие
+                    break;
+                default:
+                    alert('Ошибка');
+            }
+            break;
+        case -1: // Первое действие
+            answers[1] = [works.a00, '-1 - Выход из игры'];
+            break;
+        default:
+            alert('Ошибка');
     }
-    console.log("В корзине:");
-    for (i = 0; i < goods.length; i++){
-        console.log(goods[i].title + " стоит: " + goods[i].price + "$. Количество в корзине: " + goods[i].count);
+
+    isAnswers();
+    alert('Спасибо за игру');
+
+
+    //------------------------------------------
+    function isAnswer(q, event) {
+        if (isNaN(event) || !isFinite(event)) {
+            alert('Вы ввели недопустимый символ');
+            return false;
+        }
+        else if (event < 1 || event > q) {
+            alert('Ваше число выходит из допустимого диапозона');
+            return false;
+        }
+        return true;
+        
     }
-    console.log("Cумма товаров корзины: " + countBasketPrice(goods) + "$");
+
+    function isAnswers(){
+        var step = prompt("Хотите посмотреть ваши ответы? Введите интересующий вас шаг. \n -1 - Выход"); 
+        switch(step) {
+            case "1":
+                alert("Текст на шаге 1 был: \n"  +  answers[1].join('\n Ваш ответ: '));
+                break;
+            case "2":
+                alert("Текст на шаге 2 был: \n" +  answers[1].join('\n Ваш ответ: '));
+                break;
+            case "-1":
+                break;
+            default:
+                alert("Вы ввели не верное значение. Укажите номер шага");
+        }
+    }
+ 
     
-    }
+}
