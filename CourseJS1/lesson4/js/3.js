@@ -9,7 +9,7 @@ function myScript3(){
     alert("Начинаем игру - Кто хочет стать миллионером?");
 
     function questions(){
-        if (i == 6){
+        if (i == question.length){
             alert("Поздравляю, вы стали МИИИИЛЛИОНЕРОМ!");
         } else {
             answer = prompt(question[i].a00 + "Варианты ответа: \n" + question[i].a1 + question[i].a2 + question[i].a3 + question[i].a4 + "Ваш ответ: \n Если хотите закончить, нажмите q");
