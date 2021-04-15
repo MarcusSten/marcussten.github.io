@@ -51,15 +51,15 @@ score();</pre>
             <div class="block">
                 <div class="box1">
                     <h2>2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)</h2>
-                    <button onClick="myScript2()">Запустить (Смотреть в console)</button> 
+                    <button onClick="myScript2()">Запустить</button> 
                 </div>
                 <div class="box2">
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">var</span> answers = [];
 
-<span class="hljs-comment" style="color: rgb(136, 136, 136);">//тело программы</span>
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//тело программы не менял, т.к. в задаче было добавить, а не оптимизировать.</span>
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Перед case добавлены присвоения [works.i00, works.i2] для массива с ответами answers </span>
 
 isAnswers();
-alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Спасибо за игру'</span>);
 
 <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">isAnswers</span><span class="hljs-params">()</span></span>{
     <span class="hljs-keyword" style="font-weight: 700;">var</span> step = prompt(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Хотите посмотреть ваши ответы? Введите интересующий вас шаг. \n -1 - Выход"</span>); 
@@ -68,7 +68,10 @@ alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Спасибо �
             alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Текст на шаге 1 был: \n"</span>  +  answers[<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>].join(<span class="hljs-string" style="color: rgb(136, 0, 0);">'\n Ваш ответ: '</span>));
             <span class="hljs-keyword" style="font-weight: 700;">break</span>;
         <span class="hljs-keyword" style="font-weight: 700;">case</span> <span class="hljs-string" style="color: rgb(136, 0, 0);">"2"</span>:
-            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Текст на шаге 2 был: \n"</span> +  answers[<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>].join(<span class="hljs-string" style="color: rgb(136, 0, 0);">'\n Ваш ответ: '</span>));
+            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Текст на шаге 2 был: \n"</span> +  answers[<span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>].join(<span class="hljs-string" style="color: rgb(136, 0, 0);">'\n Ваш ответ: '</span>));
+            <span class="hljs-keyword" style="font-weight: 700;">break</span>;
+        <span class="hljs-keyword" style="font-weight: 700;">case</span> <span class="hljs-string" style="color: rgb(136, 0, 0);">"3"</span>:
+            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Выбора нет, Нео!"</span>);
             <span class="hljs-keyword" style="font-weight: 700;">break</span>;
         <span class="hljs-keyword" style="font-weight: 700;">case</span> <span class="hljs-string" style="color: rgb(136, 0, 0);">"-1"</span>:
             <span class="hljs-keyword" style="font-weight: 700;">break</span>;
@@ -82,10 +85,49 @@ alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Спасибо �
             <div class="block">
                 <div class="box1">
                     <h2>3.*На базе игры, созданной на уроке, реализовать игру «Кто хочет стать миллионером?»</h2>
-                    <button onClick="myScript3()">Запустить (Смотреть в console)</button>
+                    <button onClick="myScript3()">Запустить</button>
                 </div>
                 <div class="box2">
-        
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-comment" style="color: rgb(136, 136, 136);">//Многомерный массив с вопросами и ответами в отдельном файле questions.js</span>
+<span class="hljs-keyword" style="font-weight: 700;">var</span> answer;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> answers = [];
+<span class="hljs-keyword" style="font-weight: 700;">var</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> n = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> score = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+<span class="hljs-keyword" style="font-weight: 700;">var</span> many = [<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">1000</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">5000</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">50000</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">200000</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">500000</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">1000000</span>];
+
+alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Начинаем игру - Кто хочет стать миллионером?"</span>);
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">questions</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> (i == <span class="hljs-number" style="color: rgb(136, 0, 0);">6</span>){
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Поздравляю, вы стали МИИИИЛЛИОНЕРОМ!"</span>);
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        answer = prompt(question[i].a00 + <span class="hljs-string" style="color: rgb(136, 0, 0);">"Варианты ответа: \n"</span> + question[i].a1 + question[i].a2 + question[i].a3 + question[i].a4 + <span class="hljs-string" style="color: rgb(136, 0, 0);">"Ваш ответ: \n Если хотите закончить, нажмите q"</span>);
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (answer &gt; <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span> &amp;&amp; answer &lt; <span class="hljs-number" style="color: rgb(136, 0, 0);">5</span> || answer == <span class="hljs-string" style="color: rgb(136, 0, 0);">"q"</span>) {
+            <span class="hljs-keyword" style="font-weight: 700;">if</span> (answer == <span class="hljs-string" style="color: rgb(136, 0, 0);">"q"</span>){
+                alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Спасибо за игру. Вы заработали: "</span> + many[n] + <span class="hljs-string" style="color: rgb(136, 0, 0);">"p"</span>);
+            } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+                gameContinue();
+            }
+        } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ввели неверное значение. Введите ответ от 1 до 4 или покиньте игру нажав q"</span>);
+            <span class="hljs-keyword" style="font-weight: 700;">return</span> questions();
+        }
+    }
+}
+
+questions();
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">gameContinue</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(answer == question[i].aa){
+        score++;
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы угадали. Вы выиграли "</span> + many[n + <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>] + <span class="hljs-string" style="color: rgb(136, 0, 0);">"p"</span>);
+        many[++n];
+        questions = questions(++i);
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы проиграли. Вы заработали: "</span> + many[n] + <span class="hljs-string" style="color: rgb(136, 0, 0);">"p"</span>);
+    }
+}</pre>     
                 </div>
             </div>
 

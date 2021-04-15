@@ -77,6 +77,7 @@ function myScript2(){
             } while (!ok);
             switch (event) {
                 case 1: // Второе действие
+                    answers[2] = [works.c00, works.c1];
                     do {
                         ok = false;
                         event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
@@ -90,6 +91,7 @@ function myScript2(){
 
                     break;
                 case 2: // Второе действие
+                    answers[2] = [works.c00, works.c2];
                     do {
                         ok = false;
                         event = +prompt(works.d00 + works.d1 + works.d2 + '-1 - Выход из игры');
@@ -103,6 +105,7 @@ function myScript2(){
 
                     break;
                 case -1: // Второе действие
+                    answers[2] = [works.c00, '-1 - Выход из игры'];
                     break;
                 default:
                     alert('Ошибка');
@@ -116,8 +119,6 @@ function myScript2(){
     }
 
     isAnswers();
-    alert('Спасибо за игру');
-
 
     //------------------------------------------
     function isAnswer(q, event) {
@@ -140,8 +141,11 @@ function myScript2(){
                 alert("Текст на шаге 1 был: \n"  +  answers[1].join('\n Ваш ответ: '));
                 break;
             case "2":
-                alert("Текст на шаге 2 был: \n" +  answers[1].join('\n Ваш ответ: '));
+                alert("Текст на шаге 2 был: \n" +  answers[2].join('\n Ваш ответ: '));
                 break;
+            case "3":
+                alert("Выбора нет, Нео!");
+                break;    
             case "-1":
                 break;
             default:
