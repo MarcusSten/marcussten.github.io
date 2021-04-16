@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet">
     <script src="js/animation.js"></script>
-    <script src="js/1.js"></script>
+    <script src="js/1.js" defer></script>
     <script src="js/2.js"></script>
     <script src="js/3.js"></script>
     <title>lesson5</title>
@@ -20,17 +20,21 @@
 
             <div class="block">
                 <div class="box1">
-                    <h2>1. </h2>  
+                    <h2>1. Создать функцию, генерирующую шахматную доску. Можно использовать любые html-теги. Доска должна быть верно разлинована на черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, столбцы — латинскими буквами A, B, C, D, E, F, G, H.</h2>  
                     <button onClick="myScript1()">Запустить (Смотреть в console)</button> 
                 </div> 
                 <div class="box2">
+                    <div id="table">
 
+                    </div>
                 </div>
             </div>
 
             <div class="block">
                 <div class="box1">
-                    <h2>2. </h2>
+                    <h2>2. Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре. Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS: <br>
+                        a. Пустая корзина должна выводить строку «Корзина пуста»; <br>
+                        b. Наполненная должна выводить «В корзине: n товаров на сумму m рублей».</h2>
                     <button onClick="myScript2()">Запустить (Смотреть в console)</button> 
                 </div>
                 <div class="box2">
@@ -41,7 +45,9 @@
 
             <div class="block">
                 <div class="box1">
-                    <h2>3. </h2>
+                    <h2>3.* Сделать так, чтобы товары в каталоге выводились при помощи JS: <br>
+                        Создать массив товаров (сущность Product); <br>
+                        При загрузке страницы на базе данного массива генерировать вывод из него. HTML-код должен содержать только div id=”catalog” без вложенного кода. Весь вид каталога генерируется JS.</h2>
                     <button onClick="myScript3()">Запустить (Смотреть в console)</button>
                 </div>
                 <div class="box2">

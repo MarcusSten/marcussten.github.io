@@ -39,8 +39,10 @@ function score() {
         numbers.tens = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>.charAt(<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>);
         numbers.figure = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>.charAt(<span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>);
         console.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">log</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"В заданном числе содержится: "</span> + numbers.figure + <span class="hljs-string" style="color: rgb(136, 0, 0);">" единиц, "</span> + numbers.tens + <span class="hljs-string" style="color: rgb(136, 0, 0);">" десятков, "</span> + numbers.hundred + <span class="hljs-string" style="color: rgb(136, 0, 0);">" сотен."</span>);  
-    } <span class="hljs-keyword" style="font-weight: 700;">else</span>{
-        console.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">log</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ввели значение больше заданного или не число "</span> + numbers);
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> <span class="hljs-keyword" style="font-weight: 700;">if</span>(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> &gt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">1000</span>){
+        console.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">log</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ввели значение больше заданного. Свойств в объекте: "</span> + Object.keys(numbers).<span class="hljs-built_in" style="color: rgb(57, 115, 0);">length</span>);
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        console.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">log</span>(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ввели не число "</span>);
     }
 }
 
