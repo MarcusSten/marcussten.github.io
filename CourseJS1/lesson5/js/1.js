@@ -47,8 +47,8 @@ function myScript1(){
         table.rows[1].cells[j].innerHTML = shapes[i];
     }
     //Белые король и ладья
-    table.rows[8].cells[4].innerHTML = shapes[5];
-    table.rows[8].cells[5].innerHTML = shapes[4];
+    table.rows[8].cells[5].innerHTML = shapes[5];
+    table.rows[8].cells[4].innerHTML = shapes[4];
     //Черные король и ладья
     table.rows[1].cells[4].innerHTML = shapes[4];
     table.rows[1].cells[5].innerHTML = shapes[5];
