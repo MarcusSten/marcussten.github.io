@@ -1,5 +1,0 @@
-function myScript3(){
-
-    
-
-}
