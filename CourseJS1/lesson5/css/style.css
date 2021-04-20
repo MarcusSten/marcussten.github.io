@@ -113,4 +113,9 @@ td {
   font-size: 20px;
   color: #FFE4C4;
 }
+
+.white {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em black;
+}
 /*# sourceMappingURL=style.css.map */
