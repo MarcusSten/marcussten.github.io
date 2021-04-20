@@ -38,7 +38,7 @@ function myScript1(){
     }
 
     //Расстановка остальных фигур
-    for (var i = 1,j=8; i <= 3; i++,j--){
+    for (var i = 1, j = 8; i <= 3; i++, j--){
         //Белые фигуры
         table.rows[8].cells[i].innerHTML = shapes[i];
         table.rows[8].cells[j].innerHTML = shapes[i];
@@ -63,23 +63,21 @@ function myScript1(){
     for (var i = 1; i <= 8; i++) {
         table.rows[0].cells[i].innerHTML = letters[i - 1];
         table.rows[9].cells[i].innerHTML = letters[i - 1];
+    }
 
+    //Развернутая разметка
+    for (var i = 0; i <= 7; i++) {
+    table.rows[0].cells[i+1].innerHTML = "<div>" + letters[i] + "</div>";
+    }
+    for (var i = 0; i <= 7; i++) {
+        table.rows[i+1].cells[9].innerHTML = "<div>" + Math.abs(i-8) + "</div>";
     }
 
     //Классы для стилей CSS разметки
-    for (var i = 0; i <= 8; i++) {
-        table.rows[0].cells[i].className = "markup-rotate";
-        table.rows[i].cells[9].className = "markup-rotate";
-        if (i === 8) {
-            table.rows[i + 1].cells[9].className = "markup-rotate";
-        }
-    }
-
-    for (var i = 0; i <= 8; i++) {
+    for (var i = 0; i <= 9; i++) {
+        table.rows[0].cells[i].className = "markup";
+        table.rows[i].cells[9].className = "markup";
         table.rows[9].cells[i].className = "markup";
-        if (i !== 0) {
-            table.rows[i].cells[0].className = "markup";
-        }
+        table.rows[i].cells[0].className = "markup";
     }
-  
 }

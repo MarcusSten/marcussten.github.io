@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet">
     <script src="js/animation.js"></script>
     <script src="js/1.js" defer></script>
-    <script src="js/2.js"></script>
-    <script src="js/3.js"></script>
     <title>lesson5</title>
 </head>
 <body>
@@ -65,7 +63,7 @@ for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>; 
 }
 
 <span class="hljs-comment" style="color: rgb(136, 136, 136);">//Расстановка остальных фигур</span>
-for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>,j=<span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>; i++,j--){
+for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, j = <span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>; i++, j--){
     <span class="hljs-comment" style="color: rgb(136, 136, 136);">//Белые фигуры</span>
     <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[8].cells[i].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">= shapes[i]</span>;
     <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[8].cells[j].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">= shapes[i]</span>;
@@ -90,25 +88,23 @@ for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, 
 for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>; i++) {
     <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[0].cells[i].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">= letters[i - 1]</span>;
     <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[9].cells[i].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">= letters[i - 1]</span>;
+}
 
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Развернутая разметка</span>
+for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">7</span>; i++) {
+<span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[0].cells[i+1].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"&lt;div&gt;"</span><span class="hljs-comment" style="color: rgb(136, 136, 136);"> + letters[i] +</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"&lt;/div&gt;"</span>;
+}
+for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">7</span>; i++) {
+    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i+1].cells[9].innerHTML <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"&lt;div&gt;"</span><span class="hljs-comment" style="color: rgb(136, 136, 136);"> + Math.abs(i-8) +</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"&lt;/div&gt;"</span>;
 }
 
 <span class="hljs-comment" style="color: rgb(136, 136, 136);">//Классы для стилей CSS разметки</span>
-for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>; i++) {
-    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[0].cells[i].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup-rotate"</span>;
-    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i].cells[9].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup-rotate"</span>;
-    if (i === <span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>) {
-        <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i <span class="hljs-comment" style="color: rgb(136, 136, 136);">+ 1].cells[9].className =</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup-rotate"</span>;
-    }
-}
-
-for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">8</span>; i++) {
+for (var i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt;= <span class="hljs-number" style="color: rgb(136, 0, 0);">9</span>; i++) {
+    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[0].cells[i].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup"</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i].cells[9].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup"</span>;
     <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[9].cells[i].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup"</span>;
-    if (i !== <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>) {
-        <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i].cells[0].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup"</span>;
-    }
+    <span class="hljs-keyword" style="font-weight: 700;">table</span>.rows[i].cells[0].className <span class="hljs-comment" style="color: rgb(136, 136, 136);">=</span> <span class="hljs-comment" style="color: rgb(136, 136, 136);">"markup"</span>;
 }</pre>
-<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Не получилось реализовать переворот разметки. Есть понимание, что надо в ячейку положить контейнер, но реализация подвела. Поэтому класс markup-rotate присвоен, CSS transform: rotate(180deg) написан, но закоментен.</span>
 </div>
                 </div>
             </div>

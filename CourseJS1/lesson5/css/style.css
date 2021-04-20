@@ -93,6 +93,14 @@ table {
   border-collapse: collapse;
 }
 
+table div {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: #331900 !important;
+  font-size: 20px;
+  color: #FFE4C4;
+}
+
 tr, td {
   text-align: center;
   font-size: 50px;
@@ -103,12 +111,6 @@ td {
 }
 
 .markup {
-  background-color: #331900 !important;
-  font-size: 20px;
-  color: #FFE4C4;
-}
-
-.markup-rotate {
   background-color: #331900 !important;
   font-size: 20px;
   color: #FFE4C4;
