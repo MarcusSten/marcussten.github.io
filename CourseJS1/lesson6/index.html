@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet">
     <script src="js/animation.js"></script>
     <script src="js/1.js" defer></script>
-    <script src="js/2.js"></script>
-    <script src="js/3.js"></script>
+    <script src="js/2.js" defer></script>
+    <script src="js/3.js" defer></script>
     <title>lesson6</title>
 </head>
 <body>
@@ -20,10 +20,15 @@
 
             <div class="block">
                 <div class="box1">
-                    <h2>1. Продолжаем реализовывать модуль корзины: <br>
-                        a. Добавлять в объект корзины выбранные товары по клику на кнопке «Купить» без перезагрузки страницы; <br>
-                        b. Привязать к событию покупки товара пересчет корзины и обновление ее внешнего вида.</h2>  
-                    <button onClick="myScript1()">Запустить (Смотреть в console)</button> 
+                    <h2>1. Доработать функцию замены картинки в галерее таким образом, чтобы она проверяла наличие картинки по указанному в src адресу.</h2>  
+                    <div class="image_center">
+                        <div id="big_picture"></div>
+                        <div id="gallery">
+                            <img id="image_1" src="img/small/1.jpg" class="small_img">
+                            <img id="image_2" src="img/small/2.jpg" class="small_img">
+                            <img id="image_3" src="img/small/3.jpg" class="small_img">
+                        </div>
+                    </div>
                 </div> 
                 <div class="box2">
                 
@@ -32,12 +37,46 @@
 
             <div class="block">
                 <div class="box1">
-                    <h2>2.* У товара может быть несколько изображений. Нужно: <br>
-                        a. Реализовать функционал показа полноразмерных картинок товара в модальном окне; <br>
-                        b. Реализовать функционал перехода между картинками внутри модального окна.</h2>  
-                    <button onClick="myScript1()">Запустить (Смотреть в console)</button> 
+                    <h2>2. Реализовать модуль корзины. Создать блок товаров и блок корзины. У каждого товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок корзины. Корзина должна уметь считать общую сумму заказа.</h2>  
+                    <button onClick="myScript1()">Запустить</button> 
                 </div> 
                 <div class="box2">
+                
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>3. *Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой картинки должны быть стрелки «вперед» и «назад», по нажатию на которые происходит замена изображения на следующее или предыдущее.</h2>  
+                    <br>
+                    <br>
+                    <div class="image_center">
+                        <img src="img/small/1.jpg" alt="" id="changeImg">
+                        <div class="btn">
+                            <button class="buttons" onclick="changeLeft()">&#10094;</button>
+                            <button class="buttons" onclick="changeRight()">&#10095;</button>
+                        </div>
+                    </div>
+                </div> 
+                <div class="box2">
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-built_in" style="color: rgb(57, 115, 0);">var</span> photo = [<span class="hljs-string" style="color: rgb(136, 0, 0);">"1"</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">"2"</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">"3"</span>];
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">var</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> = <span class="hljs-string" style="color: rgb(136, 0, 0);">"0"</span>;
+
+function changeLeft(){
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>++;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> == photo.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">length</span>){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> = <span class="hljs-string" style="color: rgb(136, 0, 0);">"0"</span>;
+    }
+    changeImg.src = <span class="hljs-string" style="color: rgb(136, 0, 0);">"img/small/"</span> + photo[<span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>] + <span class="hljs-string" style="color: rgb(136, 0, 0);">".jpg"</span>;
+}
+
+function changeRight(){
+    <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>--;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> == -<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span> = photo.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">length</span> - <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>;
+    }
+    changeImg.src = <span class="hljs-string" style="color: rgb(136, 0, 0);">"img/small/"</span> + photo[<span class="hljs-built_in" style="color: rgb(57, 115, 0);">num</span>] + <span class="hljs-string" style="color: rgb(136, 0, 0);">".jpg"</span>;
+}</pre>                    
                 
                 </div>
             </div>
