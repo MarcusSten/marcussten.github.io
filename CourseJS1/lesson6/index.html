@@ -31,14 +31,93 @@
                     </div>
                 </div> 
                 <div class="box2">
-                
-                </div>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">init</span>(<span class="hljs-params"></span>)</span>{
+
+    <span class="hljs-keyword" style="font-weight: 700;">var</span> images = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByTagName(<span class="hljs-string" style="color: rgb(136, 0, 0);">"img"</span>);
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">var</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; images.length; i++) {
+        images[i].onclick = changeBigPicture;
+        images[i].onerror = errorLoadImg;
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">errorLoadImg</span>(<span class="hljs-params">e</span>)</span>{
+    e.target.src=<span class="hljs-string" style="color: rgb(136, 0, 0);">'https://upload.wikimedia.org/wikipedia/commons/9/9a/%D0%9D%D0%B5%D1%82_%D1%84%D0%BE%D1%82%D0%BE.png'</span>
+     alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Error load img"</span>);
+    
+}
+ <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">changeBigPicture</span>(<span class="hljs-params">eventObj</span>) </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">var</span> appDiv = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"big_picture"</span>);
+      appDiv.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">""</span>;	
+      <span class="hljs-keyword" style="font-weight: 700;">var</span> eventElement = eventObj.target;
+      <span class="hljs-keyword" style="font-weight: 700;">var</span> imageNameParts = eventElement.id.split(<span class="hljs-string" style="color: rgb(136, 0, 0);">"_"</span>);
+      <span class="hljs-keyword" style="font-weight: 700;">var</span> src = <span class="hljs-string" style="color: rgb(136, 0, 0);">"./img/big/"</span> + imageNameParts[<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>] + <span class="hljs-string" style="color: rgb(136, 0, 0);">".jpg"</span>;
+      <span class="hljs-keyword" style="font-weight: 700;">var</span> imageDomElement = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.createElement(<span class="hljs-string" style="color: rgb(136, 0, 0);">"img"</span>);
+      imageDomElement.src = src;
+    imageDomElement.onerror = errorLoadImg;
+       appDiv.appendChild(imageDomElement);
+  
+  }
+        
+init();</pre>                    
+        </div>
             </div>
 
             <div class="block">
                 <div class="box1">
-                    <h2>2. Реализовать модуль корзины. Создать блок товаров и блок корзины. У каждого товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок корзины. Корзина должна уметь считать общую сумму заказа.</h2>  
-                    <button onClick="myScript1()">Запустить</button> 
+                    <h2>2. Реализовать модуль корзины. Создать блок товаров и блок корзины. У каждого товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок корзины. Корзина должна уметь считать общую сумму заказа.</h2> 
+                    <div class="cart_block">
+                        <ul class="card_menu_list">
+                            <li>
+                                <a class="card_nomber" href="#">
+                                    <div class="cart_card">
+                                        <div class="cart_card_info">
+                                            <p class="cart_card_title"></p>
+                                            <div class="card_summa">
+                                                <p>1</p>
+                                                <p>&nbsp;&nbsp;x&nbsp;&nbsp;</p>
+                                                <p>$250</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="cart_shape"></div>
+                            </li>
+
+                    </div>
+                    <div class="product_block">
+                        <div class="card_item">
+                            <a href="#" class="card_item_link">
+                                <div class="card_image"></div>
+                                <img class="card_image_w" src="img/card1.jpg" alt="photo">
+                                <p class="card_title">Mango People T-shirt</p>
+                                <div class="price_score">
+                                    <p class="card_price">$52.00</p>
+                                </div>
+                            </a>
+                            <a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+                        </div> 
+                        <div class="card_item">
+                            <a href="#" class="card_item_link">
+                                <div class="card_image"></div>
+                                <img class="card_image_w" src="img/card2.jpg" alt="photo">
+                                <p class="card_title">Mango People T-shirt</p>
+                                <div class="price_score">
+                                    <p class="card_price">$52.00</p>
+                                </div>
+                            </a>
+                            <a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+                        </div> 
+                        <div class="card_item">
+                            <a href="#" class="card_item_link">
+                                <div class="card_image"></div>
+                                <img class="card_image_w" src="img/card3.jpg" alt="photo">
+                                <p class="card_title">Mango People T-shirt</p>
+                                <div class="price_score">
+                                    <p class="card_price">$52.00</p>
+                                </div>
+                            </a>
+                            <a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+                        </div> 
+                    </div>
                 </div> 
                 <div class="box2">
                 
