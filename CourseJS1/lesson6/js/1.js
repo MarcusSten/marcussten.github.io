@@ -1,6 +1,6 @@
 function init(){
 
-    var images = document.getElementsByTagName("img");
+    var images = document.getElementsByClassName("small_img");
     for (var i = 0; i < images.length; i++) {
         images[i].onclick = changeBigPicture;
         images[i].onerror = errorLoadImg;
