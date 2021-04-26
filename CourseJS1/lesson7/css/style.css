@@ -136,4 +136,8 @@ td.game-table-cell {
   color: red;
   font-size: 16px;
 }
+
+.block-unit {
+  background-color: blue;
+}
 /*# sourceMappingURL=style.css.map */

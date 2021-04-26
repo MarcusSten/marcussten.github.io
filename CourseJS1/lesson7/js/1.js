@@ -69,6 +69,7 @@ function startGame() {
 
     snake_timer = setInterval(move, SNAKE_SPEED);//каждые 200мс запускаем функцию move
     setTimeout(createFood, 5000);
+    setTimeout(createBlock, 7000);
 }
 
 /**
@@ -143,6 +144,10 @@ function move() {
     else {
         finishTheGame();
     }
+
+    //Проверка на границу и переход на противоположную сторону
+
+
 }
 
 /**
@@ -173,8 +178,7 @@ function haveFood(unit) {
         check = true;
         createFood();
         score++;
-        food_count.innerHTML = score;
-        
+        food_count.innerHTML = score;  
     }
     return check;
 }
@@ -206,25 +210,25 @@ function createFood() {
     }
 }
 //Создание препятствий
-function createblock() {
-    var foodCreated = false;
+function createBlock() {
+    var blockCreated = false;
 
-    while (!foodCreated) {
-        var food_x = Math.floor(Math.random() * FIELD_SIZE_X);
-        var food_y = Math.floor(Math.random() * FIELD_SIZE_Y);
+    while (!blockCreated) {
+        var block_x = Math.floor(Math.random() * FIELD_SIZE_X);
+        var block_y = Math.floor(Math.random() * FIELD_SIZE_Y);
 
-        var food_cell = document.getElementsByClassName('cell-' + food_y + '-' + food_x)[0];
-        var food_cell_classes = food_cell.getAttribute('class').split(' ');
+        var block_cell = document.getElementsByClassName('cell-' + block_y + '-' + block_x)[0];
+        var block_cell_classes = block_cell.getAttribute('class').split(' ');
 
         // проверка на змейку
-        if (!food_cell_classes.includes('snake-unit')) {
+        if (!block_cell_classes.includes('snake-unit')) {
             var classes = '';
-            for (var i = 0; i < food_cell_classes.length; i++) {
-                classes += food_cell_classes[i] + ' ';
+            for (var i = 0; i < block_cell_classes.length; i++) {
+                classes += block_cell_classes[i] + ' ';
             }
 
-            food_cell.setAttribute('class', classes + 'food-unit');
-            foodCreated = true;
+            block_cell.setAttribute('class', classes + 'block-unit');
+            blockCreated = true;
         }
     }
 }
