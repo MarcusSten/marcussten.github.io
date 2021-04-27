@@ -100,6 +100,9 @@ button {
   text-align: center;
   cursor: pointer;
   float: left;
+}
+
+#snake-start {
   margin-right: 10px;
 }
 
@@ -119,7 +122,7 @@ td.game-table-cell {
 }
 
 .food-unit {
-  background-color: red;
+  background-color: green;
 }
 
 .buttons {
@@ -132,12 +135,25 @@ td.game-table-cell {
 }
 
 .food_count {
-  margin-top: 20px;
-  color: red;
+  color: green;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .block-unit {
-  background-color: blue;
+  background-color: red;
+}
+
+.count {
+  margin-top: 70px;
+  border: 2px solid green;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */

@@ -69,7 +69,7 @@ function startGame() {
 
     snake_timer = setInterval(move, SNAKE_SPEED);//каждые 200мс запускаем функцию move
     setTimeout(createFood, 5000);
-    setTimeout(createBlock, 7000);
+    setInterval(createBlock, 7000);
 }
 
 /**
@@ -121,12 +121,27 @@ function move() {
     else if (direction == 'y-') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y + 1) + '-' + (coord_x))[0];
     }
+    if (new_unit == undefined) {
+        if (direction == 'x-'){
+            new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-19')[0];
+        }
+        else if (direction == 'x+') {
+            new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-0')[0];
+        }
+        else if (direction == 'y+') {
+            new_unit = document.getElementsByClassName('cell-19' + '-' + (coord_x))[0];
+        }
+        else if (direction == 'y-') {
+            new_unit = document.getElementsByClassName('cell-0' + '-' + (coord_x))[0];
+        }
+    }
+        
 
     // Проверки
     // 1) new_unit не часть змейки
     // 2) Змейка не ушла за границу поля
     //console.log(new_unit);
-    if (!isSnakeUnit(new_unit) && new_unit !== undefined) {
+    if (!isSnakeUnit(new_unit) && !haveBlock(new_unit)) {
         // Добавление новой части змейки
         new_unit.setAttribute('class', new_unit.getAttribute('class') + ' snake-unit');
         snake.push(new_unit);
@@ -183,6 +198,19 @@ function haveFood(unit) {
     return check;
 }
 
+function haveBlock(unit) {
+    var check = false;
+
+    var unit_classes = unit.getAttribute('class').split(' ');
+
+    // Если препятствие
+    if (unit_classes.includes('block-unit')) {
+        check = true;
+        finishTheGame(); 
+    }
+    return check;
+}
+
 /**
  * Создание еды
  */
@@ -203,7 +231,6 @@ function createFood() {
             for (var i = 0; i < food_cell_classes.length; i++) {
                 classes += food_cell_classes[i] + ' ';
             }
-
             food_cell.setAttribute('class', classes + 'food-unit');
             foodCreated = true;
         }
@@ -212,6 +239,8 @@ function createFood() {
 //Создание препятствий
 function createBlock() {
     var blockCreated = false;
+    
+
 
     while (!blockCreated) {
         var block_x = Math.floor(Math.random() * FIELD_SIZE_X);
@@ -226,7 +255,6 @@ function createBlock() {
             for (var i = 0; i < block_cell_classes.length; i++) {
                 classes += block_cell_classes[i] + ' ';
             }
-
             block_cell.setAttribute('class', classes + 'block-unit');
             blockCreated = true;
         }

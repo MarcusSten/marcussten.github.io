@@ -18,42 +18,94 @@
 
             <div class="block">
                 <div class="box1">
-                    <h2>1. Выводить счёт в режиме реального времени.</h2> 
+                    <h2>1. Выводить счёт в режиме реального времени.</h2>
+                    <h2>2. Генерировать временные препятствия на поле.</h2> 
+                    <h2>3.* Убрать границы поля. Т.е. при пересечении границы поля змейка появляется с противоположной стороны.</h2>
                     <br>
                     <div class="wrap">
+                        <div>
+                            <div><span class="green">&#128915;</span>- Сьедобный кубик</div>
+                            <div><span class="red">&#128915;</span>- Препятствие</div>
+                        </div>
                         <div id="snake-field"></div>
                         <div class="buttons">
                             <div id="snake-start">Старт</div>
                             <div id="snake-renew">Новая игра</div>
-                            <span class="food_count">Счет съеденных кубиков:</span>
-                            <span id="food_count" class="food_count">0</span>
+                            <div class="count">
+                                <span class="food_count">Счет съеденных кубиков:</span>
+                                <span id="food_count" class="food_count">0</span>
+                            </div>
+                            
                         </div> 
                     </div> 
                 </div> 
                 <div class="box2">
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-comment" style="color: rgb(136, 136, 136);">// 1. Добавлен счет</span>
+<span class="hljs-keyword" style="font-weight: 700;">if</span> (unit_classes.includes(<span class="hljs-string" style="color: rgb(136, 0, 0);">'food-unit'</span>)) {
+    check = <span class="hljs-literal" style="color: rgb(120, 169, 96);">true</span>;
+    createFood();
+    score++;
+    food_count.innerHTML = score;  
+}
 
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">// 2. Добавлен генератор препятствий</span>
+
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Интервал появления </span>
+setInterval(createBlock, <span class="hljs-number" style="color: rgb(136, 0, 0);">7000</span>);
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Создание препятствий</span>
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">createBlock</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">var</span> blockCreated = <span class="hljs-literal" style="color: rgb(120, 169, 96);">false</span>;
+    
+    <span class="hljs-keyword" style="font-weight: 700;">while</span> (!blockCreated) {
+        <span class="hljs-keyword" style="font-weight: 700;">var</span> block_x = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * FIELD_SIZE_X);
+        <span class="hljs-keyword" style="font-weight: 700;">var</span> block_y = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * FIELD_SIZE_Y);
+
+        <span class="hljs-keyword" style="font-weight: 700;">var</span> block_cell = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cell-'</span> + block_y + <span class="hljs-string" style="color: rgb(136, 0, 0);">'-'</span> + block_x)[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>];
+        <span class="hljs-keyword" style="font-weight: 700;">var</span> block_cell_classes = block_cell.getAttribute(<span class="hljs-string" style="color: rgb(136, 0, 0);">'class'</span>).split(<span class="hljs-string" style="color: rgb(136, 0, 0);">' '</span>);
+
+        <span class="hljs-comment" style="color: rgb(136, 136, 136);">// проверка на змейку</span>
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (!block_cell_classes.includes(<span class="hljs-string" style="color: rgb(136, 0, 0);">'snake-unit'</span>)) {
+            <span class="hljs-keyword" style="font-weight: 700;">var</span> classes = <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>;
+            <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">var</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; block_cell_classes.length; i++) {
+                classes += block_cell_classes[i] + <span class="hljs-string" style="color: rgb(136, 0, 0);">' '</span>;
+            }
+            block_cell.setAttribute(<span class="hljs-string" style="color: rgb(136, 0, 0);">'class'</span>, classes + <span class="hljs-string" style="color: rgb(136, 0, 0);">'block-unit'</span>);
+            blockCreated = <span class="hljs-literal" style="color: rgb(120, 169, 96);">true</span>;
+        }
+    }
+}
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">//Проверка на препятствие</span>
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">haveBlock</span>(<span class="hljs-params">unit</span>) </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">var</span> check = <span class="hljs-literal" style="color: rgb(120, 169, 96);">false</span>;
+
+    <span class="hljs-keyword" style="font-weight: 700;">var</span> unit_classes = unit.getAttribute(<span class="hljs-string" style="color: rgb(136, 0, 0);">'class'</span>).split(<span class="hljs-string" style="color: rgb(136, 0, 0);">' '</span>);
+
+    <span class="hljs-comment" style="color: rgb(136, 136, 136);">// Если препятствие</span>
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> (unit_classes.includes(<span class="hljs-string" style="color: rgb(136, 0, 0);">'block-unit'</span>)) {
+        check = <span class="hljs-literal" style="color: rgb(120, 169, 96);">true</span>;
+        finishTheGame(); 
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">return</span> check;
+}
+
+<span class="hljs-comment" style="color: rgb(136, 136, 136);">// 3. Добавлен телепорт</span>
+<span class="hljs-keyword" style="font-weight: 700;">if</span> (new_unit == <span class="hljs-literal" style="color: rgb(120, 169, 96);">undefined</span>) {
+    <span class="hljs-keyword" style="font-weight: 700;">if</span> (direction == <span class="hljs-string" style="color: rgb(136, 0, 0);">'x-'</span>){
+        new_unit = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cell-'</span> + (coord_y) + <span class="hljs-string" style="color: rgb(136, 0, 0);">'-19'</span>)[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>];
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">else</span> <span class="hljs-keyword" style="font-weight: 700;">if</span> (direction == <span class="hljs-string" style="color: rgb(136, 0, 0);">'x+'</span>) {
+        new_unit = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cell-'</span> + (coord_y) + <span class="hljs-string" style="color: rgb(136, 0, 0);">'-0'</span>)[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>];
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">else</span> <span class="hljs-keyword" style="font-weight: 700;">if</span> (direction == <span class="hljs-string" style="color: rgb(136, 0, 0);">'y+'</span>) {
+        new_unit = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cell-19'</span> + <span class="hljs-string" style="color: rgb(136, 0, 0);">'-'</span> + (coord_x))[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>];
+    }
+    <span class="hljs-keyword" style="font-weight: 700;">else</span> <span class="hljs-keyword" style="font-weight: 700;">if</span> (direction == <span class="hljs-string" style="color: rgb(136, 0, 0);">'y-'</span>) {
+        new_unit = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cell-0'</span> + <span class="hljs-string" style="color: rgb(136, 0, 0);">'-'</span> + (coord_x))[<span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>];
+    }
+}</pre>
                 </div>
             </div>
-
-            <div class="block">
-                <div class="box1">
-                    <h2>2. Генерировать временные препятствия на поле.</h2>
-                </div>
-                <div class="box2">
-
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="box1">
-                    <h2>3.* Убрать границы поля. Т.е. при пересечении границы поля змейка появляется с противоположной стороны.</h2>
-                </div>
-                <div class="box2">
-
-                </div>
-            </div>
-
-            
+         
         </div>
     
         <footer>
