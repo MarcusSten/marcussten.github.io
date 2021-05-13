@@ -38,6 +38,14 @@ body {
           flex: 1;
 }
 
+.title-2 {
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Raleway', sans-serif;
+}
+
 footer {
   height: 70px;
   background-color: #ccc;
