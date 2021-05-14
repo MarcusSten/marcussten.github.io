@@ -514,6 +514,233 @@ alert("Cумма зарплат сотрудников \n" + myJob[0].name + myJ
                 </div>
             </div>
 
+            <div class="block">
+                <div class="box1">
+                    <h2>16. Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.</h2>
+                    <button onClick="myScript16()">Запустить</button> 
+                </div> 
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre>
+let obj = {name: 'Oleg', age: 35, salary: 700};
+function multiplyNumeric(obj){
+    for(let key in obj){
+        if(typeof obj[key] == 'number'){
+            obj[key] *= 2;
+        };
+    }
+}
+multiplyNumeric(obj);
+alert(Object.entries(obj).join('\n'));
+</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>17. Написать объект ladder - объект, который позволяет подниматься вверх и спускаться. Начальное свойство ступени равно 0.</h2>
+                    <button onClick="myScript17()">Запустить</button> 
+                </div> 
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre>
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+    },
+    down() {
+        this.step--;
+    },
+    showStep: function() {
+        alert("Ступенька " + this.step );
+    }
+};
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.up();
+ladder.showStep();
+</pre>
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Альтернативное решение</summary>
+                        <p>
+<pre>
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        alert("Ступенька " + this.step );
+        return this;
+    }
+};
+ladder.up().up().down().up().down().up().showStep();
+</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <p class="title-2">DOM</p>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>18. Вывести кнопку с текстом "Привет", при нажатии на неё выводим alert c текстом "Привет Мир!"</h2>
+                    <button onClick="myScript18()">Запустить</button> 
+                    <div id="button"></div>
+                </div> 
+                
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre>
+<code>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">    <span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"button"</span>);
+    btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;button onClick="getAlert()"&gt;Привет&lt;/button&gt;'</span>;
+    <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">getAlert</span>(<span class="hljs-params"></span>)</span>{
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Привет Мир!"</span>);
+    }</pre>
+</code>
+</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>19. Выводим кнопку с текстом "Заполнить" и незаполненный инпут, при клике на кнопку, заполняем инпут текстом "test@email.ru"</h2>
+                    <button onClick="myScript19()">Запустить</button> 
+                    <div id="button2"></div>
+                    <div id="button"></div>
+                </div> 
+                
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"button2"</span>);
+    btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;button onClick="fillInput()"&gt;Заполнить&lt;/button&gt;&lt;br&gt;&lt;input type="email" id="inputEmail"&gt;'</span>;
+    <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">fillInput</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword" style="font-weight: 700;">let</span> fillMail = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputEmail"</span>).value = <span class="hljs-string" style="color: rgb(136, 0, 0);">'test@email.ru'</span>;
+    }</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>20. Выводим кнопку и инпут, в инпуте можно ввести любой и текст и при нажатии на кнопку, выводится алерт с текстом "Вы ввели 'текст инпута'" или "Вы ничего не ввели в поле".</h2>
+                    <button onClick="myScript20()">Запустить</button> 
+                    <div id="button3"></div>
+                    <div id="button"></div>
+                </div> 
+                
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"button3"</span>);
+    btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;button onClick="fillInput()"&gt;Проверить&lt;/button&gt;&lt;br&gt;&lt;input type="text" id="inputText"&gt;'</span>;
+    <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">fillInput</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (<span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText"</span>).value === <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>) {
+            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ничего не ввели в поле"</span>);
+        }<span class="hljs-keyword" style="font-weight: 700;">else</span>{
+            alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">"Вы ввели: "</span> + <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText"</span>).value)
+        }
+    }</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>21. Выводим кнопку с текстом "Поменять" и два инпута, при клике на кнопку инпуты меняются своим введеным текстом</h2>
+                    <button onClick="myScript21()">Запустить</button> 
+                    <div id="button4"></div>
+                    <div id="button"></div>
+                </div> 
+                
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = document.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"button4"</span>);
+        btn.innerHTML = '&lt;button onClick=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeInput()"</span>&gt;Поменять&lt;/button&gt;&lt;br&gt;&lt;input <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">type</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"text"</span> id=<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText1"</span>&gt;&lt;br&gt;&lt;input <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">type</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"text"</span> id=<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText2"</span>&gt;';
+<span class="hljs-keyword" style="font-weight: 700;">function</span> changeInput(){
+    <span class="hljs-keyword" style="font-weight: 700;">let</span> storage = document.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText2"</span>).value;
+    document.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText2"</span>).value = document.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText1"</span>).value;
+    document.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText1"</span>).value = storage;
+}</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>22. Выводим две кнопки "заблокировать" и "разблокировать" и инпут. Одна из них блокирует инпут с помощью атрибута disabled, а другая разблокирует</h2>
+                    <button onClick="myScript22()">Запустить</button> 
+                    <div id="button5"></div>
+                    <div id="button"></div>
+                </div> 
+
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"button5"</span>);
+btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;button onClick="disabledInput()"&gt;заблокировать&lt;/button&gt;&lt;br&gt;&lt;br&gt;&lt;button onClick="activatedInput()"&gt;разблокировать&lt;/button&gt;&lt;br&gt;&lt;br&gt;&lt;input type="text" id="inputText3"&gt;'</span>;
+        <span class="hljs-function">
+<span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">disabledInput</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText3"</span>).setAttribute(<span class="hljs-string" style="color: rgb(136, 0, 0);">'disabled'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'disabled'</span>);
+        }
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">activatedInput</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">"inputText3"</span>).removeAttribute(<span class="hljs-string" style="color: rgb(136, 0, 0);">'disabled'</span>);
+        }</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>23. Вывести любой квадрат и кнопку "скрыть квадрат". Когда мы нажимаем на скрыть, квадрат исчезает и текст кнопки меняется на "показать квадрат" и так можно кликать сколько угодно раз.</h2>
+                    <button onClick="myScript23()">Запустить</button> 
+                    <div id="button5"></div>
+                    <div id="button"></div>
+                </div> 
+
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть ответ</summary>
+                        <p>
+<pre>
+
+</pre>
+                        </p>
+                    </details>
+                </div>
+            </div>
+
 
 
         </div>
@@ -770,9 +997,92 @@ alert("Cумма зарплат сотрудников \n" + myJob[0].name + myJ
             alert("Cумма зарплат сотрудников \n" + myJob[0].name + myJob[0].salary + "$\n" + myJob[1].name + myJob[1].salary + "$\n" + myJob[2].name + myJob[2].salary + "$\n" + myJob[3].name + myJob[3].salary + "$\n" + "Итого: " + countSalary(myJob) + "$");
         }
 
+        function myScript16(){
+            let obj = {name: 'Oleg', age: 35, salary: 700};
+            function multiplyNumeric(obj){
+                for(let key in obj){
+                    if(typeof obj[key] == 'number'){
+                        obj[key] *= 2;
+                    }
+                }
+            }
+            multiplyNumeric(obj);
+            alert(Object.entries(obj).join('\n'));
 
+        }
 
+        function myScript17(){
+            let ladder = {
+                step: 0,
+                up() {
+                    this.step++;
+                },
+                down() {
+                    this.step--;
+                },
+                showStep: function() {
+                    alert("Ступенька " + this.step );
+                }
+            };
+            ladder.up();
+            ladder.up();
+            ladder.down();
+            ladder.up();
+            ladder.showStep();
+        }
 
+        function myScript18(){
+            let btn = document.getElementById("button");
+            btn.innerHTML = '<button onClick="getAlert()">Привет</button>'; 
+        }
+        function getAlert(){
+            alert("Привет Мир!");
+        }
+
+        function myScript19(){
+            let btn = document.getElementById("button2");
+            btn.innerHTML = '<button onClick="fillInput()">Заполнить</button><br><input type="email" id="inputEmail">';
+        }
+        function fillInput(){
+            let fillMail = document.getElementById("inputEmail").value = 'test@email.ru';
+        }
+
+        function myScript20(){
+            let btn = document.getElementById("button3");
+            btn.innerHTML = '<button onClick="fillInput()">Проверить</button><br><input type="text" id="inputText">';  
+        }
+        function fillInput(){
+            if (document.getElementById("inputText").value === '') {
+                alert("Вы ничего не ввели в поле");
+            }else{
+                alert("Вы ввели: " + document.getElementById("inputText").value)
+            }
+        }
+
+        function myScript21(){
+            let btn = document.getElementById("button4");
+            btn.innerHTML = '<button onClick="changeInput()">Поменять</button><br><input type="text" id="inputText1"><br><input type="text" id="inputText2">';
+        }
+        function changeInput(){
+            let storage = document.getElementById("inputText2").value;
+            document.getElementById("inputText2").value = document.getElementById("inputText1").value;
+            document.getElementById("inputText1").value = storage;
+        }
+
+        function myScript22(){
+            let btn = document.getElementById("button5");
+            btn.innerHTML = '<button onClick="disabledInput()">заблокировать</button><br><br><button onClick="activatedInput()">разблокировать</button><br><br><input type="text" id="inputText3">';
+        }
+        function disabledInput(){
+            document.getElementById("inputText3").setAttribute('disabled', 'disabled');
+        }
+        function activatedInput(){
+            document.getElementById("inputText3").removeAttribute('disabled');
+        }
+
+        function myScript23(){
+
+        }
 
 
     </script>

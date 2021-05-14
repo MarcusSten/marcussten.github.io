@@ -95,4 +95,10 @@ button {
   width: 100%;
   text-align: center;
 }
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
 /*# sourceMappingURL=style.css.map */
