@@ -270,7 +270,7 @@ for (i = 0; i < 100; i++){
             <div class="block">
                 <div class="box1">
                     <h2>8. Создай новую функцию, в которую передаешь имя и возраст человека и получаешь сообщение (Иван имеет возраст 44 и он зрелый). А также вызови внутри своей функции, функцию из прошлого задания</h2>
-                   
+                    <div id="appNew"></div>
                 </div> 
                 <div class="box2">
                     <details>
@@ -900,22 +900,44 @@ btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;bu
             function getHello(){
                 if(year < 17){
                     alert(name + " имеет возраст " + year + " и он ребенок"); 
-                    myScript7();
+                    myScriptNaN();
                 } else if(year >= 17 && year < 29){
                     alert(name + " имеет возраст " + year + " и он молодой");
-                    myScript7();
+                    myScriptNaN();
                 } else if(year >= 29 && year < 54){
                     alert(name + " имеет возраст " + year + " и он зрелый"); 
-                    myScript7();
+                    myScriptNaN();
                 } else if(year >= 54 && year < 99){
                     alert(name + " имеет возраст " + year + " и он старый"); 
-                    myScript7();
+                    myScriptNaN();
                 } else {
                     alert(name + " имеет возраст " + year + " и он древний или не верно указал свой возраст");
-                    myScript7();
+                    myScriptNaN();
                 }
             }
             getHello();
+        }
+        function myScriptNaN(){
+            let year = 0;
+            for (i = 0; i < 100; i++){
+                if(year < 17){
+                    var p = document.createElement("p");
+                    p.innerText = ++year + " ребёнок";
+                    document.getElementById("appNew").append(p);
+                } else if(year >= 17 && year < 29){
+                    var p = document.createElement("p");
+                    p.innerText = ++year + " молодой";
+                    document.getElementById("appNew").append(p);
+                } else if(year >= 29 && year < 54){
+                    var p = document.createElement("p");
+                    p.innerText = ++year + " зрелый";
+                    document.getElementById("appNew").append(p);
+                } else {
+                    var p = document.createElement("p");
+                    p.innerText = ++year + " старый";
+                    document.getElementById("appNew").append(p);
+                }
+            }
         }
 
         function myScript9(){
@@ -1107,6 +1129,11 @@ btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;bu
         }
 
         function myScript23(){
+
+        }
+
+        function myScript24(){
+            
 
         }
 
