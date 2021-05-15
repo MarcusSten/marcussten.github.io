@@ -194,15 +194,6 @@ class Charaster {
 				coinsCollected++;
 			}
 		});
-
-		//Изменение модельки при сборе 10 монет
-		if(coin.collected >= 10 && coin.collected < 20){
-			Charaster.image = {
-				moveR: "img/mario64x64_10.png",
-				moveL: "img/mario64x64inv_10.png"
-			}
-
-		}
 	}
 
 	hit(){
@@ -279,55 +270,6 @@ class Ground {
 			this.y - camera.y
 	)}
 
-}
-
-class Bot {
-
-	constructor(x = 0, y = 0){
-
-		this.image = {
-			moveR: "img/",
-			moveL: "img/"
-		}
-		this.x = x;
-		this.y = y;
-		this.speed = 1;
-		this.onfloor = false;
-		this.dy = 0;
-		this.direction = "right";
-
-		this.texture = {
-			moveR: new Image(),
-			moveL: new Image()
-		}
-
-		this.texture.moveR.src = this.image.moveR;
-		this.texture.moveL.src = this.image.moveL;
-	}
-
-	update(){
-		move(){
-			//Движение бота
-			let distanceBot = Math.floor(Math.random() * (300 - 100) + 100);
-			
-		}
-		draw(){
-			//Поворот бота
-			if(this.direction == "right"){
-				ctx.drawImage(
-					this.texture.moveR,
-					this.x - camera.x, this.y - camera.y
-				);
-			} else {
-				ctx.drawImage(
-					this.texture.moveL,
-					this.x - camera.x, this.y - camera.y
-				);
-			}
-		
-	
-		}
-	}
 }
 
 class Block {

@@ -9,6 +9,10 @@ body {
   height: 100%;
 }
 
+summary {
+  cursor: pointer;
+}
+
 .text-smile {
   text-align: left;
   margin: 0;
