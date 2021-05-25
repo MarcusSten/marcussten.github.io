@@ -673,3 +673,96 @@ function myScript40(){
     }
 }
 
+function myScript41(){
+    let btn = document.getElementById('button41');
+    btn.innerHTML = "";
+    let arr = [];
+    let randomParagr = Math.floor(Math.random() * (10 - 4) + 4);
+    for (let i = 0; i < randomParagr; i++){
+        arr.push(Math.floor(Math.random() * (99 - 1) + 1));
+        btn.innerHTML += '<p class="paragraph41">' + arr[i] + '</p>';
+    }
+    btn.innerHTML += '<br><button id="btn41">Фильтр по возрастанию</button>';
+    let elem = document.getElementsByClassName('paragraph41');
+    let getBtn41 = document.getElementById('btn41');
+    getBtn41.addEventListener('click', func);
+
+    function func(){
+        arr.sort( (a, b) => a - b );
+        btn.innerHTML += '<br><input id="date41" type="text" value="' + arr + '">';
+    }
+}
+
+let addHref = document.getElementsByClassName('href42');  
+document.addEventListener('DOMContentLoaded', function() {
+    for (var i = 0; i < addHref.length; i++) {
+        addHref[i].innerHTML = addHref[i].innerHTML + ' (' + addHref[i].href + ')';
+    }
+}, false);
+
+let addHref2 = document.getElementsByClassName('href43');
+let pattern = 'http://';
+document.addEventListener('DOMContentLoaded', function() {
+    for (var i = 0; i < addHref2.length; i++) {
+        if (addHref2[i].href.indexOf(pattern) !== -1) {
+        addHref2[i].innerHTML = addHref2[i].innerHTML + ' &rarr;';
+        }
+    }
+}, false);
+
+function myScript44(){
+    let btn = document.getElementById('button44');
+    btn.innerHTML = "";
+    let arr = [];
+    let randomParagr = Math.floor(Math.random() * (10 - 4) + 4);
+    for (let i = 0; i < randomParagr; i++){
+        arr.push(Math.floor(Math.random() * (99 - 1) + 1));
+        btn.insertAdjacentHTML('beforeend', '<p onClick="getsquare44(this)">' + arr[i] + '</p>');
+    }
+}
+function getsquare44(obj) {
+    obj.innerHTML = Math.pow(obj.innerHTML, 2);
+}
+
+function myScript45(){
+    let btn = document.getElementById('button45');
+    btn.innerHTML = '<img src="img/icon3.png" class="changeImageSize45" alt="photo1">' +
+    '<img src="img/icon4.png" class="changeImageSize45" alt="photo2">' +
+    '<img src="img/icon5.png" class="changeImageSize45" alt="photo3">';  
+
+    let elem = document.getElementsByClassName('changeImageSize45');
+    for (let i = 0; i < elem.length; i++){
+        elem[i].addEventListener('click', func);
+    }
+    function func() {
+        this.height = this.height * 2;
+    }
+}  
+
+function myScript46(){
+    let btn = document.getElementById('button46');
+    btn.innerHTML = '<img src="img/icon3.png" height="70" alt="photo1"onClick="changeSizeImage46(this)">' +
+    '<img src="img/icon4.png" height="70" alt="photo2"onClick="changeSizeImage46(this)">' +
+    '<img src="img/icon5.png" height="70" alt="photo3"onClick="changeSizeImage46(this)">';  
+    }
+    function changeSizeImage46(obj){
+    if (obj.style.height == '140px'){
+        obj.style.height = '70px';
+    } else {
+        obj.style.height = '140px';
+    }
+}
+
+function myScript47(){
+
+}
+
+function myScript48(){
+
+}
+
+function myScript49(){
+
+}
+
+

@@ -1433,7 +1433,265 @@ getBtn40.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0)
 					</div>
 				</li>
 
-            
+				<li class="block">
+					<div class="box1">
+						<h3>41. Даны N абзацев с числами. По нажатию на кнопку выведите эти числа в инпут через запятую в порядке возрастания.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'button41'</span>);
+btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">""</span>;
+<span class="hljs-keyword" style="font-weight: 700;">let</span> arr = [];
+<span class="hljs-keyword" style="font-weight: 700;">let</span> randomParagr = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * (<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span> - <span class="hljs-number" style="color: rgb(136, 0, 0);">4</span>) + <span class="hljs-number" style="color: rgb(136, 0, 0);">4</span>);
+<span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">let</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; randomParagr; i++){
+    arr.push(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * (<span class="hljs-number" style="color: rgb(136, 0, 0);">99</span> - <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>) + <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>));
+    btn.innerHTML += <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;p class="paragraph41"&gt;'</span> + arr[i] + <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;/p&gt;'</span>;
+}
+btn.innerHTML += <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;br&gt;&lt;button id="btn41"&gt;Фильтр по возрастанию&lt;/button&gt;'</span>;
+<span class="hljs-keyword" style="font-weight: 700;">let</span> elem = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'paragraph41'</span>);
+<span class="hljs-keyword" style="font-weight: 700;">let</span> getBtn41 = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'btn41'</span>);
+getBtn41.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, func);
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">func</span>(<span class="hljs-params"></span>)</span>{
+    arr.sort( (a, b) =&gt; a - b );
+    btn.innerHTML += <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;br&gt;&lt;input id="date41" type="text" value="'</span> + arr + <span class="hljs-string" style="color: rgb(136, 0, 0);">'"&gt;'</span>;
+}</pre>							
+							</p>
+							<button onClick="myScript41()">Запустить</button>
+							<div id="button41"></div>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>42. Даны ссылки. По загрузке страницы добавьте в конец каждой ссылки ее href в круглых скобках.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+HTML
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">&lt;a href=<span class="hljs-string" style="color: rgb(136, 0, 0);">"https://yandex.ru/"</span> <span class="hljs-keyword" style="font-weight: 700;">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"href42"</span>&gt;Яндекс&lt;/a&gt;
+&lt;a href=<span class="hljs-string" style="color: rgb(136, 0, 0);">"https://www.google.com/"</span> <span class="hljs-keyword" style="font-weight: 700;">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"href42"</span>&gt;Google&lt;/a&gt;
+</pre>
+JS
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> addHref = document.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'href42'</span>);  
+document.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'DOMContentLoaded'</span>, function() {
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">var</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; addHref.length; i++) {
+        addHref[i].innerHTML = addHref[i].innerHTML + <span class="hljs-string" style="color: rgb(136, 0, 0);">' ('</span> + addHref[i].href + <span class="hljs-string" style="color: rgb(136, 0, 0);">')'</span>;
+    }
+}, <span class="hljs-literal" style="color: rgb(120, 169, 96);">false</span>);</pre>							
+							</p>
+							<br>
+							<a href="https://yandex.ru/" class="href42">Яндекс</a>
+							<br>
+							<a href="https://www.google.com/" class="href42">Google</a>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>43. Даны ссылки. По загрузке страницы, если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &amp;rarr;).</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+HTML
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">&lt;a href=<span class="hljs-string" style="color: rgb(136, 0, 0);">"https://yandex.ru/"</span> <span class="hljs-keyword" style="font-weight: 700;">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"href43"</span>&gt;Яндекс&lt;/a&gt;
+&lt;a href=<span class="hljs-string" style="color: rgb(136, 0, 0);">"http://www.google.com/"</span> <span class="hljs-keyword" style="font-weight: 700;">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"href43"</span>&gt;Google&lt;/a&gt;</pre>
+
+JS
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> addHref2 = document.getElementsByClassName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'href43'</span>);
+<span class="hljs-keyword" style="font-weight: 700;">let</span> pattern = <span class="hljs-string" style="color: rgb(136, 0, 0);">'http://'</span>;
+document.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'DOMContentLoaded'</span>, function() {
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">var</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; addHref2.length; i++) {
+        <span class="hljs-keyword" style="font-weight: 700;">if</span> (addHref2[i].href.indexOf(pattern) !== <span class="hljs-number" style="color: rgb(136, 0, 0);">-1</span>) {
+        addHref2[i].innerHTML = addHref2[i].innerHTML + <span class="hljs-string" style="color: rgb(136, 0, 0);">' &amp;rarr;'</span>;
+        }
+    }
+}, <span class="hljs-literal" style="color: rgb(120, 169, 96);">false</span>);</pre>					
+							</p>
+							<br>
+							<a href="https://yandex.ru/" class="href43">Яндекс</a>
+    						<br>
+							<a href="http://www.google.com/" class="href43">Google</a>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>44. Даны N абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> btn = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'button44'</span>);
+btn.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">""</span>;
+<span class="hljs-keyword" style="font-weight: 700;">let</span> arr = [];
+<span class="hljs-keyword" style="font-weight: 700;">let</span> randomParagr = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * (<span class="hljs-number" style="color: rgb(136, 0, 0);">10</span> - <span class="hljs-number" style="color: rgb(136, 0, 0);">4</span>) + <span class="hljs-number" style="color: rgb(136, 0, 0);">4</span>);
+<span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">let</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; randomParagr; i++){
+    arr.push(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.floor(<span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.random() * (<span class="hljs-number" style="color: rgb(136, 0, 0);">99</span> - <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>) + <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>));
+    btn.insertAdjacentHTML(<span class="hljs-string" style="color: rgb(136, 0, 0);">'beforeend'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;p onClick="getsquare44(this)"&gt;'</span> + arr[i] + <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;/p&gt;'</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">getsquare44</span>(<span class="hljs-params">obj</span>) </span>{
+        obj.innerHTML = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">Math</span>.pow(obj.innerHTML, <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>);
+}</pre>							
+							</p>
+							<button onClick="myScript44()">Запустить</button>
+							<div id="button44"></div>
+						</details>
+						<br>
+						<details>
+							<summary>Альтернативное решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> elem = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByTagName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'a'</span>);
+<span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">let</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; elem.length; i++) {
+	elem[i].addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, func);
+}
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">func</span>(<span class="hljs-params"></span>) </span>{
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.innerHTML = <span class="hljs-keyword" style="font-weight: 700;">this</span>.innerHTML * <span class="hljs-keyword" style="font-weight: 700;">this</span>.innerHTML;
+}</pre>							
+							</p>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>45. Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">let btn = document.getElementById(<span class="hljs-symbol" style="color: rgb(188, 96, 96);">'button4</span>5');
+btn.innerHTML = '&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon3.png"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeImageSize45"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo1"</span>&gt;' +
+'&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon4.png"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeImageSize45"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo2"</span>&gt;' +
+'&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon5.png"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeImageSize45"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo3"</span>&gt;';  
+
+let elem = document.getElementsByClassName(<span class="hljs-symbol" style="color: rgb(188, 96, 96);">'changeImageSize4</span>5');
+<span class="hljs-keyword" style="font-weight: 700;">for</span> (let i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; elem.length; i++){
+    elem[i].addEventListener(<span class="hljs-symbol" style="color: rgb(188, 96, 96);">'clic</span>k', func);
+}
+function func() {
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.height = <span class="hljs-keyword" style="font-weight: 700;">this</span>.height * <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>;
+}</pre>				
+							</p>
+							<button onClick="myScript45()">Запустить</button>
+							<div id="button45"></div>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>46. Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-built_in" style="color: rgb(57, 115, 0);">let</span> btn = document.getElementById('button46');
+btn.innerHTML = '&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon3.png"</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"70"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo1"</span>onClick=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeSizeImage46(this)"</span>&gt;' +
+'&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon4.png"</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"70"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo2"</span>onClick=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeSizeImage46(this)"</span>&gt;' +
+'&lt;img src=<span class="hljs-string" style="color: rgb(136, 0, 0);">"img/icon5.png"</span> <span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"70"</span> alt=<span class="hljs-string" style="color: rgb(136, 0, 0);">"photo3"</span>onClick=<span class="hljs-string" style="color: rgb(136, 0, 0);">"changeSizeImage46(this)"</span>&gt;';  
+
+function changeSizeImage46(obj){
+<span class="hljs-keyword" style="font-weight: 700;">if</span> (obj.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">style</span>.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span> == '140px'){
+    obj.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">style</span>.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span> = '70px';
+} <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+    obj.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">style</span>.<span class="hljs-built_in" style="color: rgb(57, 115, 0);">height</span> = '140px';
+}</pre>							
+							</p>
+							<button onClick="myScript46()">Запустить</button>
+							<div id="button46"></div>
+						</details>
+						<br>
+						<details>
+							<summary>Альтернативное решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> elem = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementsByTagName(<span class="hljs-string" style="color: rgb(136, 0, 0);">'img'</span>);
+<span class="hljs-keyword" style="font-weight: 700;">for</span> (<span class="hljs-keyword" style="font-weight: 700;">let</span> i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; elem.length; i++){
+	elem[i].addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, func);
+ }
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">func</span>(<span class="hljs-params"></span>) </span>{
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.height = <span class="hljs-keyword" style="font-weight: 700;">this</span>.height * <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>;
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.removeEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, func);
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, reback);
+  }
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">reback</span>(<span class="hljs-params"></span>) </span>{
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.height = <span class="hljs-keyword" style="font-weight: 700;">this</span>.height / <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>;
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.removeEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, reback);
+	<span class="hljs-keyword" style="font-weight: 700;">this</span>.addEventListener(<span class="hljs-string" style="color: rgb(136, 0, 0);">'click'</span>, func);
+}    </pre>							
+							</p>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>47. Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+							
+							</p>
+							<button onClick="myScript47()">Запустить</button>
+							<div id="button47"></div>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>48. Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+							
+							</p>
+							<button onClick="myScript48()">Запустить</button>
+							<div id="button48"></div>
+						</details>
+					</div>
+				</li>
+
+				<li class="block">
+					<div class="box1">
+						<h3>49. Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+							
+							</p>
+							<button onClick="myScript49()">Запустить</button>
+							<div id="button49"></div>
+						</details>
+					</div>
+				</li>
+
+
+
+        
+
+
             </ol>
 
 
