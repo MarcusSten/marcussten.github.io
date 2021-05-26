@@ -1,3 +1,10 @@
+let numbersOl = document.getElementsByClassName('box1');
+for (let i = 0; i < numbersOl.length; i++) {
+    numbersOl[i].innerHTML = '<span class="numbers">' + (i + 1) + '</span>' + numbersOl[i].innerHTML;
+}
+
+
+
 function myScript1(){
     let b = 0;
     let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 18, 20];
@@ -741,9 +748,9 @@ function myScript45(){
 
 function myScript46(){
     let btn = document.getElementById('button46');
-    btn.innerHTML = '<img src="img/icon3.png" height="70" alt="photo1"onClick="changeSizeImage46(this)">' +
-    '<img src="img/icon4.png" height="70" alt="photo2"onClick="changeSizeImage46(this)">' +
-    '<img src="img/icon5.png" height="70" alt="photo3"onClick="changeSizeImage46(this)">';  
+    btn.innerHTML = '<img src="img/icon3.png" height="70" alt="photo1" onClick="changeSizeImage46(this)">' +
+    '<img src="img/icon4.png" height="70" alt="photo2" onClick="changeSizeImage46(this)">' +
+    '<img src="img/icon5.png" height="70" alt="photo3" onClick="changeSizeImage46(this)">';  
     }
     function changeSizeImage46(obj){
     if (obj.style.height == '140px'){
@@ -754,15 +761,123 @@ function myScript46(){
 }
 
 function myScript47(){
-
+    let btn = document.getElementById('button47');
+    btn.innerHTML = "";
+    let randomImages = Math.floor(Math.random() * (15 - 4) + 4);
+    for (let i = 0; i < randomImages; i++){
+        let randomImage = Math.floor(Math.random() * (6 - 3) + 3);
+        btn.insertAdjacentHTML('beforeend', '<img src="img/icon' + randomImage + '.png" class="changeImageSize47" height="30" alt="photo' + randomImage + '" onClick="changeSizeImage47(this)">');
+    }
+}
+function changeSizeImage47(obj){
+    if (obj.style.height == '50px'){
+        obj.style.height = '30px';
+    } else {
+        obj.style.height = '50px';
+    }
 }
 
 function myScript48(){
-
+    let btn = document.getElementById('button48');
+    btn.innerHTML = '<button class="btn48" onClick="increment()">+1</button>' +
+    '<input class="input48" id="date48" type="text" value ="1">' +
+    '<button class="btn48" onClick="decrement()">-1</button>';
+}
+function increment() {
+    if (+document.getElementById('date48').value >= 0) {
+        document.getElementById('date48').value = +document.getElementById('date48').value + 1;
+        } else {
+            document.getElementById('date48').value = 0;
+        }
+}
+function decrement() {
+    if (+document.getElementById('date48').value >= 1) {
+    document.getElementById('date48').value = +document.getElementById('date48').value - 1;
+    } else {
+        document.getElementById('date48').value = 0;
+    }
 }
 
 function myScript49(){
+    let btn = document.getElementById('button49');
+    btn.innerHTML = '<input class="input49" id="date49" type="text">';
+    let inputText = document.getElementById('date49');
+    inputText.addEventListener('blur', func);
 
+    function func(){
+        let str = inputText.value;
+        if(str >= 1 && str <= 100){
+            inputText.style.background = 'green';
+        } else {
+            inputText.style.background = 'red';
+        }
+    }
 }
+
+function myScript50(){
+    let btn = document.getElementById('button50');
+    btn.innerHTML = '<input class="input50" id="date50" type="text">';
+    document.documentElement.addEventListener('mouseup', getSelectionText);
+
+    function getSelectionText() {
+        let txt = window.getSelection();
+        document.getElementById('date50').value = txt;
+    }
+}
+
+function myScript51(){
+    let btn = document.getElementById('button51');
+    btn.innerHTML = '<button id="btn51">Найти максимально число</button>';
+    for (let i = 0; i < 5; i++) {
+        btn.innerHTML += '<p class="numbers51">' + (Math.floor(Math.random() * (999 - 1) + 1)) + '</p>';
+    };
+    document.querySelector('#btn51').addEventListener('click', function() {
+    let elems = [...document.getElementsByClassName('numbers51')];
+
+    let { index } = elems.reduce((max, n, i) => {
+        let val = +n.innerHTML;
+        return val > max.val
+        ? { val, index: i }
+        : max;
+    }, { val: -Infinity, index: null });
+
+    elems[index].classList.add('red');
+    });
+}
+
+function myScript52(){
+    
+}
+
+function myScript53(){
+    
+}
+
+function myScript54(){
+    
+}
+
+function myScript55(){
+    
+}
+
+function myScript56(){
+    
+}
+
+function myScript57(){
+    
+}
+
+function myScript58(){
+    
+}
+
+function myScript59(){
+    
+}
+
+
+
 
 
