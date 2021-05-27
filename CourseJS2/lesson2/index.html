@@ -25,10 +25,80 @@
             <div class="block">
                 <div class="box1">
                     <h2>2. Добавьте для GoodsList метод, определяющий суммарную стоимость всех товаров.</h2>
-                    <button class="button-push" onClick="myScript2()">Запустить</button>
                 </div>
                 <div class="box2">
-               
+                    <p>Сcылка на <a href="https://marcussten.github.io/CourseJS2/lesson2/project/index.html">интернет магазин</a></p>
+                    <br>
+                    <details>
+                        <summary>Смотреть код</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ProductList</span> {</span>
+  <span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods;</span>
+  <span class="hljs-comment" style="color: rgb(136, 136, 136);">#allProducts;</span>
+  constructor(container = <span class="hljs-string" style="color: rgb(136, 0, 0);">'.products'</span>) {
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.container = container;
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods = [];</span>
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#allProducts = [];</span>
+
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#fetchGoods();</span>
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#render();</span>
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#sumProducts();</span>
+  }
+
+  <span class="hljs-comment" style="color: rgb(136, 136, 136);">#fetchGoods() {</span>
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods = [</span>
+      {id: <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>, title: <span class="hljs-string" style="color: rgb(136, 0, 0);">'Notebook'</span>, price: <span class="hljs-number" style="color: rgb(136, 0, 0);">20000</span>},
+      {id: <span class="hljs-number" style="color: rgb(136, 0, 0);">2</span>, title: <span class="hljs-string" style="color: rgb(136, 0, 0);">'Mouse'</span>, price: <span class="hljs-number" style="color: rgb(136, 0, 0);">1500</span>},
+      {id: <span class="hljs-number" style="color: rgb(136, 0, 0);">3</span>, title: <span class="hljs-string" style="color: rgb(136, 0, 0);">'Keyboard'</span>, price: <span class="hljs-number" style="color: rgb(136, 0, 0);">5000</span>},
+      {id: <span class="hljs-number" style="color: rgb(136, 0, 0);">4</span>, title: <span class="hljs-string" style="color: rgb(136, 0, 0);">'Gamepad'</span>, price: <span class="hljs-number" style="color: rgb(136, 0, 0);">4500</span>},
+    ];
+  }
+
+  <span class="hljs-comment" style="color: rgb(136, 136, 136);">#render() {</span>
+    const block = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.querySelector(<span class="hljs-keyword" style="font-weight: 700;">this</span>.container);
+
+    <span class="hljs-keyword" style="font-weight: 700;">for</span> (let product <span class="hljs-keyword" style="font-weight: 700;">of</span> <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods) {</span>
+      const productObject = <span class="hljs-keyword" style="font-weight: 700;">new</span> ProductItem(product);
+
+      <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#allProducts.push(productObject);</span>
+      block.insertAdjacentHTML(<span class="hljs-string" style="color: rgb(136, 0, 0);">'beforeend'</span>, productObject.render());
+    }
+  }
+
+  <span class="hljs-regexp" style="color: rgb(188, 96, 96);">//</span>метод для расчета суммы товаров каталога
+  <span class="hljs-comment" style="color: rgb(136, 136, 136);">#sumProducts() {</span>
+    let sum = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>;
+    <span class="hljs-keyword" style="font-weight: 700;">for</span>(let i = <span class="hljs-number" style="color: rgb(136, 0, 0);">0</span>; i &lt; <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods.length; i++){</span>
+      sum = sum + <span class="hljs-keyword" style="font-weight: 700;">this</span>.<span class="hljs-comment" style="color: rgb(136, 136, 136);">#goods[i].price;</span>
+    }
+    let ren = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'summa'</span>);
+    ren.insertAdjacentHTML(<span class="hljs-string" style="color: rgb(136, 0, 0);">'beforeend'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;div class="block-sum"&gt;Сумма всех товаров равна: '</span> + sum + <span class="hljs-string" style="color: rgb(136, 0, 0);">' \u20bd&lt;/div&gt;'</span>);
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">ProductItem</span> {</span>
+  constructor(product, img=<span class="hljs-string" style="color: rgb(136, 0, 0);">'https://via.placeholder.com/200x150'</span>) {
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.title = product.title;
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.price = product.price;
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.id = product.id;
+    <span class="hljs-keyword" style="font-weight: 700;">this</span>.img = img;
+  }
+
+  render() {
+    <span class="hljs-keyword" style="font-weight: 700;">return</span> `<span class="javascript">&lt;div <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"product-item"</span> data-id=<span class="hljs-string" style="color: rgb(136, 0, 0);">"${this.id}"</span>&gt;
+              <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"${this.img}"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"Some img"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"desc"</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">h3</span>&gt;</span>${this.title}<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">h3</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">p</span>&gt;</span>${this.price} \u20bd<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">p</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"buy-btn"</span>&gt;</span>Купить<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">button</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">div</span>&gt;</span></span></span>`;
+  }
+}
+
+const catalog = <span class="hljs-keyword" style="font-weight: 700;">new</span> ProductList();</pre>               
+                        </p>
+                    </details>
                 </div>
             </div>
 
