@@ -15,10 +15,9 @@
             <div class="block">
                 <div class="box1">
                     <h2>1. Добавьте пустые классы для Корзины товаров и Элемента корзины товаров. Продумайте, какие методы понадобятся для работы с этими сущностями.</h2>
-                    <button class="button-push" onClick="myScript1()">Запустить</button>
                 </div>
                 <div class="box2">
-
+                  <p>Не делать</p>
                 </div>
             </div>
 
@@ -126,10 +125,68 @@ const catalog = <span class="hljs-keyword" style="font-weight: 700;">new</span> 
 
 </pre>                    
                     </h2>
-                    <button class="button-push" onClick="myScript3()">Запустить</button>
                 </div>
                 <div class="box2">
+                  <p>Сcылка на <a href="https://marcussten.github.io/CourseJS2/lesson2/hamburger/index.html">Стоимость и калорийность гамбургера</a></p>
+                  <br>
+                    <details>
+                        <summary>Смотреть код</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">function checking(){
+        let burger = new Hamburger(<span class="hljs-string" style="color: rgb(136, 0, 0);">'size'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'fillings'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'topings'</span>);
+        burger.showSum(<span class="hljs-string" style="color: rgb(136, 0, 0);">'#price'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'#calories'</span>);
+}
 
+
+<span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Param</span> </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">constructor</span>(element) {
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.name = element.value;
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.price = +element.dataset[<span class="hljs-string" style="color: rgb(136, 0, 0);">'price'</span>];
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.calories = +element.dataset[<span class="hljs-string" style="color: rgb(136, 0, 0);">'calories'</span>];
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Hamburger</span> </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">constructor</span>(size, fillings, topping){
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.size = new Param(<span class="hljs-keyword" style="font-weight: 700;">this</span>._select(size));
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.fillings = new Param(<span class="hljs-keyword" style="font-weight: 700;">this</span>._select(fillings));
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.toppings = <span class="hljs-keyword" style="font-weight: 700;">this</span>._getToppings(topping);
+    }
+
+    _select(name) {
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> document.querySelector(`input[name=<span class="hljs-string" style="color: rgb(136, 0, 0);">"<span class="hljs-subst" style="color: rgb(68, 68, 68);">${name}</span>"</span>]:checked`);
+    }
+
+    _getToppings(name) {
+        let result = [];
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>._selectAll(name).forEach(el =&gt; result.push(new Param(el)));
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> result;
+    }
+
+    _selectAll(name) {
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> document.querySelectorAll(`input[name=<span class="hljs-string" style="color: rgb(136, 0, 0);">"<span class="hljs-subst" style="color: rgb(68, 68, 68);">${name}</span>"</span>]:checked`);
+    }
+
+    _calculatePrice() {
+        let result = <span class="hljs-keyword" style="font-weight: 700;">this</span>.size.price + <span class="hljs-keyword" style="font-weight: 700;">this</span>.fillings.price;
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.toppings.forEach(topping =&gt; result += topping.price);
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> result;
+    }
+
+    _calculateCalories() {
+        let result = <span class="hljs-keyword" style="font-weight: 700;">this</span>.size.calories + <span class="hljs-keyword" style="font-weight: 700;">this</span>.fillings.calories;
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.toppings.forEach(topping =&gt; result += topping.calories);
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> result;
+    }
+
+    showSum(price, calories){
+        document.querySelector(price).textContent = <span class="hljs-keyword" style="font-weight: 700;">this</span>._calculatePrice();
+        document.querySelector(calories).textContent = <span class="hljs-keyword" style="font-weight: 700;">this</span>._calculateCalories();
+    }
+}
+</pre>           
+                        </p>
+                    </details>
                 </div>
             </div>
 
