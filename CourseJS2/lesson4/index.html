@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/Regular_Expressions.js"></script>
+    <title>Lesson4</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Практическое задание к уроку 4. Продвинутый курс Javascript</h1>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>1. Дан большой текст, в котором для оформления прямой речи используются одинарные кавычки. Придумать шаблон, который заменяет одинарные кавычки на двойные.</h2>
+                    <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Hi Mary.' Two: 'Oh, hi.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'How are you doing?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm doing alright. How about you?'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Not too bad. The weather is great isn't it?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yes. It's absolutely beautiful today.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I wish it was like this more frequently.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Me too.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'So where are you going now?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm going to meet a friend of mine at the department store'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Going to do a little shopping?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yeah, I have to buy some presents for my parents.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'What's the occasion?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'It's their anniversary.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'That's great. Well, you better get going. You don't want to be late.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'll see you next time.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Sure.' Bye.'</span></pre>                        
+                    </p>
+                </div>
+                
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть решение</summary>
+                        <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> <span class="hljs-keyword" style="font-weight: 700;">text</span> = `One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Hi Mary.' Two: 'Oh, hi.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'How are you doing?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm doing alright. How about you?'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Not too bad. The weather is great isn't it?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yes. It's absolutely beautiful today.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I wish it was like this more frequently.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Me too.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'So where are you going now?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm going to meet a friend of mine at the department store'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Going to do a little shopping?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yeah, I have to buy some presents for my parents.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'What's the occasion?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'It's their anniversary.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'That's great. Well, you better get going. You don't want to be late.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'll see you next time.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Sure.' Bye.'`;</span>
+
+<span class="hljs-keyword" style="font-weight: 700;">let</span> paragraph = document.getElementById(<span class="hljs-comment" style="color: rgb(136, 136, 136);">'paragr');</span>
+paragraph.insertAdjacentHTML(<span class="hljs-comment" style="color: rgb(136, 136, 136);">'beforeend', text.replace(/'/g, '"'));</span></pre>                            
+                        </p>
+                        <br>
+                        <button class="button-push" onClick="myScript1()">Запустить</button>
+                        <br>
+                        <pre id="paragr1"></pre>
+                    </details>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>2. Улучшить шаблон так, чтобы в конструкциях типа aren't одинарная кавычка не заменялась на двойную.</h2>
+                </div>
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть решение</summary>
+                        <p>
+
+                        </p>
+                        <button class="button-push" onClick="myScript2()">Запустить</button>
+                        <br>
+                        <pre id="paragr2"></pre>
+                    </details>
+
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>3. *Создать форму обратной связи с полями: Имя, Телефон, E-mail, текст, кнопка Отправить. При нажатии на кнопку Отправить произвести валидацию полей следующим образом:<br>
+                        a. Имя содержит только буквы. <br>
+                        b. Телефон имеет вид +7(000)000-0000.<br>
+                        c. E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.<br>
+                        d. Текст произвольный.<br>
+                        e. Если одно из полей не прошло валидацию, необходимо выделить это поле красной рамкой и сообщить пользователю об ошибке.<br>
+                    </h2>
+                    <p>
+
+                    </p>
+                    
+                </div>
+                <div class="box2">
+                    <details>
+                        <summary>Смотреть решение</summary>
+                        <p>
+                            
+                        </p>
+                        <button class="button-push" onClick="myScript3()">Запустить</button>
+                        <br>
+                        <div id="form-callBack"></div>
+                    </details>
+                </div>
+            </div>
+
+            
+        </div>
+        <footer>
+            <p class="copyright">© 2021 Marcus Sten</p>
+        </footer>
+    </div>   
+</body>
+</html>
