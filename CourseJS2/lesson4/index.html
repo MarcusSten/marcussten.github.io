@@ -76,7 +76,25 @@ paragraph.insertAdjacentHTML(<span class="hljs-comment" style="color: rgb(136, 1
                     <details>
                         <summary>Смотреть решение</summary>
                         <p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> <span class="hljs-keyword" style="font-weight: 700;">text</span> = `One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Hi Mary.' Two: 'Oh, hi.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'How are you doing?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm doing alright. How about you?'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Not too bad. The weather is great isn't it?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yes. It's absolutely beautiful today.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I wish it was like this more frequently.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Me too.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'So where are you going now?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'm going to meet a friend of mine at the department store'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Going to do a little shopping?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Yeah, I have to buy some presents for my parents.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'What's the occasion?'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'It's their anniversary.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'That's great. Well, you better get going. You don't want to be late.'</span>
+Two: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'I'll see you next time.'</span>
+One: <span class="hljs-comment" style="color: rgb(136, 136, 136);">'Sure.' Bye.'`;</span>
 
+<span class="hljs-keyword" style="font-weight: 700;">let</span> paragraph = document.getElementById(<span class="hljs-comment" style="color: rgb(136, 136, 136);">'paragr2');</span>
+paragraph.insertAdjacentHTML(<span class="hljs-comment" style="color: rgb(136, 136, 136);">'beforeend', text.replace(/'$/igm, '"').replace(/: '/igm, ': "'));</span></pre>
                         </p>
                         <button class="button-push" onClick="myScript2()">Запустить</button>
                         <br>
@@ -104,7 +122,46 @@ paragraph.insertAdjacentHTML(<span class="hljs-comment" style="color: rgb(136, 1
                     <details>
                         <summary>Смотреть решение</summary>
                         <p>
-                            
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-keyword" style="font-weight: 700;">let</span> form = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'form-callBack'</span>);
+form.innerHTML = <span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;input type="text" name="callBack" id="fio" placeholder="Введите свое имя"&gt;&lt;br&gt;'</span> +
+<span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;input type="text" name="callBack" id="nomber" placeholder="Введите свой телефон"&gt;&lt;br&gt;'</span> +
+<span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;input type="text" name="callBack" id="email" placeholder="Введите свое email"&gt;&lt;br&gt;'</span> +
+<span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;input type="text" name="callBack" id="text" placeholder="Введите текст"&gt;&lt;br&gt;'</span> +
+<span class="hljs-string" style="color: rgb(136, 0, 0);">'&lt;button id="btn1" onClick="checkInput()"&gt;Отправить&lt;/button&gt;&lt;br&gt;'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">checkInput</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword" style="font-weight: 700;">let</span> fio = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'fio'</span>).value;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(fio.match(<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/[a-zа-яА-ЯёЁ]/i</span>) !== <span class="hljs-literal" style="color: rgb(120, 169, 96);">null</span>){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'fio'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>;
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Ошибка. Поле "Имя" заполнено неверно!'</span>);
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'fio'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">'red'</span>;
+    }
+
+    <span class="hljs-keyword" style="font-weight: 700;">let</span> nomber = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'nomber'</span>).value;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(nomber.match(<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/^\+7\(\d{3}\)\d{3}\-\d{4}/i</span>) !== <span class="hljs-literal" style="color: rgb(120, 169, 96);">null</span>){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'nomber'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>;
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Ошибка. Поле "Телефон" заполнено неверно!'</span>);
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'nomber'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">'red'</span>;
+    }
+
+    <span class="hljs-keyword" style="font-weight: 700;">let</span> email = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'email'</span>).value;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(email.match(<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/i</span>) !== <span class="hljs-literal" style="color: rgb(120, 169, 96);">null</span>){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'email'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>;
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Ошибка. Поле "Email" заполнено неверно!'</span>);
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'email'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">'red'</span>;
+    }
+
+    <span class="hljs-keyword" style="font-weight: 700;">let</span> text = <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'text'</span>).value;
+    <span class="hljs-keyword" style="font-weight: 700;">if</span>(text){
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'text'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">''</span>;
+    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Ошибка. Поле "Текст" заполнено неверно!'</span>);
+        <span class="hljs-built_in" style="color: rgb(57, 115, 0);">document</span>.getElementById(<span class="hljs-string" style="color: rgb(136, 0, 0);">'text'</span>).style.borderColor = <span class="hljs-string" style="color: rgb(136, 0, 0);">'red'</span>;
+    }
+}</pre>                            
                         </p>
                         <button class="button-push" onClick="myScript3()">Запустить</button>
                         <br>

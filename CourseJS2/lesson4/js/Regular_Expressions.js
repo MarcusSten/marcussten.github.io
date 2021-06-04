@@ -50,23 +50,39 @@ function myScript3(){
     '<input type="text" name="callBack" id="text" placeholder="Введите текст"><br>' +
     '<button id="btn1" onClick="checkInput()">Отправить</button><br>';
 }
+
 function checkInput(){
     let fio = document.getElementById('fio').value;
     if(fio.match(/[a-zа-яА-ЯёЁ]/i) !== null){
-        return;
+        document.getElementById('fio').style.borderColor = '';
     } else {
-        alert('Ошибка. Одно из полей заполнено неверно!');
+        alert('Ошибка. Поле "Имя" заполнено неверно!');
+        document.getElementById('fio').style.borderColor = 'red';
     }
 
     let nomber = document.getElementById('nomber').value;
-    if(nomber.match(/[a-zа-яА-ЯёЁ]/i) !== null){
-        alert('good');
+    if(nomber.match(/^\+7\(\d{3}\)\d{3}\-\d{4}/i) !== null){
+        document.getElementById('nomber').style.borderColor = '';
     } else {
-        alert('Ошибка. Одно из полей заполнено неверно!');
+        alert('Ошибка. Поле "Телефон" заполнено неверно!');
+        document.getElementById('nomber').style.borderColor = 'red';
     }
 
+    let email = document.getElementById('email').value;
+    if(email.match(/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/i) !== null){
+        document.getElementById('email').style.borderColor = '';
+    } else {
+        alert('Ошибка. Поле "Email" заполнено неверно!');
+        document.getElementById('email').style.borderColor = 'red';
+    }
 
-
+    let text = document.getElementById('text').value;
+    if(text){
+        document.getElementById('text').style.borderColor = '';
+    } else {
+        alert('Ошибка. Поле "Текст" заполнено неверно!');
+        document.getElementById('text').style.borderColor = 'red';
+    }
 }
 
 
