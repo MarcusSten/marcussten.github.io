@@ -44,10 +44,10 @@ One: 'Sure.' Bye.'`;
 
 function myScript3(){
     let form = document.getElementById('form-callBack');
-    form.innerHTML = '<input type="text" name="callBack" id="fio" placeholder="Введите свое имя"><br>' +
-    '<input type="text" name="callBack" id="nomber" placeholder="Введите свой телефон"><br>' +
-    '<input type="text" name="callBack" id="email" placeholder="Введите свое email"><br>' +
-    '<input type="text" name="callBack" id="text" placeholder="Введите текст"><br>' +
+    form.innerHTML = '<input type="text" class="callBack" id="fio" placeholder="Введите свое имя"><br>' +
+    '<input type="text" class="callBack" id="nomber" placeholder="Введите свой телефон"><br>' +
+    '<input type="text" class="callBack" id="email" placeholder="Введите свое email"><br>' +
+    '<input type="text" class="callBack" id="text" placeholder="Введите текст"><br>' +
     '<button id="btn1" onClick="checkInput()">Отправить</button><br>';
 }
 
@@ -84,6 +84,25 @@ function checkInput(){
         document.getElementById('text').style.borderColor = 'red';
     }
 }
+
+
+// function checkInput(){
+//     let regExp = [/[a-zа-яА-ЯёЁ]/i, /^\+7\(\d{3}\)\d{3}\-\d{4}/i, /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/i];
+
+//     let callBack = document.getElementsByClassName('callBack');
+
+//     for(let i = 0; i < callBack.length; i++){
+//         if(callBack[i].match(regExp[i]) !== null){
+//             callBack[i].style.borderColor = '';
+//         } else {
+//             alert('Ошибка. Поле "Имя" заполнено неверно!');
+//             callBack[i].style.borderColor = 'red';
+//         }
+//     }
+// }
+
+
+    
 
 
 
