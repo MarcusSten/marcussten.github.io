@@ -1913,7 +1913,57 @@ elems[index].classList.add(<span class="hljs-string" style="color: rgb(136, 0, 0
 						</details>
 					</div>
 				</li>
+			</ol>
 
+			<h2 class="title-2">Основы ООП</h2>
+			
+			<ol>
+				<li class="block">
+					<div class="box1">
+						<h3>Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия), rate (ставка за день работы), days (количество отработанных дней). Также класс должен иметь метод getSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
+
+							Вот так должен работать наш класс:</h3>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-built_in" style="color: rgb(57, 115, 0);">var</span> worker = <span class="hljs-literal" style="color: rgb(120, 169, 96);">new</span> Worker(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Иван'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'Иванов'</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">31</span>);
+
+console.<span class="hljs-keyword" style="font-weight: 700;">log</span>(worker.name); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 'Иван'</span>
+console.<span class="hljs-keyword" style="font-weight: 700;">log</span>(worker.surname); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 'Иванов'</span>
+console.<span class="hljs-keyword" style="font-weight: 700;">log</span>(worker.rate); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 10</span>
+console.<span class="hljs-keyword" style="font-weight: 700;">log</span>(worker.days); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 31</span>
+console.<span class="hljs-keyword" style="font-weight: 700;">log</span>(worker.getSalary()); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 310 - то есть 10*31</span></pre>
+					<h3>С помощью нашего класса создайте двух рабочих и найдите сумму их зарплат.</h3>
+					</div>
+					<div class="box2">
+						<details>
+							<summary>Смотреть решение</summary>
+							<p>
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">Worker</span> </span>{
+    <span class="hljs-keyword" style="font-weight: 700;">constructor</span>(name, surname, rate, days) {
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.name = name,
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.surname  = surname,
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.rate  = rate,
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.days  = days
+    }
+
+    getSalary(rate, days) {
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> <span class="hljs-keyword" style="font-weight: 700;">this</span>.rate * <span class="hljs-keyword" style="font-weight: 700;">this</span>.days;
+    }
+
+}
+
+<span class="hljs-keyword" style="font-weight: 700;">let</span> worker = <span class="hljs-keyword" style="font-weight: 700;">new</span> Worker(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Иван'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'Иванов'</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">10</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">31</span>);
+<span class="hljs-keyword" style="font-weight: 700;">let</span> worker2 = <span class="hljs-keyword" style="font-weight: 700;">new</span> Worker(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Маским'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'Петров'</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">20</span>, <span class="hljs-number" style="color: rgb(136, 0, 0);">31</span>);
+
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.name); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 'Иван'</span>
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.surname); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 'Иванов'</span>
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.rate); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 10</span>
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.days); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 31</span>
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.getSalary()); <span class="hljs-comment" style="color: rgb(136, 136, 136);">//выведет 310 - то есть 10*31</span>
+<span class="hljs-built_in" style="color: rgb(57, 115, 0);">console</span>.log(worker.getSalary() + worker2.getSalary());</pre>					
+							</p>
+							<button onClick="myScript60()">Запустить и смотреть консоль</button>
+						</details>
+					</div>
+				</li>
 
         
 
