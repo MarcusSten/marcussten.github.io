@@ -1,7 +1,7 @@
 Vue.component('cart', {
     data(){
       return {
-          imgCart: 'https://placehold.it/50x100',
+          imgCart: 'https://sun1-98.userapi.com/s/v1/ig2/mmn4XPtAx2FCQsl329Vy-harBgut2wjsZLtN23WZM0po1p2AGji7OV7nJU4WW6sx4NypAo41GZUGRf4Ws4NtcYwB.jpg?size=50x0&quality=96&crop=0,1,1078,1078&ava=1',
           cartUrl: '/getBasket.json',
           cartItems: [],
           showCart: false,
@@ -70,11 +70,11 @@ Vue.component('cart-item', {
                         <div class="product-desc">
                             <p class="product-title">{{cartItem.product_name}}</p>
                             <p class="product-quantity">Количество: {{cartItem.quantity}}</p>
-                            <p class="product-single-price">{{cartItem.price}}₽ за единицу</p>
+                            <p class="product-single-price">{{cartItem.price}}₽ за шт.</p>
                         </div>
                     </div>
                     <div class="right-block">
-                        <p class="product-price">{{cartItem.quantity*cartItem.price}}₽</p>
+                        <p class="product-price">{{cartItem.quantity*cartItem.price}}</p>
                         <button class="del-btn" @click="$emit('remove', cartItem)">&times;</button>
                     </div>
                 </div>

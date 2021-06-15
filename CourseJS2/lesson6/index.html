@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="js/Regular_Expressions.js"></script>
     <title>Lesson6</title>
 </head>
+
 <body>
     <div class="container">
         <div class="content">
@@ -17,20 +19,32 @@
                 <div class="box1">
                     <h2>1. Вынести поиск в отдельный компонент.</h2>
                     <p>
-                      
+
                     </p>
                 </div>
-                
+
                 <div class="box2">
+                    <p>Сcылка на <a href="https://marcussten.github.io/CourseJS2/lesson6/project/index.html">интернет
+                            магазин</a></p>
+                    <br>
                     <details>
                         <summary>Смотреть решение</summary>
-                        <p>
-                        
-                        </p>
-                        <br>
-                        <button class="button-push" onClick="myScript1()">Запустить</button>
-                        <br>
-                        <pre id="paragr1"></pre>
+                        <pre class="hljs"
+                            style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-type" style="color: rgb(136, 0, 0);">Vue</span>.component(<span class="hljs-symbol" style="color: rgb(188, 96, 96);">'filter</span>-el', {
+    data() {
+        <span class="hljs-keyword" style="font-weight: 700;">return</span> {
+            userSearch: '',
+        }
+    },
+    template: `
+            &lt;form action=<span class="hljs-string" style="color: rgb(136, 0, 0);">"#"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"search-form"</span> <span class="hljs-meta" style="color: rgb(31, 113, 153);">@submit</span>.prevent=<span class="hljs-string" style="color: rgb(136, 0, 0);">"$parent.$refs.products.filter(userSearch)"</span>&gt;
+                &lt;input <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">type</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"text"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"search-field"</span> v-model=<span class="hljs-string" style="color: rgb(136, 0, 0);">"userSearch"</span>&gt;
+                &lt;button <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"btn-search"</span> <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">type</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"submit"</span>&gt;
+                    &lt;i <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"fas fa-search"</span>&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/form&gt;
+    `
+});</pre>
                     </details>
                 </div>
             </div>
@@ -40,31 +54,116 @@
                     <h2>2. Вынести корзину в отдельный компонент.</h2>
                 </div>
                 <div class="box2">
-                        <p>
+                    <p>Сcылка на <a href="https://marcussten.github.io/CourseJS2/lesson6/project/index.html">интернет
+                            магазин</a></p>
+                    <br>
+                    <details>
+                        <summary>Смотреть решение</summary>
+                        <pre class="hljs"
+                            style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">Vue.component(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cart'</span>, {
+    data(){
+      <span class="hljs-keyword" style="font-weight: 700;">return</span> {
+          imgCart: <span class="hljs-string" style="color: rgb(136, 0, 0);">'https://sun1-98.userapi.com/s/v1/ig2/mmn4XPtAx2FCQsl329Vy-harBgut2wjsZLtN23WZM0po1p2AGji7OV7nJU4WW6sx4NypAo41GZUGRf4Ws4NtcYwB.jpg?size=50x0&amp;quality=96&amp;crop=0,1,1078,1078&amp;ava=1'</span>,
+          cartUrl: <span class="hljs-string" style="color: rgb(136, 0, 0);">'/getBasket.json'</span>,
+          cartItems: [],
+          showCart: <span class="hljs-literal" style="color: rgb(120, 169, 96);">false</span>,
+      }
+    },
+    methods: {
+        addProduct(product){
+            <span class="hljs-keyword" style="font-weight: 700;">this</span>.$parent.getJson(`<span class="javascript">${API}/addToBasket.json</span>`)
+                .<span class="hljs-keyword" style="font-weight: 700;">then</span>(data =&gt; {
+                    <span class="hljs-keyword" style="font-weight: 700;">if</span>(data.result === <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>){
+                        let find = <span class="hljs-keyword" style="font-weight: 700;">this</span>.cartItems.find(el =&gt; el.id_product === product.id_product);
+                        <span class="hljs-keyword" style="font-weight: 700;">if</span>(find){
+                            find.quantity++;
+                        } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+                            let prod = Object.assign({quantity: <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>}, product);
+                            <span class="hljs-keyword" style="font-weight: 700;">this</span>.cartItems.push(prod)
+                        }
+                    } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+                        alert(<span class="hljs-string" style="color: rgb(136, 0, 0);">'Error'</span>);
+                    }
+                })
+        },
+        remove(item) {
+            <span class="hljs-keyword" style="font-weight: 700;">this</span>.$parent.getJson(`<span class="javascript">${API}/deleteFromBasket.json</span>`)
+                .<span class="hljs-keyword" style="font-weight: 700;">then</span>(data =&gt; {
+                    <span class="hljs-keyword" style="font-weight: 700;">if</span>(data.result === <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>) {
+                        <span class="hljs-keyword" style="font-weight: 700;">if</span>(item.quantity&gt;<span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>){
+                            item.quantity--;
+                        } <span class="hljs-keyword" style="font-weight: 700;">else</span> {
+                            <span class="hljs-keyword" style="font-weight: 700;">this</span>.cartItems.splice(<span class="hljs-keyword" style="font-weight: 700;">this</span>.cartItems.indexOf(item), <span class="hljs-number" style="color: rgb(136, 0, 0);">1</span>)
+                        }
+                    }
+                })
+        },
+    },
+    mounted(){
+        <span class="hljs-keyword" style="font-weight: 700;">this</span>.$parent.getJson(`<span class="javascript">${API + <span class="hljs-keyword" style="font-weight: 700;">this</span>.cartUrl}</span>`)
+            .<span class="hljs-keyword" style="font-weight: 700;">then</span>(data =&gt; {
+                <span class="hljs-keyword" style="font-weight: 700;">for</span>(let el <span class="hljs-keyword" style="font-weight: 700;">of</span> data.contents){
+                    <span class="hljs-keyword" style="font-weight: 700;">this</span>.cartItems.push(el);
+                }
+            });
+    },
+    template: `<span class="javascript">
+        &lt;div&gt;
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"btn-cart"</span> <span class="hljs-attr">type</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"button"</span> @<span class="hljs-attr">click</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"showCart = !showCart"</span>&gt;</span>Корзина<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">button</span>&gt;</span></span>
+            &lt;div <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"cart-block"</span> v-show=<span class="hljs-string" style="color: rgb(136, 0, 0);">"showCart"</span>&gt;
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"!cartItems.length"</span>&gt;</span>Корзина пуста<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">p</span>&gt;</span></span>
+                &lt;cart-item <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"cart-item"</span> 
+                v-<span class="hljs-keyword" style="font-weight: 700;">for</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"item of cartItems"</span> 
+                :key=<span class="hljs-string" style="color: rgb(136, 0, 0);">"item.id_product"</span>
+                :cart-item=<span class="hljs-string" style="color: rgb(136, 0, 0);">"item"</span> 
+                :img=<span class="hljs-string" style="color: rgb(136, 0, 0);">"imgCart"</span>
+                @remove=<span class="hljs-string" style="color: rgb(136, 0, 0);">"remove"</span>&gt;
+                <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">cart-item</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">div</span>&gt;</span></span>
+        &lt;<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/div&gt;</span></span>`
+});
 
-                        </p>
+Vue.component(<span class="hljs-string" style="color: rgb(136, 0, 0);">'cart-item'</span>, {
+    props: [<span class="hljs-string" style="color: rgb(136, 0, 0);">'cartItem'</span>, <span class="hljs-string" style="color: rgb(136, 0, 0);">'img'</span>],
+    template: `<span class="javascript"><span class="hljs-regexp" style="color: rgb(188, 96, 96);">
+                &lt;div class="cart-item"&gt;
+                    &lt;div class="product-bio"&gt;
+                        &lt;img :src="img" alt="Some image"&gt;
+                        &lt;div class="product-desc"&gt;
+                            &lt;p class="product-title"&gt;{{cartItem.product_name}}&lt;/</span>p&gt;
+                            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"product-quantity"</span>&gt;</span>Количество: {{cartItem.quantity}}<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">p</span>&gt;</span></span>
+                            &lt;p <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"product-single-price"</span>&gt;{{cartItem.price}}₽ за шт.&lt;<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/p&gt;
+                        &lt;/</span>div&gt;
+                    <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">div</span>&gt;</span></span>
+                    &lt;div <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"right-block"</span>&gt;
+                        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"product-price"</span>&gt;</span>{{cartItem.quantity*cartItem.price}}<span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">p</span>&gt;</span></span>
+                        &lt;button <span class="hljs-class"><span class="hljs-keyword" style="font-weight: 700;">class</span></span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"del-btn"</span> @click=<span class="hljs-string" style="color: rgb(136, 0, 0);">"$emit('remove', cartItem)"</span>&gt;&amp;times;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">button</span>&gt;</span></span>
+                    &lt;<span class="hljs-regexp" style="color: rgb(188, 96, 96);">/div&gt;
+                &lt;/</span>div&gt;
+    </span>`
+});
+</pre>
+                    </details>
                 </div>
             </div>
 
             <div class="block">
                 <div class="box1">
-                    <h2>3. *Создать компонент с сообщением об ошибке. Компонент должен отображаться, когда не удаётся выполнить запрос к серверу.<br>
+                    <h2>3. *Создать компонент с сообщением об ошибке. Компонент должен отображаться, когда не удаётся
+                        выполнить запрос к серверу.<br>
                     </h2>
-                    <p>
-
-                    </p>
-                    
                 </div>
                 <div class="box2">
-
+                    Пока не осилил.
                 </div>
             </div>
 
-            
+
         </div>
         <footer>
             <p class="copyright">© 2021 Marcus Sten</p>
         </footer>
-    </div>   
+    </div>
 </body>
+
 </html>
