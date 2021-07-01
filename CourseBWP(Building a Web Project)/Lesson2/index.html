@@ -9,19 +9,31 @@
 </head>
 
 <body>
-    <form id="datecalc">
-        <h3>Калькулятор дат</h3>
-        <label>
-            <strong>Первая дата:</strong>
-            <input type="date" name="firstDate" />
-        </label>
-        <label>
-            <strong>Вторая дата:</strong>
-            <input type="date" name="secondDate" />
-        </label>
-        <button type="submit">Расчитать промежуток</button>
-        <p id="datecalc__result"></p>
-    </form>
+    <button type="button" id="changeApp">Переключиться на Таймер</button><br><br>
+    <div id="change1">
+        <form id="datecalc">
+            <h3>Калькулятор дат</h3>
+            <label>
+                <strong>Первая дата:</strong>
+                <input type="date" name="firstDate" />
+            </label>
+            <label>
+                <strong>Вторая дата:</strong>
+                <input type="date" name="secondDate" />
+            </label>
+            <button type="submit">Расчитать промежуток</button>
+            <p id="datecalc__result"></p>
+        </form>
+    </div>
+
+    <div id="change2" style="display:none">
+        <form id="timerr">
+            <h3>Таймер</h3>
+            <input type="text" name="time" id="time">
+            <button id="button2" type="button">Запустить</button>
+            <div id="timer"></div>
+        </form>
+    </div>
 </body>
 
 </html>

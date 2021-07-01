@@ -75,4 +75,12 @@ h2 {
   margin-top: 20px;
   width: 20%;
 }
+
+.change1 {
+  display: block;
+}
+
+.change2 {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

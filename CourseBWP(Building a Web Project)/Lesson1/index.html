@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/animation.js" defer></script>
     <script src="js/learning.js" defer></script>
+    <script src="js/main.js" type="module"></script>
     <title>Lesson1</title>
 </head>
 <body>
@@ -24,10 +25,23 @@
                         d. Для обновления времени на странице используйте setInterval(). <br>
                         e. Добавьте звуковое сопровождение, когда время заканчивается. Для работы со звуком воспользуйтесь сторонней библиотекой, например, Howler.js. <br>
                         f. Не используйте другие сторонние библиотеки.</h2>
-                        <button class="button-push" onClick="myScript1()">Запустить</button>
                 </div>
 
                 <div class="box2" id="form-date">
+                    <button onClick="changeSquare(this)">Переключиться на Таймер</button><br><br><div class="square" id="change">
+                        <form id="datecalc">
+                        <h3>Калькулятор дат</h3>
+                        <label>
+                        <strong>Первая дата:</strong>
+                        <input type="date" name="firstDate" />
+                        </label>
+                        <label>
+                        <strong>Вторая дата:</strong>
+                        <input type="date" name="secondDate" />
+                        </label>
+                        <button type="submit">Расчитать промежуток</button>
+                        <p id="datecalc__result"></p>
+                        </form></div>
 
                 </div>
             </div>
