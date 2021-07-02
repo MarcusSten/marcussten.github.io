@@ -10,7 +10,6 @@
 
 <body>
     <button type="button" id="changeApp">Переключиться на Таймер</button><br><br>
-    <div id="change1">
         <form id="datecalc">
             <h3>Калькулятор дат</h3>
             <label>
@@ -24,16 +23,15 @@
             <button type="submit">Расчитать промежуток</button>
             <p id="datecalc__result"></p>
         </form>
-    </div>
 
-    <div id="change2" style="display:none">
-        <form id="timerr">
+        <form id="timer" style="display:none">
             <h3>Таймер</h3>
-            <input type="text" name="time" id="time">
-            <button id="button2" type="button">Запустить</button>
-            <div id="timer"></div>
+            <strong>Минуты</strong><input type="text" name="time" id="time__minute">
+            <strong>Секунды</strong><input type="text" name="time" id="time__sec">
+            <button id="button__start" type="button">START</button>
+            <button id="button__stop" type="button" disabled>STOP</button>
+            <div id="timer__result"></div>
         </form>
-    </div>
 </body>
 
 </html>

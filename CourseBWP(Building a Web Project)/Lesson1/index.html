@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/animation.js" defer></script>
-    <script src="js/learning.js" defer></script>
+    <title>Datetime superapp</title>
     <script src="js/main.js" type="module"></script>
-    <title>Lesson1</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="content">
-            <h1 class="text-smile"><span class="txt-rotate" data-period="2000" data-rotate='[ "Hello im Marcus Sten", "and this is a JavaScript course", "Smile, peanut!" ]'></span></h1>
-            <h1>Практическое задание к уроку 1. Инструменты сборки Web-проектов</h1>
+    <button type="button" id="changeApp">Переключиться на Таймер</button><br><br>
+        <form id="datecalc">
+            <h3>Калькулятор дат</h3>
+            <label>
+                <strong>Первая дата:</strong>
+                <input type="date" name="firstDate" />
+            </label>
+            <label>
+                <strong>Вторая дата:</strong>
+                <input type="date" name="secondDate" />
+            </label>
+            <button type="submit">Расчитать промежуток</button>
+            <p id="datecalc__result"></p>
+        </form>
 
-            <div class="block">
-                <div class="box1">
-                    <h2>1. Реализуйте таймер. Включите в него общую кодовую базу с калькулятором дат, реализованным в этом уроке. Вложите его в тот же index.html, что и калькулятор дат, реализовав код переключения между разделами страницы. <br>
-                        a. Вынесите код переключения между разделами (таймер/калькулятор дат) в отдельный модуль. <br>
-                        b. Вынесите общие функции обоих разделов в отдельный модуль. <br>
-                        c. Включите в таймер поле для установки времени и кнопки «Старт», «Стоп». <br>
-                        d. Для обновления времени на странице используйте setInterval(). <br>
-                        e. Добавьте звуковое сопровождение, когда время заканчивается. Для работы со звуком воспользуйтесь сторонней библиотекой, например, Howler.js. <br>
-                        f. Не используйте другие сторонние библиотеки.</h2>
-                </div>
-
-                <div class="box2" id="form-date">
-                    <button onClick="changeSquare(this)">Переключиться на Таймер</button><br><br><div class="square" id="change">
-                        <form id="datecalc">
-                        <h3>Калькулятор дат</h3>
-                        <label>
-                        <strong>Первая дата:</strong>
-                        <input type="date" name="firstDate" />
-                        </label>
-                        <label>
-                        <strong>Вторая дата:</strong>
-                        <input type="date" name="secondDate" />
-                        </label>
-                        <button type="submit">Расчитать промежуток</button>
-                        <p id="datecalc__result"></p>
-                        </form></div>
-
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="box1">
-                    <h2>2. * В качестве эксперимента доработайте нашу функцию loadScript
-a. Её аргументы: <br>
-i. Первый аргумент: коллбек или строка с url до файла или массив с url до файлов зависимостей; <br>
-ii. Второй аргумент: необязательный коллбек (только если первый аргумент строка или массив)
-b. Её задачи: <br>
-* обнаруживать повторно запрашиваемые зависимости и не загружать их: ситуация, когда модуль А зависит от В, и С зависит от В. <br>
-* Подумайте, как реализовать вызов callback модуля А после того, как разрешатся все зависимости модуля В, и отработает его callback. Попробуйте реализовать логику работы функции define из системы модулей AMD (RequireJS).</h2>           
-<button class="button-push" onClick="myScript1()">Запустить</button>     
-                </div>
-
-                <div class="box2">
-   
-                </div>
-            </div> 
-        </div>
-
-
-        <footer>
-            <p class="copyright">© 2021 Marcus Sten</p>
-        </footer>
-    </div>
-    <script>
-        
-    </script>
-    
-    
+        <form id="timer" style="display:none">
+            <h3>Таймер</h3>
+            <strong>Минуты</strong><input type="text" name="time" id="time__minute">
+            <strong>Секунды</strong><input type="text" name="time" id="time__sec">
+            <button id="button__start" type="button">START</button>
+            <button id="button__stop" type="button" disabled>STOP</button>
+            <div id="timer__result"></div>
+        </form>
 </body>
+
 </html>
+

@@ -1,1 +1,3 @@
-import "./datecalc.js"
+import "./datecalc.js";
+import "./changeApp.js";
+import "./timer.js";
