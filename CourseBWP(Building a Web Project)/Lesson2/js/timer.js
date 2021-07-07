@@ -1,4 +1,4 @@
-import "./howler.js";
+import "howler";
 
 const sound = new Howl({
   src: ['./rington/111.mp3']
