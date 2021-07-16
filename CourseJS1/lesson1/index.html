@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Практическое задание к уроку 1. Основы языка JavaScript</h1>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>1. Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по Фаренгейту. Подсказка: расчёт идёт по формуле: Tf = (9 / 5) * Tc + 32, где Tf – температура по Фаренгейту, Tc – температура по Цельсию</h2>
+                    <button onClick="myScript1()">Запустить</button>
+                </div>
+                
+                <div class="box2">
+                    <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">myScript1</span><span class="hljs-params">()</span></span>{
+                        <span class="hljs-keyword" style="font-weight: 700;">var</span> celsius = +prompt(<span class="hljs-string" style="color: rgb(136, 0, 0);">"введите количество градусов по Цельсию"</span>);
+                        <span class="hljs-keyword" style="font-weight: 700;">var</span> fahrenheit = (<span class="hljs-number" style="color: rgb(136, 0, 0);">9</span> / <span class="hljs-number" style="color: rgb(136, 0, 0);">5</span>) * celsius + <span class="hljs-number" style="color: rgb(136, 0, 0);">32</span>;
+                        alert(celsius + <span class="hljs-string" style="color: rgb(136, 0, 0);">" Цельсий будет равно: "</span> + fahrenheit + <span class="hljs-string" style="color: rgb(136, 0, 0);">" Фаренгейт"</span>);
+                    }</pre>
+
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>2. Работа с переменными.</h2>
+                    <button onClick="myScript2()">Запустить</button>
+                </div>
+                <div class="box2">
+                    <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"> <span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">myScript2</span><span class="hljs-params">()</span><span class="hljs-comment" style="color: rgb(136, 136, 136);">{
+                        var a = 10;
+                        var b = 20;
+                        a = a + b;
+                        b = a - b;
+                        a = a - b; 
+                        alert(a);
+                        alert(b);
+                    }</span></span></pre>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>3. Объявить две переменные: admin и name. Записать в name строку "Василий"; Скопировать значение из name в admin. Вывести admin (должно вывести «Василий»).</h2>
+                    <button onClick="myScript3()">Запустить</button>
+                </div>
+                <div class="box2">
+                    <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="hljs-function"><span class="hljs-keyword" style="font-weight: 700;">function</span> <span class="hljs-title" style="color: rgb(136, 0, 0); font-weight: 700;">myScript3</span><span class="hljs-params">()</span></span>{
+                        <span class="hljs-keyword" style="font-weight: 700;">var</span> admin;
+                        <span class="hljs-keyword" style="font-weight: 700;">var</span> name;
+                        name = <span class="hljs-string" style="color: rgb(136, 0, 0);">"Василий"</span>;
+                        admin = name;
+                        alert(admin);
+                    }</pre>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>4. *Чему будет равно JS-выражение 1000 + "108"</h2>
+                </div>
+                <div class="box2">
+                    <h3>1000108 - неявное приведение типов</h3>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="box1">
+                    <h2>5. *Самостоятельно разобраться с атрибутами тега script (async и defer)</h2>
+                </div>
+                <div class="box2">
+                    <h3>Атрибут defer сохраняет относительную последовательность скриптов, а async – нет. Кроме того, defer всегда ждёт, пока весь HTML-документ будет готов, а async – нет.</h3>
+                </div>
+            </div> 
+        </div>
+        <footer>
+            <p class="copyright">© 2021 Marcus Sten</p>
+        </footer>
+    </div>
+    <script>
+        function myScript1(){
+            var celsius = +prompt("введите количество градусов по Цельсию");
+            var fahrenheit = (9 / 5) * celsius + 32;
+            alert(celsius + " Цельсий будет равно: " + fahrenheit + " Фаренгейт");
+        }
+    </script>
+    <script>
+        function myScript2(){
+            var a = 10;
+            var b = 20;
+            a = a + b;
+            b = a - b;
+            a = a - b; 
+            alert(a);
+            alert(b);
+        }
+    </script>
+    <script>
+        function myScript3(){
+            var admin;
+            var name;
+            name = "Василий";
+            admin = name;
+            alert(admin);
+        }
+    </script>
+    
+</body>
+</html>
