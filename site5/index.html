@@ -1,265 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="css/all.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="css/all.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Shop</title>
+	<title>Best Shop</title>
 </head>
 
 <body>
-    <header>
-    	<div class="header_container">
-	        <div class="header_nav">
-	            <div class="header_flex">
-	                <div class="header_left">
-	                    <a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
-	                    <p class="logo_text">BRAN<span class="logo_d">D</span></p></a>
-	                    <a class="header_link"  href="#">browse<img class="fa_caret_down" src="img/fa_caret_down.png"></a>
-	                    <input type="text" class="header_input" placeholder="Search for Item...">
-	                    <button class="search_button" type="submit"><i class="fa fa-search search"></i></button>
-	                </div>
+	<header>
+		<div class="header_container">
+			<div class="header_nav">
+				<div class="header_flex">
+					<div class="header_left">
+						<a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+							<p class="logo_text">BRAN<span class="logo_d">D</span></p>
+						</a>
+						<details>
+							<summary class="header_link">browse<i class="fas fa-caret-down browse_caret_down"></i>
+							</summary>
+							<div class="browse_block down_flex">
+								<div class="menu_browse_block"><a class="menu_title" href="product.html">Women</a>
+									<div class="menu_shape"></div>
+									<ul class="browse_link">
+										<li><a class="browse_link_text" href="product.html">Dresses</a></li>
+										<li><a class="browse_link_text" href="product.html">Tops</a></li>
+										<li><a class="browse_link_text" href="product.html">Sweaters/Knits</a></li>
+										<li><a class="browse_link_text" href="product.html">Jackets/Coats</a></li>
+										<li><a class="browse_link_text" href="product.html">Blazers</a></li>
+										<li><a class="browse_link_text" href="product.html">Denim</a></li>
+										<li><a class="browse_link_text" href="product.html">Leggings/Pants</a></li>
+										<li><a class="browse_link_text" href="product.html">Skirts/Shorts</a></li>
+										<li><a class="browse_link_text" href="product.html">Accessories</a></li>
+									</ul>
+								</div>
+								<div class="menu_browse_block"><a class="menu_title" href="product.html">Men</a>
+									<div class="menu_shape"></div>
+									<ul class="browse_link">
+										<li><a class="browse_link_text" href="product.html">Tees/Tank tops</a></li>
+										<li><a class="browse_link_text" href="product.html">Shirts/Polos</a></li>
+										<li><a class="browse_link_text" href="product.html">Sweaters</a></li>
+										<li><a class="browse_link_text" href="product.html">Sweatshirts/Hoodies</a></li>
+										<li><a class="browse_link_text" href="product.html">Blazers</a></li>
+										<li><a class="browse_link_text" href="product.html">Jackets/vests</a></li>
+									</ul>
+								</div>
+							</div>
+						</details>
+						<input type="text" class="header_input" placeholder="Search for Item...">
+						<button class="search_button" type="submit"><i class="fa fa-search search"></i></button>
+					</div>
 
-	                <div class="header_right">
-						<a href="cart.html"><img src="img/cart.png" alt="cart"></a>
-	                    <a href="#" class="account">My account<i class="fas fa-caret-down caret_down"></i></a>
-	                </div>
+					<div class="header_right">
+						<a class="cart" href="shoppingcart.html"><img src="img/cart.png" alt="cart" class="cart-hover"></a>
+						<div class="cart_block">
+							<div class="mega_box cart_mega_box">
+							</div>
+							<div class="card_menu">
+								<ul class="card_menu_list">
+									<li>
+										<a class="card_nomber" href="single_page.html">
+											<div class="cart_card">
+												<img src="img/cart_1.jpg" alt="">
+												<div class="cart_card_info">
+													<p class="cart_card_title">Rebox Zane</p>
+													<div class="score">
+														<div class="score-wrap">
+															<span class="stars-active" style="width:91%">
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+															</span>
+															<span class="stars-inactive">
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+															</span>
+														</div>
+													</div>
+													<div class="card_summa">
+														<p>1</p>
+														<p>&nbsp;&nbsp;x&nbsp;&nbsp;</p>
+														<p>$250</p>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="cart_shape"></div>
+									</li>
 
-	            </div>
-
-	        </div>
-        </div>
-
-		<div class="header_nav_bottom">
-            <div class="bottom_menu">
-            	<div class="name_menu">HOME</div>
-            	<div class="name_menu">MAN</div>
-            	<div class="name_menu">WOMAN</div>
-            	<div class="name_menu">KIDS</div>
-            	<div class="name_menu">ACCOSERIESE</div>
-            	<div class="name_menu">FEATURED</div>
-            	<div class="name_menu">HOT DEALS</div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-    	<div class="top_content">
-    		<div class="top_content_box">
-	    		<div class="carousel">
-	    			<div class="photo_man">
-						<div class="band_block">
-							<div class="band_post"></div>
-							<div class="band_text">
-							<h1 class="band_text_top">THE BRAND</h1>
-							<h2 class="band_text_bot">OF LUXERIOUS <span class="band_text_color">FASHION</span></h2>
+									<li>
+										<a class="card_nomber" href="single_page.html">
+											<div class="cart_card">
+												<img src="img/cart_2.jpg" alt="">
+												<div class="cart_card_info">
+													<p class="cart_card_title">Rebox Zane</p>
+													<div class="score">
+														<div class="score-wrap">
+															<span class="stars-active" style="width:91%">
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+																<i class="fas fa-star" aria-hidden="true"></i>
+															</span>
+															<span class="stars-inactive">
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+																<i class="far fa-star" aria-hidden="true"></i>
+															</span>
+														</div>
+													</div>
+													<div class="card_summa">
+														<p>1</p>
+														<p>&nbsp;&nbsp;x&nbsp;&nbsp;</p>
+														<p>$250</p>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="cart_shape"></div>
+									</li>
+								</ul>
+								<div class="total_summa">
+									<p class="total">TOTAL</p>
+									<p class="summa">$500.00</p>
+								</div>
+								<div class="checkout_btn">
+									<a class="checkout" href="checkout.html">Checkout</a>
+									<a class="go_to_card" href="shoppingcart.html">Go to cart</a>
+								</div>
 							</div>
 						</div>
-	    			</div>
-					
-	    		</div>
-    		</div>
-    	</div>
 
-    	<div class="center_content">
-    		<div class="center_content_box">
-    			<div class="center_box_right">
-	    			
-	    			<a class="card_image_link"	href="#">
-					<div class="card_image_man">
-	    				<h2 class="nav_card_title"><span class="nav_card_text">HOT DEAL</span><br>FOR <span class="band_text_color">MEN</span></h2>
-	    			</div>
-					</a>
+						<a href="#" class="account">My account<i class="fas fa-caret-down caret_down"></i></a>
+					</div>
 
-					<a href="#">
-	    			<div class="card_image_accesories">
-						<h2 class="nav_card_title"><span class="nav_card_text">LUXIROUS & TRENDY</span><br><span
-						class="band_text_color">ACCESORIES</span></h2>
-	    			</div>
-					</a>
-    			</div>
+				</div>
 
-    			<div class="center_box_left">
-    				<a class="card_image_link" href="#">
-    				<div class="card_image_woman">
-						<h2 class="nav_card_title"><span class="nav_card_text">30% OFF</span><br>FOR <span class="band_text_color">WOMEN</span></h2>
-    				</div>
-					</a>
-
-					<a href="#">
-    				<div class="card_image_kids">
-						<h2 class="nav_card_title"><span class="nav_card_text">NEW ARRIVALS</span><br>FOR <span class="band_text_color">KIDS</span></h2>
-    				</div>
-					</a>
-    			</div>
-    		</div>
-
-    		<div>
-				<p class="main_text">Fetured Items</p>
-				<p class="main_text_bot">Shop for items based on what we featured in this week</p>
-			</div>
-
-    	</div>
-
-    	<div class="card_block">
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card1.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card2.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card3.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card4.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card5.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card6.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card7.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
-			</div>
-			<div class="card_item">
-				<div class="card_image1">
-					<img src="img/opacity_card.png" alt="opacity_card">
-					<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a>
-				</div>
-				<div class="card_image2">
-					<img src="img/card8.jpg" alt="photo">
-				</div>
-				<p class="card_title">Mango People T-shirt</p>
-				<p class="card_price">$52.00</p>
 			</div>
 		</div>
 
+		<nav>
+			<div class="header_nav_bottom">
+				<ul class="bottom_menu">
+					<li class="name_menu"><a href="index.html" class="menu_link">HOME</a></li>
+					<li class="name_menu"><a href="product.html" class="menu_link">MAN</a>
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">Men</a>
+									<div class="menu_shape"></div>
+									<ul class="menu_list">
+										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
+										<li><a class="menu_list_text" href="product.html">Bags</a></li>
+										<li><a class="menu_list_text" href="product.html">Denim</a></li>
+										<li><a class="menu_list_text" href="product.html">Hoodies & Sweatshirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Jackets & Coats</a></li>
+										<li><a class="menu_list_text" href="product.html">Pants</a></li>
+										<li><a class="menu_list_text" href="product.html">Polos</a></li>
+										<li><a class="menu_list_text" href="product.html">Shirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Shoes</a></li>
+										<li><a class="menu_list_text" href="product.html">Shorts</a></li>
+										<li><a class="menu_list_text" href="product.html">Sweaters & Knits</a></li>
+										<li><a class="menu_list_text" href="product.html">T-Shirts</a></li>
+										<li><a class="menu_list_text" href="product.html">Tanks</a></li>
+									</ul>
+								</div>
+							</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">WOMAN</a>
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">Women</a>
+									<div class="menu_shape"></div>
+									<ul class="menu_list">
+										<li><a class="menu_list_text" href="product.html">Dresses</a></li>
+										<li><a class="menu_list_text" href="product.html">Tops</a></li>
+										<li><a class="menu_list_text" href="product.html">Sweaters/Knits</a></li>
+										<li><a class="menu_list_text" href="product.html">Jackets/Coats</a></li>
+										<li><a class="menu_list_text" href="product.html">Blazers</a></li>
+										<li><a class="menu_list_text" href="product.html">Denim</a></li>
+										<li><a class="menu_list_text" href="product.html">Leggings/Pants</a></li>
+										<li><a class="menu_list_text" href="product.html">Skirts/Shorts</a></li>
+										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
+									</ul>
+								</div>
+							</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">KIDS</a>
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">KIDS</a>
+									<div class="menu_shape"></div>
+									<ul class="menu_list">
+										<li><a class="menu_list_text" href="product.html">Dresses</a></li>
+										<li><a class="menu_list_text" href="product.html">Tops</a></li>
+										<li><a class="menu_list_text" href="product.html">Sweaters/Knits</a></li>
+										<li><a class="menu_list_text" href="product.html">Jackets/Coats</a></li>
+										<li><a class="menu_list_text" href="product.html">Blazers</a></li>
+										<li><a class="menu_list_text" href="product.html">Denim</a></li>
+										<li><a class="menu_list_text" href="product.html">Leggings/Pants</a></li>
+										<li><a class="menu_list_text" href="product.html">Skirts/Shorts</a></li>
+										<li><a class="menu_list_text" href="product.html">Accessories</a></li>
+									</ul>
+								</div>
+						</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">ACCOSERIESE</a>
+							<div class="mega_menu_block">
+								<div class="mega_box">
+								</div>
+								<div class="menu_block"><a class="menu_title" href="product.html">ACCOSERIESE</a>
+									<div class="menu_shape"></div>
+									<ul class="menu_list">
+										<li><a class="menu_list_text" href="product.html">Gloves</a></li>
+										<li><a class="menu_list_text" href="product.html">Glasses</a></li>
+										<li><a class="menu_list_text" href="product.html">Wallets</a></li>
+										<li><a class="menu_list_text" href="product.html">Cufflinks</a></li>
+										<li><a class="menu_list_text" href="product.html">Security Features</a></li>
+										<li><a class="menu_list_text" href="product.html">Headwear</a></li>
+									</ul>
+								</div>
+								<img src="img/mega_menu.jpg" alt="menu_image" class="mega_menu_image">
+							</div>
+					</li>
+					<li class="name_menu"><a href="product.html" class="menu_link">FEATURED</a></li>
+					<li class="name_menu"><a href="product.html" class="menu_link">HOT DEALS</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
+	<main>
+		<div class="top_content">
+			<div class="top_content_box">
+				<div class="content_box">
+					<div class="photo_man">
+						<div class="band_block">
+							<div class="band_post"></div>
+							<div class="band_text">
+								<h1 class="band_text_top">THE BRAND</h1>
+								<h2 class="band_text_bot">OF LUXERIOUS <span class="band_text_color">FASHION</span></h2>
+							</div>
+						</div>
+					</div>
 
-    	<a href="#" class="button_all">Browse All Product</a>
-    	
-    	<div class="bottom_conent">
-	    	<div class="bottom_left">
-	    		
-	    	</div>
-	    	
-	    	<div class="bottom_right">
-	    		<div class="bottom_right_top">
-		    		<img class="bottom_image1" src="img/bottom_1.png" alt="">
-		    		<div class="text_block">
-		    			<p class="bottom_title">Free Delivery</p>
-						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+				</div>
+			</div>
+		</div>
+
+		<div class="center_content">
+			<div class="center_content_box">
+				<div class="center_box_right">
+
+					<a class="card_image_link" href="product.html">
+						<div class="card_image_man">
+							<h2 class="nav_card_title"><span class="nav_card_text">HOT DEAL</span><br>FOR <span
+									class="band_text_color">MEN</span></h2>
+						</div>
+					</a>
+
+					<a href="product.html">
+						<div class="card_image_accesories">
+							<h2 class="nav_card_title"><span class="nav_card_text">LUXIROUS & TRENDY</span><br><span
+									class="band_text_color">ACCESORIES</span></h2>
+						</div>
+					</a>
+				</div>
+
+				<div class="center_box_left">
+					<a class="card_image_link" href="product.html">
+						<div class="card_image_woman">
+							<h2 class="nav_card_title"><span class="nav_card_text">30% OFF</span><br>FOR <span
+									class="band_text_color">WOMEN</span></h2>
+						</div>
+					</a>
+
+					<a href="product.html">
+						<div class="card_image_kids">
+							<h2 class="nav_card_title"><span class="nav_card_text">NEW ARRIVALS</span><br>FOR <span
+									class="band_text_color">KIDS</span></h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<section>
+		<h3 class="main_text">Fetured Items</h3>
+		<h4 class="main_text_bot">Shop for items based on what we featured in this week</h4>
+
+		<div class="card_block">
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card1.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card2.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card3.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card4.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card5.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card6.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card7.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+			<div class="card_item">
+				<a href="single_page.html" class="card_item_link">
+					<div class="card_image"></div>
+					<img class="card_image_w" src="img/card8.jpg" alt="photo">
+					<p class="card_title">Mango People T-shirt</p>
+					<div class="price_score">
+						<p class="card_price">$52.00</p>
+						<div class="score disp_none">
+							<div class="score-wrap">
+								<span class="stars-active" style="width:100%">
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+									<i class="fas fa-star" aria-hidden="true"></i>
+								</span>
+								<span class="stars-inactive">
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+									<i class="far fa-star" aria-hidden="true"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="opacity_cart" href="#"><img src="img/add_cart.png" alt="add to cart"><span class="opacity_cart_text">Add to Cart</span></a> 
+			</div> 
+		</div>
+
+		<a href="#" class="button_all">Browse All Product</a>
+	</section>
+
+	<article>
+		<div class="bottom_content">
+			<a class="link_navigation_text" href="product.html">
+				<div class="bottom_left">
+					<div class="Bottom_left_text">
+						<h2 class="Bottom_left_text_top">30% <span class="band_text_color">OFFER</span></h2>
+						<h3 class="Bottom_left_text_bot">FOR WOMEN</h3>
+					</div>
+				</div>
+			</a>
+			<div class="bottom_right">
+				<div class="bottom_right_top">
+					<img class="bottom_image1" src="img/bottom_1.png" alt="">
+					<div class="text_block">
+						<h2 class="bottom_title">Free Delivery</h2>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation
+							innov tion with extensive models.
 						</p>
 					</div>
-	    		</div>
-	    		<div class="bottom_right_center">
-	    			<img class="bottom_image2" src="img/bottom_2.png" alt="">
-		    		<div class="text_block">
-		    			<p class="bottom_title">Sales & discounts</p>
-						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+				</div>
+				<div class="bottom_right_center">
+					<img class="bottom_image2" src="img/bottom_2.png" alt="">
+					<div class="text_block">
+						<h2 class="bottom_title">Sales & discounts</h2>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation
+							innov tion with extensive models.
 						</p>
-		    		</div>
-	    		</div>
-	    		<div class="bottom_right_bot">
-	    			<img class="bottom_image3" src="img/bottom_3.png" alt="">
-		    		<div class="text_block">
-		    			<p class="bottom_title">Quality assurance</p>
-						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
+					</div>
+				</div>
+				<div class="bottom_right_bot">
+					<img class="bottom_image3" src="img/bottom_3.png" alt="">
+					<div class="text_block">
+						<h2 class="bottom_title">Quality assurance</h2>
+						<p class="bottom_text">Worldwide delivery on all. Authorit tively morph next-generation
+							innov tion with extensive models.
 						</p>
-		    		</div>
-	    		</div>
-	    		
-	    	</div>		
-    	</div>
-    </main>
+					</div>
+				</div>
 
-    <footer>
+			</div>
+		</div>
+	</article>
+	
+
+	<footer>
 		<div class="footer_top">
 			<div class="footer_line"></div>
 			<div class="footer_block">
 				<div class="carousel_reviews">
-					<div class="review">
+					<article class="review">
 						<div class="image_review">
 							<img src="img/review_img.png" alt="review_img">
 						</div>
 						<div class="review_text_block">
-							<p class="review_text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
-		a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
-							<h4 class="review_name">Bin Burhan</h4>
-							<h4 class="review_adr">Dhaka, Bd</h4>
+							<p class="review_text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+								a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+							<h3 class="review_name">Bin Burhan</h3>
+							<p class="review_adr">Dhaka, Bd</p>
 							<div class="review_post">
 								<div class="post1"></div>
 								<div class="post2"></div>
 								<div class="post1"></div>
 							</div>
-						</div>	
-					</div>
-
+						</div>
+					</article>
 				</div>
-				<div class="subscribe">
-					<p class="subscribe_title">SUBSCRIBE</p>
+
+				<section class="subscribe">
+					<h2 class="subscribe_title">SUBSCRIBE</h2>
 					<p class="subscribe_text">FOR OUR NEWLETTER AND PROMOTION</p>
 					<form action="#" class="subscribe__form">
 
@@ -267,47 +619,55 @@
 							class="subscribe__button" type="submit">Subscribe</button>
 
 					</form>
-				</div>
+				</section>
 			</div>
 		</div>
 
 		<div class="footer_center">
 			<div class="footer_center_right">
 				<div class="footer_logo">
-				<img src="img/logo.png" alt="logo">
-	            <p class="logo_text">BRAN<span class="logo_d">D</span></p>
-	            </div>
-				<h3 class="footer_center_text">Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</h3>
-				<br>
-				<h3 class="footer_center_text">Efficiently plagiarize 24/365 action items and focused infomediaries.
-Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</h3>
-			</div>
-			<div class="footer_center_left">
-				<div class="navigation">
-					<ul class="navigation_title1">COMPANY
-						<li class="navigation_text">Home</li>
-						<li class="navigation_text">Shop</li>
-						<li class="navigation_text">About</li>
-						<li class="navigation_text">How It Works</li>
-						<li class="navigation_text">Contact</li>
-					</ul>
-					<ul class="navigation_title2">INFORMATION
-						<li class="navigation_text">Tearms & Condition</li>
-						<li class="navigation_text">Privacy Policy</li>
-						<li class="navigation_text">How to Buy</li>
-						<li class="navigation_text">How to Sell</li>
-						<li class="navigation_text">Promotion</li>
-					</ul>
-					<ul class="navigation_title3">SHOP CATEGORY
-						<li class="navigation_text">Men</li>
-						<li class="navigation_text">Women</li>
-						<li class="navigation_text">Child</li>
-						<li class="navigation_text">Apparel</li>
-						<li class="navigation_text">Brows All</li>
-					</ul>
+					<a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+						<p class="logo_text">BRAN<span class="logo_d">D</span></p>
+					</a>
 				</div>
-
+				<p class="footer_center_text">Objectively transition extensive data rather than cross functional
+					solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits.
+					Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p>
+				<br>
+				<hp class="footer_center_text">Efficiently plagiarize 24/365 action items and focused infomediaries.
+					Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
 			</div>
+			<nav>
+				<div class="footer_center_left">
+					<div class="navigation">
+						<ul class="navigation_title1">
+							<li class="navigation_title">COMPANY</li>
+							<li class="navigation_text"><a class="link_navigation_text" href="index.html">Home</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Shop</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">About</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">How It Works</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">Contact</a></li>
+						</ul>
+						<ul class="navigation_title2">
+							<li class="navigation_title">INFORMATION</li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">Tearms & Condition</a>
+							</li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">Privacy Policy</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">How to Buy</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">How to Sell</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="#">Promotion</a></li>
+						</ul>
+						<ul class="navigation_title3">
+							<li class="navigation_title">SHOP CATEGORY</li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Men</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Women</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Child</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Apparel</a></li>
+							<li class="navigation_text"><a class="link_navigation_text" href="product.html">Brows All</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 		</div>
 
 		<div class="footer_bottom">
@@ -315,12 +675,17 @@ Distinctively seize superior initiatives for wireless technologies. Dynamically 
 				<div class="copyright">
 					<p class="copyright_text">© 2021 Brand All Rights Reserved.</p>
 				</div>
-				<div class="social_network">
-					<i class="fab fa-facebook fa_social" aria-hidden="true"></i>
-					<i class="fab fa-twitter fa_social" aria-hidden="true"></i>
-					<i class="fab fa-linkedin fa_social" aria-hidden="true"></i>
-					<i class="fab fa-pinterest fa_social" aria-hidden="true"></i>
-					<i class="fab fa-google-plus fa_social" aria-hidden="true"></i>
+				<div class="footer_social">
+					<a href="https://www.facebook.com/">
+						<i class="fab fa-facebook-f"></i></a>
+					<a href="https://twitter.com/">
+						<i class="fab fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://www.linkedin.cn/">
+						<i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+					<a href="https://www.pinterest.ru/">
+						<i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+					<a href="https://accounts.google.com/">
+						<i class="fab fa-google-plus-g" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
@@ -329,4 +694,5 @@ Distinctively seize superior initiatives for wireless technologies. Dynamically 
 
 
 </body>
+
 </html>

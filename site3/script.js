@@ -18,6 +18,7 @@ let blocks = [];
 let obstacles = [];
 let coins = [];
 let decors = [];
+let bot = [];
 
 let coinsCollected = 0;
 
