@@ -4,17 +4,15 @@
       <h1>User Espenses</h1>
     </header>
     <main>
-      <button>
-        <label class="border">
-          <input class="custom-checkbox" type="checkbox" v-model="showNewRecord" />
-          ADD NEW COST
-          <div class="showNewRecord" v-if="showNewRecord">
-            <add-payment-form @addNewPayment="addData" />
-          </div>
-        </label>
-      </button>
+    <button v-on:click="visible=!visible">ADD NEW COST</button>
+      <div v-show="visible">
+        <add-payment-form @addNewPayment="addData" />
+      </div>
       <div class="content">
         <payments-display :list="paymentsList" />
+      </div>
+      <div>
+        <pagination :list="pages" />
       </div>
     </main>
   </div>
@@ -23,17 +21,20 @@
 <script>
 import AddPaymentForm from "./components/AddPaymentForm.vue";
 import PaymentsDisplay from "./components/PaymentsDisplay.vue";
+import Pagination from "./components/pagination.vue";
 
 export default {
   name: "App",
   components: {
     PaymentsDisplay,
     AddPaymentForm,
+    Pagination,
   },
   data() {
     return {
       paymentsList: [],
-      showNewRecord: false
+      pages: [],
+      visible: false,
     };
   },
   computed: {
@@ -60,7 +61,32 @@ export default {
         {
           date: "03.08.2021",
           category: "Alcohol",
-          value: 1000,
+          value: 450,
+        },
+        {
+          date: "02.08.2021",
+          category: "Food",
+          value: 2500,
+        },
+        {
+          date: "11.07.2021",
+          category: "Sport",
+          value: 150,
+        },
+        {
+          date: "22.06.2021",
+          category: "Food",
+          value: 700,
+        },
+        {
+          date: "30.05.2021",
+          category: "Sport",
+          value: 368,
+        },
+        {
+          date: "15.07.2021",
+          category: "Food",
+          value: 190,
         },
       ];
     },
@@ -73,25 +99,62 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
+.addNewCost {
+  background: #afcde7;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+  color: white;
+  padding: 10px;
+}
+table {
+  margin: 0 auto;
+  font-size: 12px;
+  border-collapse: collapse;
+  text-align: center;
+  width: 50%;
+}
+th {
+  background: #afcde7;
+  color: white;
+  padding: 10px 20px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+}
+thead {
+  font-size: 16px;
+}
+
 .custom-checkbox {
   position: absolute;
   z-index: -1;
   opacity: 0;
-}
-.showNewRecord{
-  margin-top: 20px;
 }
 h1 {
   size: 25px;
 }
 .content {
   margin-top: 30px;
+}
+input {
+  margin-top: 10px;
+  padding: 10px;
+}
+button {
+  background: #afcde7;
+  color: white;
+  padding: 10px;
+  border: 1px solid gray;
+}
+button:hover {
+  cursor: pointer;
 }
 </style>
