@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr v-for="(item, idx) in list" :key="idx">
-            <th class="th-number">{{ idx +1 }}</th>
+            <th class="th-number">{{ item.id }}</th>
             <th class="th-date">{{ item.date }}</th>
             <th class="th-category">{{ item.category }}</th>
             <th class="th-cost">{{ item.value }}</th>

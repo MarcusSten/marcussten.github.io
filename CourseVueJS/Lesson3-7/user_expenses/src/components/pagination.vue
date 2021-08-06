@@ -1,49 +1,53 @@
 <template>
   <div class="container">
-           <div>
-             <button v-if="page != 1" @click="page--"> Prev </button>
-             <button v-for="pageNumber in pages.slice(page-1, page+5)" :key="pageNumber" @click="page = pageNumber"> {{pageNumber}} </button>
-             <button @click="page++" v-if="page < pages.length"> >> </button>
+           <div @click="onClick(cur - 1)">Prev</div>
+           <div class="page" v-for="page in amount" :key="page" @click="onClick(page)">
+             {{ page }}
            </div>
+           <div @click="onClick(cur + 1)">Next</div>
+             
          </div>
 </template>
 
 <script>
 export default {
   name: "Pagination",
-  data(){
-    return {
-      page: 1,
-      perPage: 5,
-      pages: [],
-    }
+  props: {
+    length: Number,
+    n: {
+      type: Number,
+      default: 5,
+    },
+    cur: Number,
   },
   methods: {
-    setPages () {
-       let numberOfPages = Math.ceil(this.paymentsList.length / this.perPage);
-       for (let index = 1; index <= numberOfPages; index++) {
-         this.pages.push(index);
-       }
-     },
-     paginate (paymentsList) {
-       let page = this.page;
-       let perPage = this.perPage;
-       let from = (page * perPage) - perPage;
-       let to = (page * perPage);
-       return  paymentsList.slice(from, to);
-     },
-  },
-  watch: {
-    paymentsList () {
-      this.setPages();
+    onClick(p) {
+      if(p < 1 || p > this.amount) {
+        return
+      }
+      this.$emit("paginate", p)
     }
   },
   computed: {
-     displayedPosts () {
-       return this.paginate(this.paymentsList);
+     amount() {
+       return Math.ceil(this.length / this.n)
      }
    },
 };
 </script>
+
+<style scoped lang="scss">
+  .container {
+    display: flex;
+    justify-content: center;
+    & > div {
+      cursor: pointer;
+      margin: 10px;
+      &.active {
+        color: gray;
+      }
+  }
+  }
+</style>
 
 

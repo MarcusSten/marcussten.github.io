@@ -1,13 +1,19 @@
 <template>
   <div>
-      <input type="text" v-model="date" placeholder="date" />
-      <input type="text" v-model="value" placeholder="value" />
-      <input type="text" v-model="category" placeholder="category" />
-      <button @click="onSave">Save</button>
+    <input type="text" v-model="date" placeholder="date" />
+    <input type="number" v-model.number="value" placeholder="value" />
+    <select v-model="category" v-if="options">
+        <option v-for="option in options" :value="option" :key="option">
+        {{ option }}
+        </option>
+    </select>
+    <button @click="onSave">Save</button>
   </div>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
     name: 'AddPaymentForm',
     data() {
@@ -24,9 +30,15 @@ export default {
             const m = today.getMpnth() + 1;
             const y = today.getFullYear();
             return `${d}.${m}.${y}`;
-        }
+        },
+        options(){
+            return this.$store.getters.getCategories
+        },
     },
     methods: {
+        ...mapActions([
+            'fetchCategoryList'
+        ]),
         onSave() {
             const{ value, category } = this
             const data = {
@@ -37,6 +49,9 @@ export default {
             this.$emit('addNewPayment', data)
         }
     },
+    created(){
+        this.fetchCategoryList()
+    }
 };
 
 </script>

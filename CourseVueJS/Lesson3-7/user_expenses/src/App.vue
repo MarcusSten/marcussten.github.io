@@ -9,16 +9,16 @@
         <add-payment-form @addNewPayment="addData" />
       </div>
       <div class="content">
-        <payments-display :list="paymentsList" />
+        <payments-display :list="currentElements" />
+        <pagination :cur="page" :n="n" :length="paymentsList.length" @paginate="onChangePage" />
       </div>
-      <div>
-        <pagination :list="pages" />
-      </div>
+      <div class="total">Total Costs - {{ getFPV }}</div>
     </main>
   </div>
 </template>
 
 <script>
+import { mapMutations, mapGetters, mapActions } from 'vuex'
 import AddPaymentForm from "./components/AddPaymentForm.vue";
 import PaymentsDisplay from "./components/PaymentsDisplay.vue";
 import Pagination from "./components/pagination.vue";
@@ -32,67 +32,45 @@ export default {
   },
   data() {
     return {
-      paymentsList: [],
-      pages: [],
       visible: false,
+      cur: 1,
+      n: 5,
+      page: 1,
     };
   },
-  computed: {
-    totalValue() {
-      return 0;
-    },
-  },
   methods: {
+    ...mapMutations({
+      loadData: 'setPaymentListData',
+      addDataToStore: 'addDataToPaymentList'
+    }),
+    ...mapActions({
+      fetchListData: 'fetchData'
+    }),
     addData(newPayment) {
       this.paymentsList.push(newPayment);
     },
-    fetchData() {
-      return [
-        {
-          date: "25.07.2021",
-          category: "Sport",
-          value: 720,
-        },
-        {
-          date: "01.08.2021",
-          category: "Food",
-          value: 1450,
-        },
-        {
-          date: "03.08.2021",
-          category: "Alcohol",
-          value: 450,
-        },
-        {
-          date: "02.08.2021",
-          category: "Food",
-          value: 2500,
-        },
-        {
-          date: "11.07.2021",
-          category: "Sport",
-          value: 150,
-        },
-        {
-          date: "22.06.2021",
-          category: "Food",
-          value: 700,
-        },
-        {
-          date: "30.05.2021",
-          category: "Sport",
-          value: 368,
-        },
-        {
-          date: "15.07.2021",
-          category: "Food",
-          value: 190,
-        },
-      ];
+    onChangePage(p) {
+      this.page = p
     },
   },
+  computed: {
+    ...mapGetters({
+      paymentsList:'getPaymentsList'
+    }),
+    getFPV(){
+      return this.$store.getters.getFullPaymentValue
+    },
+    totalValue() {
+      return 0;
+    },
+    currentElements() {
+      const {n, page} = this
+      return this.paymentsList.slice(n * (page - 1), n * (page - 1) + n)
+    }
+  },
   created() {
-    this.paymentsList = this.fetchData();
+    this.fetchListData()
+    //this.paymentsList = this.fetchData();
   },
 };
 </script>
@@ -132,7 +110,6 @@ th {
 thead {
   font-size: 16px;
 }
-
 .custom-checkbox {
   position: absolute;
   z-index: -1;
@@ -144,17 +121,26 @@ h1 {
 .content {
   margin-top: 30px;
 }
-input {
+input,
+select {
   margin-top: 10px;
   padding: 10px;
+}
+select {
+  width: 130px;
 }
 button {
   background: #afcde7;
   color: white;
+  height: 39px;
+  min-width: 100px;
   padding: 10px;
   border: 1px solid gray;
 }
 button:hover {
   cursor: pointer;
+}
+.total {
+  margin-top: 50px;
 }
 </style>
