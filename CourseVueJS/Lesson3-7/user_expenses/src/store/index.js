@@ -49,12 +49,12 @@ export default new Vuex.Store({
         fetchCategoryList({commit}) {
             return new Promise((resolve)=>{
                 setTimeout(()=>{
-                    const categories = ['Sport', 'Food', "Education", 'Internet', 'Other']
+                    const categories = ['Sport', 'Food', "Education", 'Internet', 'Other'];
         
                     resolve(categories)
                 },2000)
             })
             .then(res=> commit('setCategoriesListData', res))
-        }
+        },
     },
 })

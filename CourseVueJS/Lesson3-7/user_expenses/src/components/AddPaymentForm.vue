@@ -47,7 +47,7 @@ export default {
                 category
             }
             this.$emit('addNewPayment', data)
-        }
+        },
     },
     created(){
         this.fetchCategoryList()
