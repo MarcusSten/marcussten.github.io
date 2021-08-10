@@ -27,7 +27,7 @@ export default {
         getCurrentDate() {
             const today = new Date();
             const d = today.getDate();
-            const m = today.getMpnth() + 1;
+            const m = today.getMonth() + 1;
             const y = today.getFullYear();
             return `${d}.${m}.${y}`;
         },
