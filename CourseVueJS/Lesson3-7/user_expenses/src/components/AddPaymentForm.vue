@@ -7,7 +7,7 @@
         {{ option }}
         </option>
     </select>
-    <button @click="onSave">Save</button>
+    <button @click="onSave" :disabled="!category">Save</button>
   </div>
 </template>
 
@@ -46,11 +46,16 @@ export default {
                 value,
                 category
             }
-            this.$emit('addNewPayment', data)
+            this.$store.commit('addDataToPaymentList', data)
         },
     },
-    created(){
-        this.fetchCategoryList()
+    async created(){
+        await this.fetchCategoryList()
+        if(this.$route.name ==="AddPaymentFromUrl") {
+            this.value = Number(this.$route.query?.value) || 0,
+            this.category = this.$route.params?.category || ''
+            //this.$route.push('/dashboard')
+        }
     }
 };
 

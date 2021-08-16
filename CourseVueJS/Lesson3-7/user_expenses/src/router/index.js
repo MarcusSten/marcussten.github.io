@@ -46,13 +46,9 @@ const router =  new Router({
             component: Page404
         },
         {
-            path: "/add/payment/Food?value=200",
-            component: PageDashboard,
-            name: 'Dashboard',
-            beforeEnter: (to) => {
-                const date = new Date();
-                console.log('Date: ' + date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() + ' / category: ' + to.path.split('/').[3] + ' / Value: ' + to.fullPath.split('=').[1])
-            }
+            path: "/add/payment/:category/",
+            component: ()=>import(/* webpackChunkName:"AddPaymentFromUrl" */'../components/AddPaymentForm'),
+            name: 'AddPaymentFromUrl'
         }
     ]
 })
