@@ -4,12 +4,9 @@
       <h1>User Espenses</h1>
     </header>
     <main>
-    <button v-on:click="visible=!visible">ADD NEW COST</button>
-      <div v-show="visible">
-        <add-payment-form @addNewPayment="addData" />
-        <input v-model="category" placeholder="category">
-        <button @click="addCategory">Add New Category</button>
-      </div>
+      <button @click="showPaymentFormFn">Add payment</button>
+      <button @click="showAddCategoryForm">Add category</button>
+
       <div class="content">
         <payments-display :list="currentElements" />
         <pagination :cur="page" :n="n" :length="paymentsList.length" @paginate="onChangePage" />
@@ -17,12 +14,14 @@
       
       <div class="total">Total Costs - {{ getFPV }}</div>
     </main>
+
+    
+    
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters, mapActions } from 'vuex';
-import AddPaymentForm from "../components/AddPaymentForm.vue";
 import PaymentsDisplay from "../components/PaymentsDisplay.vue";
 import Pagination from "../components/pagination.vue";
 
@@ -30,7 +29,6 @@ export default {
   name: "Dashboard",
   components: {
     PaymentsDisplay,
-    AddPaymentForm,
     Pagination,
   },
   data() {
@@ -57,9 +55,13 @@ export default {
       this.page = p
     },
     addCategory(){
-        
-          this.$store.commit('addCategoryToList', this.category)
-        
+      this.$store.commit('addCategoryToList', this.category)
+    },
+    showPaymentFormFn(){
+      this.$modal.show('AddPaymentForm', {header: "Add payment Form"})
+    },
+    showAddCategoryForm(){
+      this.$modal.show('addCategory', {header: "Add new category Form"})
     },
   },
   computed: {
@@ -85,6 +87,14 @@ export default {
   },
 };
 </script>
+
+<style module lang="scss">
+.wrapper {
+  left: 300px;
+  display: block;
+  height: 100%
+}
+</style>
 
 <style lang="scss">
 .addNewCost {
@@ -145,5 +155,12 @@ button:hover {
 }
 .total {
   margin-top: 50px;
+}
+.th-context {
+  width: 20%;
+}
+.context-btn {
+  position: relative;
+  border: none;
 }
 </style>

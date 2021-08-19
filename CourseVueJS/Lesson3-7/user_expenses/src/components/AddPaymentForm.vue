@@ -47,6 +47,7 @@ export default {
                 category
             }
             this.$store.commit('addDataToPaymentList', data)
+            this.$modal.hide()
         },
     },
     async created(){
@@ -54,7 +55,6 @@ export default {
         if(this.$route.name ==="AddPaymentFromUrl") {
             this.value = Number(this.$route.query?.value) || 0,
             this.category = this.$route.params?.category || ''
-            //this.$route.push('/dashboard')
         }
     }
 };

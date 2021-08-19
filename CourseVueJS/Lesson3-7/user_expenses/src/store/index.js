@@ -45,7 +45,7 @@ export default new Vuex.Store({
                         })
                     }
                     resolve(items)
-                },2000)
+                },1000)
             })
             .then(res=> commit('setPaymentListData', res))
         },
