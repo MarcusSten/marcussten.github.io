@@ -1,18 +1,14 @@
 <template>
-  <div>
-    <input type="text" v-model="date" placeholder="date" />
-    <input type="number" v-model.number="value" placeholder="value" />
-    <select v-model="category" v-if="options">
-        <option v-for="option in options" :value="option" :key="option">
-        {{ option }}
-        </option>
-    </select>
-    <button @click="onSave" :disabled="!category">Save</button>
-  </div>
+  <v-card class="text-left pa-8">
+      <v-text-field v-model="date" label="date" />
+      <v-text-field v-model.number="value" label="value" />
+      <v-select v-model="category" label="category" :items="options" />
+      <v-btn @click="onSave" name="btnClick">Save</v-btn>
+  </v-card>
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapMutations} from 'vuex'
 
 export default {
     name: 'AddPaymentForm',
@@ -36,6 +32,9 @@ export default {
         },
     },
     methods: {
+        ...mapMutations([
+            'addDataToPaymentList'
+        ]),
         ...mapActions([
             'fetchCategoryList'
         ]),
@@ -46,8 +45,8 @@ export default {
                 value,
                 category
             }
-            this.$store.commit('addDataToPaymentList', data)
-            this.$modal.hide()
+            this.addDataToPaymentList(data)
+            this.$emit('close')
         },
     },
     async created(){

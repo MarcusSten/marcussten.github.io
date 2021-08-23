@@ -10,13 +10,17 @@ export default new Vuex.Store({
     },
     mutations: {
         setPaymentListData(state, payload) {
+            // Реактивность 
+            //state.paymentsList[0] = payload
+            //state.paymentsList = [...state.paymentsList]
+            //Vue.set(state.paymentsList,0, payload)
             state.paymentsList = [...payload, ...state.paymentsList]
         },
         addDataToPaymentList(state, payload) {
             state.paymentsList.push(payload)
         },
         setCategoriesListData(state, payload) {
-            state.categories = payload
+            state.categories = [...state.categories, ...payload]
         },
         addCategoryToList(state, payload) {
             state.categories.push(payload)

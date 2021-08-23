@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ContextMenu from '../src/components/ContextMenu.vue'
+import ContextMenu from './components/ContextMenu.vue'
   export default {
     components: { 
       ContextMenu,

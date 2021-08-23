@@ -1,43 +1,64 @@
 <template>
-  <div id="app">
-    <header>
-      <h1>User Espenses</h1>
-    </header>
-    <main>
-      <button @click="showPaymentFormFn">Add payment</button>
-      <button @click="showAddCategoryForm">Add category</button>
+  <v-container>
+    <v-row>
+      <v-col cols="8">
+        <div class="text-h5 text-sm-h3">My Personal cost</div>
+        <br>
+        <v-dialog v-model="dialog" width="500">
+          <template v-slot:activator="{ on }">
+            <v-btn color="teal" dark v-on="on">
+              Add payment <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </template>
+          <v-card>
+            <add-payment-form @close="dialog=false"/>
+          </v-card>
+        </v-dialog>
 
-      <div class="content">
         <payments-display :list="currentElements" />
-        <pagination :cur="page" :n="n" :length="paymentsList.length" @paginate="onChangePage" />
-      </div>
-      
-      <div class="total">Total Costs - {{ getFPV }}</div>
-    </main>
 
-    
-    
-  </div>
+        <pagination
+          :cur="page"
+          :n="n"
+          :length="paymentsList.length"
+          @paginate="onChangePage"
+        />
+
+        <v-btn color="teal" dark v-on="on" @click="addCategory">
+          Add category <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="4">
+        CHART
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import { mapMutations, mapGetters, mapActions } from 'vuex';
+import { mapMutations, mapGetters, mapActions } from "vuex";
+import AddPaymentForm from '../components/AddPaymentForm.vue';
+import Pagination from "../components/Pagination.vue";
 import PaymentsDisplay from "../components/PaymentsDisplay.vue";
-import Pagination from "../components/pagination.vue";
 
 export default {
   name: "Dashboard",
   components: {
     PaymentsDisplay,
     Pagination,
+    AddPaymentForm
   },
   data() {
     return {
+      on: false,
+      dialog: false,
       visible: false,
       cur: 1,
       n: 5,
       page: 1,
       category: '',
+      showPaymentForm: false,
+      modalSettings: ""
     };
   },
   methods: {
@@ -52,7 +73,7 @@ export default {
       this.paymentsList.push(newPayment);
     },
     onChangePage(p) {
-      this.page = p
+      this.curPage = p;
     },
     addCategory(){
       this.$store.commit('addCategoryToList', this.category)
