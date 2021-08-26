@@ -1,5 +1,3 @@
-
-
 <template>
     <v-container>
         <v-row>
@@ -14,7 +12,7 @@
             <v-col cols="4">{{item.date}}</v-col>
             <v-col cols="4">{{item.category}}</v-col>
             <v-col cols="2">{{item.value}}</v-col>
-            <v-col cols="1"><span @click="onContextMenuClick($event,item)">...</span></v-col>
+            <v-col cols="1"><v-btn @click="onContextMenuClick($event,item)">...</v-btn></v-col>
         </v-row>
     </v-container>
 </template>

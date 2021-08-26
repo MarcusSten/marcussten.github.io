@@ -6,6 +6,7 @@ import router from './router'
 import modal from './plugins/Modal'
 import context from './plugins/ContextMenu'
 import vuetify from './plugins/vuetify'
+import "echarts";
 
 Vue.config.productionTip = false
 

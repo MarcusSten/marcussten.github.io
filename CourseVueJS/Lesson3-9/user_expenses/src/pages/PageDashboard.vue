@@ -1,19 +1,34 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="8">
+      <v-col cols="9">
         <div class="text-h5 text-sm-h3">My Personal cost</div>
         <br>
-        <v-dialog v-model="dialog" width="500">
-          <template v-slot:activator="{ on }">
-            <v-btn color="teal" dark v-on="on">
-              Add payment <v-icon>mdi-plus</v-icon>
-            </v-btn>
-          </template>
-          <v-card>
-            <add-payment-form @close="dialog=false"/>
-          </v-card>
-        </v-dialog>
+        <v-card class="d-flex justify-space-around mb-6" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
+      flat
+      tile>
+          <v-dialog v-model="dialog" width="500">
+            <template v-slot:activator="{ on }">
+              <v-btn color="teal" dark v-on="on">
+                Add payment <v-icon>mdi-plus</v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <add-payment-form @close="dialog=false"/>
+            </v-card>
+          </v-dialog>
+
+          <v-dialog v-model="dialog2" width="500">
+            <template v-slot:activator="{ on }">
+              <v-btn color="teal" dark v-on="on" @click="addCategory">
+                Add category <v-icon>mdi-plus</v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <add-category @close="dialog=false"/>
+            </v-card>
+          </v-dialog>
+        </v-card>
 
         <payments-display :list="currentElements" />
 
@@ -24,12 +39,9 @@
           @paginate="onChangePage"
         />
 
-        <v-btn color="teal" dark v-on="on" @click="addCategory">
-          Add category <v-icon>mdi-plus</v-icon>
-        </v-btn>
       </v-col>
-      <v-col cols="4">
-        CHART
+      <v-col cols="3">
+        <chart />
       </v-col>
     </v-row>
   </v-container>
@@ -40,18 +52,23 @@ import { mapMutations, mapGetters, mapActions } from "vuex";
 import AddPaymentForm from '../components/AddPaymentForm.vue';
 import Pagination from "../components/Pagination.vue";
 import PaymentsDisplay from "../components/PaymentsDisplay.vue";
+import AddCategory from '../components/AddCategory.vue';
+import Chart from "../components/Chart.vue";
 
 export default {
   name: "Dashboard",
   components: {
     PaymentsDisplay,
     Pagination,
-    AddPaymentForm
+    AddPaymentForm,
+    AddCategory,
+    Chart
   },
   data() {
     return {
       on: false,
       dialog: false,
+      dialog2: false,
       visible: false,
       cur: 1,
       n: 5,
