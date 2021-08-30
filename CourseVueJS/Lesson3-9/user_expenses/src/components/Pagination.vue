@@ -1,17 +1,22 @@
+
+
 <template>
-  <div class="container">
-           <div @click="onClick(cur - 1)">Prev</div>
-           <div class="page" v-for="page in amount" :key="page" @click="onClick(page)">
-             {{ page }}
-           </div>
-           <div @click="onClick(cur + 1)">Next</div>
-             
-         </div>
+  <div class="text-center">
+    <v-pagination
+      v-model="page"
+      :length="n"
+    ></v-pagination>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Pagination",
+  data () {
+      return {
+        page: 1,
+      }
+    },
   props: {
     length: Number,
     n: {
