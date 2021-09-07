@@ -1,63 +1,99 @@
-import Vue from "vue";
-import Vuex from 'vuex'
+'use strict';
 
-Vue.use(Vuex)
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+const data = [
+  {
+    id: 1,
+    date: '15.08.2021',
+    category: 'Clothing',
+    price: 230
+  },
+  {
+    id: 2,
+    date: '15.08.2021',
+    category: 'Food',
+    price: 230
+  },
+  {
+    id: 3,
+    date: '15.08.2021',
+    category: 'Transport',
+    price: 230
+  },
+  {
+    id: 4,
+    date: '15.08.2021',
+    category: 'Transport',
+    price: 230
+  },
+  {
+    id: 5,
+    date: '15.08.2021',
+    category: 'Food',
+    price: 230
+  },
+  {
+    id: 6,
+    date: '15.08.2021',
+    category: 'Education',
+    price: 230
+  },
+  {
+    id: 7,
+    date: '15.08.2021',
+    category: 'Education',
+    price: 230
+  },
+  {
+    id: 8,
+    date: '15.08.2021',
+    category: 'Education',
+    price: 230
+  }
+];
 
 export default new Vuex.Store({
-    state: {
-        paymentsList: [],
-        categories: []
+  state: {
+    paymentsList: [],
+    categoryName: ['Food', 'Transport', 'Housing', 'Clothing', 'Education']
+  },
+  mutations: {
+    setPaymentsListData (state, payload) {
+      state.paymentsList = payload;
     },
-    mutations: {
-        setPaymentListData(state, payload) {
-            state.paymentsList = [...payload, ...state.paymentsList]
-        },
-        addDataToPaymentList(state, payload) {
-            state.paymentsList.push(payload)
-        },
-        setCategoriesListData(state, payload) {
-            state.categories = [...state.categories, ...payload]
-        },
-        addCategoryToList(state, payload) {
-            state.categories.push(payload)
-        }
+    AddPaymentsListData (state, payload) {
+      state.paymentsList.push(payload);
     },
-    getters: {
-        getPaymentsList: state => state.paymentsList,
-        getFullPaymentValue: state => {
-            return state.paymentsList.reduce((res, cur)=>res + cur.value, 0)
-        },
-        getCategories: state => state.categories
+    updatePaymentsList (state, payload) {
+      state.paymentsList = Object.assign({}, payload);
     },
-    actions: {
-        fetchData({commit}) {
-            if(this.state.paymentsList.length) return 
-            return new Promise((resolve)=>{
-                setTimeout(()=>{
-                    const items = []
-                    const getCategoryRandom = ['Sport', 'Food', "Education", 'Internet', 'Other']
-                    for (let i = 0; i < 20; i++) {
-                        items.push({
-                            date: Math.floor(Math.random() * 30) + '.' + Math.floor(Math.random() * 12) + '.' + Math.floor(Math.random() * (2021 - 2020) + 2020),
-                            category: getCategoryRandom[Math.floor(Math.random() * getCategoryRandom.length)],
-                            value: Math.floor(Math.random() * (1500 - 100) + 100),
-                            id: i + 1,
-                        })
-                    }
-                    resolve(items)
-                },1000)
-            })
-            .then(res=> commit('setPaymentListData', res))
-        },
-        fetchCategoryList({commit}) {
-            return new Promise((resolve)=>{
-                setTimeout(()=>{
-                    const categories = ['Sport', 'Food', "Education", 'Internet', 'Other'];
-        
-                    resolve(categories)
-                },2000)
-            })
-            .then(res=> commit('setCategoriesListData', res))
-        },
+    deletePayment (state, payload) {
+      // state.paymentsList.splice(payload, 1)
+      state.paymentsList = Object.assign({}, payload);
     },
-})
+    addCategoryToList(state, payload) {
+      state.categoryName.push(payload)
+    }
+  },
+  getters: {
+    getPaymentsList: state => state.paymentsList,
+    getPaymentsListLastId: state => state.paymentsList.length + 1,
+    getCategories: state => state.categoryName
+  },
+  actions: {
+    fetchData ({ commit }) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const items = data;
+          resolve(items);
+        }, 0);
+      })
+        .then(res => {
+          commit('setPaymentsListData', res);
+        });
+    }
+  }
+});

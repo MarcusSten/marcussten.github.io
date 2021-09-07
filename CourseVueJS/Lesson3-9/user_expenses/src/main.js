@@ -1,21 +1,17 @@
-import Vue from 'vue'
-import App from './App.vue'
+'use strict';
 
-import store from './store'
-import router from './router'
-import modal from './plugins/Modal'
-import context from './plugins/ContextMenu'
-import vuetify from './plugins/vuetify'
-import "echarts";
+import Vue from 'vue';
+import App from './App.vue';
+import store from './store';
+import router from './router';
+import vuetify from './plugins/vuetify';
 
-Vue.config.productionTip = false
-
-Vue.use(modal)
-Vue.use(context)
+Vue.config.productionTip = false;
+Vue.use(vuetify);
 
 new Vue({
   render: h => h(App),
   store,
   vuetify,
   router
-}).$mount('#app')
+}).$mount('#app');

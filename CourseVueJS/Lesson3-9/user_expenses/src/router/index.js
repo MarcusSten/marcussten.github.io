@@ -1,59 +1,39 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+'use strict';
 
-Vue.use(Router)
+import Vue from 'vue';
+import Router from 'vue-router';
 
-const router =  new Router({
-    mode: 'history',
-    routes: [
-        {
-            path: '/',
-            component: ()=>import(/* webpackChunkName:"Login" */'../pages/PageDashboard'),
-            name: 'Dashboard'
-        },
-        {
-            path: '/dashboard',
-            component: ()=>import(/* webpackChunkName:"PageDashboard" */'../pages/PageDashboard'),
-            name: 'Dashboard'
-        },
-        {
-            path: '/add/payment/:category/',
-            component: ()=>import(/* webpackChunkName:"AddPaymentFromUrl" */'../components/AddPaymentForm'),
-            name: 'AddPaymentFromUrl'
-        },
-        {
-            path: '/dashboard/:page',
-            component: ()=>import(/* webpackChunkName:"PageDashboard" */'../pages/PageDashboard'),
-            name: 'Dashboard'
-        },
-        {
-            path: '/about*',
-            component: ()=>import(/* webpackChunkName:"PageAbout" */'../pages/PageAbout'),
-            name: 'About'
-        },
-        {
-            path: '/404',
-            component: ()=>import(/* webpackChunkName:"Page404" */'../pages/Page404'),
-            name: '404'
-        },
-        {
-            path: "*",
-            component: ()=>import(/* webpackChunkName:"Page404" */'../pages/Page404'),
-        }
-    ]
-})
+Vue.use(Router);
 
-const getTitleByRouteName = routeName => {
-    return {
-        'Dashboard': 'Page Dashboard',
-        'About': 'Page About',
-        '404': 'Not Found !! =:(',
-        'calc': 'Calculator'
-    }[routeName]
-}
+const router = new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../page/PageDashboard')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../page/PageAbout')
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: () => import('../page/Page404')
+    }
+  ]
+});
 
-router.afterEach((to)=>{
-    document.title = getTitleByRouteName(to.name)
-})
+const titles = {
+  dashboard: 'Welcome to Dashboard',
+  about: 'About us',
+  NotFound: 'Page not found!'
+};
 
-export default router
+router.afterEach((to) => {
+  document.title = titles[to.name];
+});
+
+export default router;

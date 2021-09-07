@@ -3,8 +3,6 @@ for (let i = 0; i < numbersOl.length; i++) {
     numbersOl[i].innerHTML = '<span class="numbers">' + (i + 1) + '</span>' + numbersOl[i].innerHTML;
 }
 
-
-
 function myScript1(){
     let b = 0;
     let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 18, 20];
