@@ -4,125 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Memory Cards</title>
-    <style>
-        .container {
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        .theme-box {
-            display: flex;
-            margin: 0 auto;
-            padding-top: 100px;
-        }
-        .square-box {
-            display: flex;
-            margin: 0 auto;
-            padding-top: 100px;
-        }
-        .btn-start {
-            margin-top: 100px;
-            height: 150px;
-            width: 250px;
-            font-size: 30px;
-        }
-        .return {
-            display: none;
-            justify-content: center;
-            margin: 0 auto;
-            margin-bottom: 50px;
-            height: 50px;
-            width: 100px;
-            font-size: 20px;
-        }
-        .cardsList {
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .winnerCard {
-            opacity: 0.5;
-            transform: scale(0.5);
-            transition: 1.2s;
-        }
-        .modal {
-            display: none;
-            background: #337AB7;
-            opacity: 0.7;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 99999;
-        }
-        .modal_vis {
-            display: block;            
-        }
-        .body_block {
-            overflow: hidden;
-            margin-right: 17px;
-        }
-        #close_modal {
-            color: #BFE2FF;
-            font-size: 40px;
-            font-weight: bold;
-            font-family: Times, sans-serif;
-            border-radius: 50%;
-            border: 4px solid #BFE2FF;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            margin: 20px;
-            cursor: pointer;
-            position: absolute;
-            right: 0;
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            box-sizing: content-box;
-        }
-        #close_modal:hover {
-            color: #FFF;
-            transform: rotate(135deg);
-        }
-        .modal_txt {
-            font-size: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
-            background: #FFF;
-            padding: 30px;
-            margin: 100px auto;
-            max-width: 800px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="index.js" defer></script>
+
 </head>
 <body>
     <div id="changeBoard" class="container">
         <form>
             <div class="theme-box">
-                <input type="radio" name="theme" value="farming">Farming<br>
-                <input type="radio" name="theme" value="lego">Lego<br>
-                <input type="radio" name="theme" value="cats">Cats<br>
-                <input type="radio" name="theme" value="animals">Animals<br>
-                <input type="radio" name="theme" value="words">Words<br>
-                <input type="radio" name="theme" value="words-img">Words and images<br>
+                <div class="middle">
+                    <h1>Theme</h1>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="farming">
+                        <div class="box" id="farming">
+                            <span>Farming</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="lego">
+                        <div class="box" id="lego">
+                            <span>Lego</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="cats">
+                        <div class="box" id="cats">
+                            <span>Cats</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="animals">
+                        <div class="box" id="animals">
+                            <span>Animals</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="words">
+                        <div class="box" id="words">
+                            <span>Words</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" class="radio" name="theme" value="words-img">
+                        <div class="box" id="words-img">
+                            <span>Words and images</span>
+                        </div>
+                    </label>
+                </div>  
             </div>
-            <div class="square-box">
-                <input type="radio" name="square" alt="2" value="2">2x2<br>
-                <input type="radio" name="square" alt="4" value="8">4x4<br>
-                <input type="radio" name="square" alt="6" value="18">6x6<br>
+            <div class="middle">
+                <h1>Square</h1>
+                <label>
+                    <input type="radio" name="square" alt="2" value="2">
+                    <div class="box" id="card">
+                        <span>2x2</span>
+                    </div>
+                </label>
+                <label>
+                    <input type="radio" name="square" alt="4" value="8">
+                    <div class="box" id="card">
+                        <span>4x4</span>
+                    </div>
+                </label>
+                <label>
+                    <input type="radio" name="square" alt="6" value="18">
+                    <div class="box" id="card">
+                        <span>6x6</span>
+                    </div>
+                </label>
             </div>
         </form>
     
-        <button class="btn-start" onclick="createCards(number, square)">Начать игру!</button>
+        <button class="btn-start" onclick="createCards(number, square)">Start Game</button>
     </div>
-    <button class="return" id="returnMenu" onclick="returnMenu()">Вернуться в меню</button>
+    <button class="return hide" id="returnMenu" onclick="returnMenu()">Return menu</button>
 
     
 
@@ -132,165 +87,5 @@
         <div id="close_modal">+</div>
         <div class="modal_txt">Поздравляю, вы ПОБЕДИТЕЛЬ</div>
     </div>
-
-    <script defer>
-        let quantityCards = 0;
-        let square = 0;
-        let arr = [];
-        let step = 0;
-        let score = 0;
-        let cardOne;
-        let cardTwo;
-        let cardOneWinner;
-        let cardTwoWinner;
-        let number = 0;
-        let theme = '';
-
-        //Выбор темы и кол-ва карт
-        let inpTheme = document.querySelectorAll('[name="theme"]');
-        for(let i = 0; i < inpTheme.length; i++){
-            inpTheme[i].onclick = function() {
-                let o = document.querySelector('[name="theme"]:checked');
-                theme = o.value;
-            }
-        };
-        let inpSquare = document.querySelectorAll('[name="square"]');
-        for(let i = 0; i < inpSquare.length; i++){
-            inpSquare[i].onclick = function() {
-                let o = document.querySelector('[name="square"]:checked');
-                number = o.value;
-                square = o.alt;
-            }
-        };
-
-        //Создание доски и массива картинок
-        function createCards(number, square){
-            score = 0;
-            arr = [];
-            hideMenu();
-            for (let i = 0; i < number; i++){
-                arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
-                arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
-            }
-            let board = document.getElementById('Cards');
-            board.style.width = (71 * square) + 'px';
-            board.style.height = (71 * square) + 'px';
-            square = 0;
-            quantityCards = number;
-
-            shuffling();
-        }
-
-        //Отрисовка карт
-        function render(){
-            let memoryCards = document.getElementById('Cards');
-            memoryCards.innerHTML = "";
-            arr.forEach((element, index) => {
-                const img = document.createElement("div");
-                img.style.width = '70px';
-                img.style.height = '70px';
-                img.style.backgroundSize = 'cover';
-                img.style.backgroundImage = 'url(./img/black.png)';
-                img.className = 'memory-card';
-                img.id = index;
-                img.setAttribute("onClick", "checkStep(this)")
-                document.getElementById("Cards").appendChild(img)
-            });
-        }
-
-        //Тасование Фишера — Йетса
-        function shuffling(){
-            for (let i = arr.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            render();
-        }
-
-        //Проверка открытых карт
-        function checkStep(obj){
-            switch(step) {
-                case 0:
-                    obj.style.backgroundImage = 'url(' + arr[obj.id] + ')';
-                    cardOne = obj.style.backgroundImage;
-                    cardOneWinner = obj;
-                    obj.onclick = null;
-                    step++;
-
-                    console.log('quantityCards ' + quantityCards)
-                    break;
-
-                case 1:
-                    obj.style.backgroundImage = 'url(' + arr[obj.id] + ')';
-                    cardTwo = obj.style.backgroundImage;
-                    cardTwoWinner = obj;
-                    obj.onclick = null;
-
-                    console.log('quantityCards ' + quantityCards)
-                    if (cardOne == cardTwo){
-                        step = 0;
-                        score++;
-                        cardOneWinner.className = ' winnerCard';
-                        cardTwoWinner.className = ' winnerCard';
-
-                        if (score == quantityCards){
-
-                            console.log('quantityCards ' + quantityCards)
-                            congratulations();
-                            score = 0;
-                            quantityCards = 0;
-                        }
-                    } else {
-                        step++;
-                        setTimeout(reverseCards, 1000)
-                    }
-                    break;
-            }
-        }
-        
-        //Скрытие карт
-        function reverseCards(){
-            let elem = document.querySelectorAll('div.memory-card');
-            for (let i = 0; i <elem.length; i++){
-                elem[i].style.backgroundImage = 'url(./img/black.png)';
-                elem[i].setAttribute("onClick", "checkStep(this)")
-            }
-            step = 0;
-        }
-
-        function hideMenu(){
-            document.getElementById('changeBoard').style.display = 'none';
-            document.getElementById('returnMenu').style.display = 'flex';
-        }
-
-        function returnMenu(){
-            document.getElementById('changeBoard').style.display = 'flex';
-            document.getElementById('returnMenu').style.display = 'none';
-            arr = [];
-            render();
-        }
-
-        //Модальное окно
-        let close_modal = document.getElementById('close_modal');
-        let modal = document.getElementById('modal');
-        let body = document.getElementsByTagName('body')[0];
-
-        function congratulations() {
-            modal.classList.add('modal_vis'); // добавляем видимость окна
-            modal.classList.remove('bounceOutDown'); // удаляем эффект закрытия
-            body.classList.add('body_block'); // убираем прокрутку
-        };
-        close_modal.onclick = function() { // клик на закрытие
-            modal.classList.add('bounceOutDown'); // добавляем эффект закрытия
-            window.setTimeout(function() { // удаляем окно через полсекунды (чтобы увидеть эффект закрытия).
-                modal.classList.remove('modal_vis'); 
-                body.classList.remove('body_block'); // возвращаем прокрутку
-                returnMenu();
-            }, 500);
-        };
-
-        
-
-    </script>
 </body>
 </html>
