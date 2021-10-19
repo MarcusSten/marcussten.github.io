@@ -10,9 +10,8 @@ let cardTwoWinner;
 let number = 0;
 let theme = '';
 
-//Вставка картинок меню
+//Вставка картинок в меню
 let themesIcons = document.querySelectorAll('.box');
-console.log(themesIcons)
 for(let i = 0; i < themesIcons.length; i++){
     console.log(themesIcons[i].id)
     themesIcons[i].style.backgroundImage = 'url(./img/' + themesIcons[i].id + '.png)';
@@ -40,15 +39,23 @@ function createCards(number, square){
     score = 0;
     arr = [];
     hideMenu();
-    for (let i = 0; i < number; i++){
-        arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
-        arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
+    if (theme == 'words-img'){
+        for (let i = 0; i < number; i++){
+            arr.push('./img/' + theme + '/icon' + (i + 1) + '_1.png');
+            arr.push('./img/' + theme + '/icon' + (i + 1) + '_2.png');
+        }
+    } else {
+        for (let i = 0; i < number; i++){
+            arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
+            arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
+        }
     }
     let board = document.getElementById('Cards');
     board.style.width = (71 * square) + 'px';
     board.style.height = (71 * square) + 'px';
     square = 0;
     quantityCards = number;
+
 
     shuffling();
 }
@@ -65,8 +72,8 @@ function render(){
         img.style.backgroundImage = 'url(./img/rub.png)';
         img.className = 'memory-card';
         img.id = index;
-        img.setAttribute("onClick", "checkStep(this)")
-        document.getElementById("Cards").appendChild(img)
+        img.setAttribute("onClick", "checkStep(this)");
+        document.getElementById("Cards").appendChild(img);
     });
 }
 
@@ -84,21 +91,17 @@ function checkStep(obj){
     switch(step) {
         case 0:
             obj.style.backgroundImage = 'url(' + arr[obj.id] + ')';
-            cardOne = obj.style.backgroundImage;
+            cardOne = obj.style.backgroundImage.split('_')[0];
             cardOneWinner = obj;
             obj.onclick = null;
             step++;
-
-            console.log('quantityCards ' + quantityCards)
             break;
 
         case 1:
             obj.style.backgroundImage = 'url(' + arr[obj.id] + ')';
-            cardTwo = obj.style.backgroundImage;
+            cardTwo = obj.style.backgroundImage.split('_')[0];
             cardTwoWinner = obj;
             obj.onclick = null;
-
-            console.log('quantityCards ' + quantityCards)
             if (cardOne == cardTwo){
                 step = 0;
                 score++;
@@ -106,8 +109,6 @@ function checkStep(obj){
                 cardTwoWinner.className = ' winnerCard';
 
                 if (score == quantityCards){
-
-                    console.log('quantityCards ' + quantityCards)
                     congratulations();
                     score = 0;
                     quantityCards = 0;
