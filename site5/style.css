@@ -600,7 +600,6 @@ details>summary {
 .photo_man {
 	display: flex;
 	margin: 0 auto;
-	width: 1600px;
 	height: 613px;
 	background-image: url(img/header_photo.jpg);
 }

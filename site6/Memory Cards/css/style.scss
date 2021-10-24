@@ -4,12 +4,16 @@ $font: "Inter", sans-serif;
 html {
   overflow: hidden;
 }
+html, body {
+  height: 100%;
+}
 .middle {
   width: 100%;
   text-align: center;
-  h1 {
+  h2 {
     font-family: $font;
     margin-bottom: 50px;
+    color: #337AB7;
   }
   input[type="radio"] {
     display: none;
@@ -19,7 +23,7 @@ html {
         filter: none;
         span {
           vertical-align: top;
-          color: rgb(248, 123, 6);
+          color: #337AB7;
           &:before {
             opacity: 1;
             vertical-align: top;
@@ -78,16 +82,26 @@ html {
     }
   }
 }
+h1 {
+  font-family: $font;
+  color: #337AB7;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
 .container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 0 auto;
 }
 .theme-box {
     display: flex;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .square-box {
     display: flex;
@@ -150,7 +164,6 @@ html {
     background-repeat: no-repeat;
     background-size: 20%;
     background-position: 50% 10%;
-    opacity: 0.7;
     position: fixed;
     width: 600px;
     left: 50%;
@@ -197,4 +210,11 @@ html {
     padding: 30px;
     margin: 150px auto;
     width: 80%;
+}
+footer {
+  margin: 0 auto;
+  flex-shrink: 0;
+    p {
+      text-align: center;
+    }
 }
