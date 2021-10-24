@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,91 +9,95 @@
     <script src="index.js" defer></script>
 
 </head>
+
 <body>
     <div class="wrapper">
-        <div id="changeBoard" class="container">
+        <header>
             <h1>Memory Cards Game</h1>
-            <form>
-                <div class="theme-box">
+        </header>
+        <main>
+            <div id="changeBoard" class="container">
+                <form>
+                    <div class="theme-box">
+                        <div class="middle">
+                            <h2>Theme</h2>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="farming">
+                                <div class="box" id="farming">
+                                    <span>Farming</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="lego">
+                                <div class="box" id="lego">
+                                    <span>Lego</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="cats">
+                                <div class="box" id="cats">
+                                    <span>Cats</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="animals">
+                                <div class="box" id="animals">
+                                    <span>Animals</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="words">
+                                <div class="box" id="words">
+                                    <span>Words</span>
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" class="radio" name="theme" value="words-img">
+                                <div class="box" id="words-img">
+                                    <span>Words and images</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                     <div class="middle">
-                        <h2>Theme</h2>
+                        <h2>Square</h2>
                         <label>
-                            <input type="radio" class="radio" name="theme" value="farming">
-                            <div class="box" id="farming">
-                                <span>Farming</span>
+                            <input type="radio" name="square" alt="2" value="2">
+                            <div class="box" id="card">
+                                <span>2x2</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" class="radio" name="theme" value="lego">
-                            <div class="box" id="lego">
-                                <span>Lego</span>
+                            <input type="radio" name="square" alt="4" value="8">
+                            <div class="box" id="card">
+                                <span>4x4</span>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" class="radio" name="theme" value="cats">
-                            <div class="box" id="cats">
-                                <span>Cats</span>
+                            <input type="radio" name="square" alt="6" value="18">
+                            <div class="box" id="card">
+                                <span>6x6</span>
                             </div>
                         </label>
-                        <label>
-                            <input type="radio" class="radio" name="theme" value="animals">
-                            <div class="box" id="animals">
-                                <span>Animals</span>
-                            </div>
-                        </label>
-                        <label>
-                            <input type="radio" class="radio" name="theme" value="words">
-                            <div class="box" id="words">
-                                <span>Words</span>
-                            </div>
-                        </label>
-                        <label>
-                            <input type="radio" class="radio" name="theme" value="words-img">
-                            <div class="box" id="words-img">
-                                <span>Words and images</span>
-                            </div>
-                        </label>
-                    </div>  
-                </div>
-                <div class="middle">
-                    <h2>Square</h2>
-                    <label>
-                        <input type="radio" name="square" alt="2" value="2">
-                        <div class="box" id="card">
-                            <span>2x2</span>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="radio" name="square" alt="4" value="8">
-                        <div class="box" id="card">
-                            <span>4x4</span>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="radio" name="square" alt="6" value="18">
-                        <div class="box" id="card">
-                            <span>6x6</span>
-                        </div>
-                    </label>
-                </div>
-            </form>
-        
-            <button class="btn-start" onclick="createCards(number, square)">Start Game</button>
-        </div>
-        <button class="return hide" id="returnMenu" onclick="returnMenu()">Return menu</button>
+                    </div>
+                </form>
 
-        
+                <button class="btn-start" onclick="createCards(number, square)">Start Game</button>
+            </div>
 
-        <section class="cardsList" id='Cards'></section>
-            
-        <div id="modal" class="modal bounceIn">
-            <div id="close_modal">+</div>
-            <div><span class="modal_txt">Congratulation! You win!</span></div>
-        </div>
+            <section class="cardsList" id='Cards'></section>
 
-        <footer>
-                <p>All rights reserved &copy; Oleg Stenyaev</p> 
-        </footer>
+            <button class="return hide" id="returnMenu" onclick="returnMenu()">Return menu</button>
+
+            <div id="modal" class="modal bounceIn">
+                <div id="close_modal">+</div>
+                <div><span class="modal_txt">Congratulation! You win!</span></div>
+            </div>
+    </main>
+    <footer>
+        <p>All rights reserved &copy; Oleg Stenyaev</p>
+    </footer>
     </div>
 </body>
+
 </html>
