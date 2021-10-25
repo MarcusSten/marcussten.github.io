@@ -13,7 +13,6 @@ let theme = '';
 //Вставка картинок в меню
 let themesIcons = document.querySelectorAll('.box');
 for(let i = 0; i < themesIcons.length; i++){
-    console.log(themesIcons[i].id)
     themesIcons[i].style.backgroundImage = 'url(./img/' + themesIcons[i].id + '.png)';
 }
 
@@ -38,7 +37,6 @@ for(let i = 0; i < inpSquare.length; i++){
 function createCards(number, square){
     score = 0;
     arr = [];
-    hideMenu();
     if (theme == 'words-img'){
         for (let i = 0; i < number; i++){
             arr.push('./img/' + theme + '/icon' + (i + 1) + '_1.png');
@@ -50,14 +48,22 @@ function createCards(number, square){
             arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
         }
     }
-    let board = document.getElementById('Cards');
-    board.style.width = (71 * square) + 'px';
-    board.style.height = (71 * square) + 'px';
-    square = 0;
-    quantityCards = number;
+    console.log(theme)
+    console.log(square)
 
+    if (theme == '' || square == 0) {
+        error();
+    } else {
+        console.log('hideMenu')
+        hideMenu();
+        let board = document.getElementById('Cards');
+        board.style.width = (71 * square) + 'px';
+        board.style.height = (71 * square) + 'px';
+        square = 0;
+        quantityCards = number;
 
-    shuffling();
+        shuffling();
+    }
 }
 
 //Отрисовка карт
@@ -145,7 +151,9 @@ function returnMenu(){
 
 //Модальное окно
 let close_modal = document.getElementById('close_modal');
+let close_modalError = document.getElementById('close_modal_err');
 let modal = document.getElementById('modal');
+let modalError = document.getElementById('modal_err');
 let body = document.getElementsByTagName('body')[0];
 
 function congratulations() {
@@ -153,11 +161,26 @@ function congratulations() {
     modal.classList.remove('bounceOutDown'); // удаляем эффект закрытия
     body.classList.add('body_block'); // убираем прокрутку
 };
+
+function error() {
+    modalError.classList.add('modal_vis'); // добавляем видимость окна
+    modalError.classList.remove('bounceOutDown'); // удаляем эффект закрытия
+    body.classList.add('body_block'); // убираем прокрутку
+};
+
 close_modal.onclick = function() { // клик на закрытие
     modal.classList.add('bounceOutDown'); // добавляем эффект закрытия
     window.setTimeout(function() { // удаляем окно через полсекунды (чтобы увидеть эффект закрытия).
         modal.classList.remove('modal_vis'); 
         body.classList.remove('body_block'); // возвращаем прокрутку
         returnMenu();
+    }, 500);
+};
+
+close_modalError.onclick = function() { // клик на закрытие
+    modalError.classList.add('bounceOutDown'); // добавляем эффект закрытия
+    window.setTimeout(function() { // удаляем окно через полсекунды (чтобы увидеть эффект закрытия).
+        modalError.classList.remove('modal_vis'); 
+        body.classList.remove('body_block'); // возвращаем прокрутку
     }, 500);
 };
