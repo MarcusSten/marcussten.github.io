@@ -310,6 +310,7 @@ main {
 }
 
 .modal_txt {
+  font-family: "Inter", sans-serif;
   text-align: center;
   display: block;
   font-size: 30px;

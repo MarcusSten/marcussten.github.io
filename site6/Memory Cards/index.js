@@ -48,13 +48,10 @@ function createCards(number, square){
             arr.push('./img/' + theme + '/icon' + (i + 1) + '.png');
         }
     }
-    console.log(theme)
-    console.log(square)
 
     if (theme == '' || square == 0) {
         error();
     } else {
-        console.log('hideMenu')
         hideMenu();
         let board = document.getElementById('Cards');
         board.style.width = (71 * square) + 'px';
