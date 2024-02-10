@@ -54,4 +54,6 @@ body {
     border-width: 5px;
     border-style:solid;
     border-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
 }
